@@ -1,0 +1,329 @@
+# Travel Assistant — Documento di design
+
+Stato: bozza da rivedere · Data: 14/11/2026 · Scadenza: mercoledì 18/11/2026, sera
+
+## 1. Obiettivo
+
+Un assistente conversazionale per il settore viaggi ed esperienze. L'utente descrive in linguaggio naturale cosa desidera (budget, paese, mese, attività preferite). L'assistente raccoglie e valida questi requisiti, propone itinerari completi (volo di andata e ritorno, un hotel per ogni notte, attività per ogni giorno) che rispettano budget, disponibilità e preferenze, e prenota l'itinerario scelto direttamente in chat. Le prenotazioni vengono salvate e mostrate in una dashboard.
+
+Il progetto è un assessment tecnico per Reply. Oltre a funzionare, deve dimostrare buon giudizio ingegneristico: architettura chiara, vincoli garantiti, storia dei commit leggibile, facilità di avvio per il reviewer.
+
+### Principio guida: l'LLM conversa, il codice garantisce
+
+- L'**agente LLM** capisce l'utente, estrae i requisiti, decide quale strumento chiamare e spiega le proposte.
+- Il **codice Python deterministico** cerca voli, hotel e attività, verifica date e disponibilità, somma i costi e prenota dentro una transazione del database. L'LLM non inventa mai un prezzo, una data o una disponibilità.
+- Il **RAG** fa da ponte tra i due: trasforma preferenze espresse a parole ("cultura e buon cibo, qualcosa di rilassante") nelle attività più adatte.
+
+## 2. Perimetro
+
+### Obbligatorio (la spec)
+
+- Registrazione e login.
+- Chat in linguaggio naturale con un agente che mantiene il contesto.
+- Estrazione e validazione dei requisiti: budget, paese, mese, preferenze sulle attività (più i punti mancanti nella spec, vedi §3).
+- Generazione dell'itinerario: volo di andata e ritorno, hotel per ogni notte, attività per ogni giorno, nel rispetto di budget e disponibilità.
+- Prenotazione dell'intero itinerario tramite chat, con salvataggio dello stato.
+- Dashboard con le prenotazioni dell'utente.
+- PostgreSQL con utenti, hotel (date e costo per notte), attività (date), voli (aeroporti, date, costo), prenotazioni.
+- Database vettoriale (Qdrant) con le descrizioni delle attività e i target ideali, usato per il RAG.
+- Backend Python (FastAPI) che espone un'API REST.
+- README con le istruzioni di avvio e le note architetturali.
+
+### Consigliato
+
+- Cronologia delle conversazioni (barra laterale con le chat passate). Costa poco con il design scelto.
+- Intero sistema avviabile con un solo comando (`docker compose up`), app compresa.
+- Test automatici per planner e prenotazione.
+
+### Facoltativo (solo se avanza tempo, in quest'ordine)
+
+1. Modifica di un itinerario prenotato, con verifica della disponibilità.
+2. Cancellazione di una prenotazione.
+3. Caricamento di immagini per esprimere le preferenze.
+
+### Fuori perimetro
+
+- Fornitori reali di voli, hotel o attività: il catalogo è sintetico.
+- Pagamenti.
+- Viaggi in più città: una sola città di destinazione per viaggio.
+- Gruppi: un solo viaggiatore per prenotazione.
+- Valute multiple: tutto è in euro.
+
+### Da evitare assolutamente (sarebbe un fallimento anche se "funziona")
+
+- Un itinerario fuori budget, o con un hotel o un'attività non disponibile in quella data.
+- Una prenotazione fatta senza conferma esplicita dell'utente.
+- Prezzi o date presi dal testo dell'LLM invece che dal database.
+- Un reviewer che non riesce ad avviare il progetto in pochi minuti.
+
+## 3. Ipotesi che colmano i punti mancanti nella spec
+
+| Punto mancante | Decisione |
+|---|---|
+| Durata del viaggio (la spec indica solo il mese) | L'agente chiede il numero di notti (da 2 a 14). Se l'utente non ha preferenze, ne propone 5. |
+| Aeroporto di partenza (serve per i voli, ma non è tra gli input) | Salvato nel profilo utente alla registrazione; si può cambiare in chat ("stavolta parto da Roma"). |
+| Anno del mese indicato | La prossima occorrenza di quel mese in cui il viaggio può iniziare da domani in poi. |
+| Prezzo delle attività (la spec cita solo le date) | Le attività hanno un prezzo a persona, necessario per rispettare il budget. |
+| Numero di viaggiatori | Uno (vedi "Fuori perimetro"). |
+| Lingua | Interfaccia in italiano. L'assistente risponde nella lingua in cui scrive l'utente. |
+
+## 4. Architettura
+
+```mermaid
+flowchart TB
+    FE["Frontend<br/>HTML, CSS, JS senza framework"] -->|REST + SSE| API
+
+    subgraph BE["Backend (FastAPI)"]
+        API["Livello API<br/>auth, chat, itinerari, prenotazioni"] --> AG["Agente (LangGraph)"]
+        AG --> PL["Planner"]
+        AG --> BK["Servizio di prenotazione"]
+        PL --> RAG["Retriever RAG"]
+        PL --> CAT["Query sul catalogo"]
+    end
+
+    AG --> LLM["API LLM<br/>Anthropic o OpenAI"]
+    CAT --> PG[("PostgreSQL")]
+    BK --> PG
+    AG -. checkpoint .-> PG
+    RAG --> QD[("Qdrant")]
+```
+
+FastAPI serve anche i file del frontend: pagine e API stanno sullo stesso indirizzo. Così non ci sono problemi di CORS e il cookie di login funziona senza configurazioni aggiuntive.
+
+### Stack tecnologico
+
+| Area | Scelta | Motivo |
+|---|---|---|
+| Backend | Python 3.12+, FastAPI | Richiesto dalla spec (Python + framework web). Validazione e documentazione OpenAPI incluse. |
+| ORM | SQLAlchemy 2 + psycopg 3 | Standard, tipizzato, transazioni con blocco delle righe. |
+| Database relazionale | PostgreSQL 17 | Blocco a livello di riga per le prenotazioni concorrenti. |
+| Database vettoriale | Qdrant 1.19 | Componente separato come descritto nella spec; filtri potenti sui metadati (città, categoria). |
+| Embedding | fastembed, modello multilingue locale | Nessuna chiave API necessaria per il RAG; query in italiano e in inglese. |
+| Agente | LangGraph + modelli chat di LangChain | Grafo di stati esplicito con controlli; il checkpointer su Postgres rende persistente lo stato della conversazione. |
+| LLM | Anthropic o OpenAI, scelto nel `.env` | Indipendente dal provider. |
+| Frontend | HTML, CSS, JavaScript senza framework (moduli ES) | Scelta esplicita; nessuno step di build. |
+| Autenticazione | JWT in un cookie httpOnly | Token non leggibile da JavaScript; inviato in automatico anche con la richiesta dello stream. |
+| Avvio | Docker Compose | Un solo comando per il reviewer. |
+
+## 5. Modello dati
+
+```mermaid
+erDiagram
+    USERS ||--o{ CONVERSATIONS : avvia
+    CONVERSATIONS ||--o{ MESSAGES : contiene
+    USERS ||--o{ ITINERARIES : riceve
+    CONVERSATIONS ||--o{ ITINERARIES : produce
+    ITINERARIES ||--|{ ITINERARY_ITEMS : contiene
+    ITINERARIES ||--o| BOOKINGS : diventa
+    USERS ||--o{ BOOKINGS : effettua
+    AIRPORTS ||--o{ FLIGHTS : collega
+    FLIGHTS ||--o{ ITINERARY_ITEMS : usato_in
+    HOTELS ||--|{ HOTEL_AVAILABILITY : offre
+    HOTELS ||--o{ ITINERARY_ITEMS : usato_in
+    ACTIVITIES ||--|{ ACTIVITY_SLOTS : offre
+    ACTIVITIES ||--o{ ITINERARY_ITEMS : usato_in
+```
+
+| Tabella | Colonne principali | Note |
+|---|---|---|
+| `users` | id, email (unica), password_hash, name, home_airport → airports | |
+| `airports` | iata (PK), city, country | |
+| `flights` | id, origin → airports, destination → airports, departure_at, arrival_at, price, seats_left | Solo andata; un viaggio di andata e ritorno usa due voli. |
+| `hotels` | id, name, city, country, stars, description | |
+| `hotel_availability` | (hotel_id, night) PK, price, rooms_left | Una riga per hotel per notte. |
+| `activities` | id, name, city, country, category, target, price, duration_hours, description | `description` e `target` finiscono anche in Qdrant. |
+| `activity_slots` | (activity_id, day) PK, spots_left | Una riga per attività per giorno disponibile. |
+| `itineraries` | id, user_id, conversation_id, variant, status, total_cost, start_date, end_date, created_at, superseded_by | Stati: `proposed` (proposto), `superseded` (sostituito), `booked` (prenotato), `cancelled` (annullato). |
+| `itinerary_items` | id, itinerary_id, kind, flight_id / hotel_id / activity_id, day, price | Tipi: `flight_out`, `flight_return`, `hotel_night`, `activity`. Esattamente una delle tre chiavi esterne è valorizzata (vincolo di controllo). Il prezzo è una copia al momento della proposta. |
+| `bookings` | id, user_id, itinerary_id (unico), status, total_cost, booked_at | Stati: `confirmed` (confermata), `cancelled` (annullata). |
+| `conversations` | id, user_id, title, created_at, updated_at | |
+| `messages` | id, conversation_id, role, content, payload (JSON), created_at | `payload` conserva i dati strutturati (proposte, prenotazione) per ricostruire l'interfaccia dalla cronologia. |
+
+Gli importi sono salvati come `NUMERIC(10,2)` e gestiti come `Decimal`, mai come float.
+
+Lo stato dell'agente è salvato dal checkpointer Postgres di LangGraph (nelle sue tabelle), con la conversazione come chiave. La tabella `messages` è quella che mostra l'interfaccia.
+
+### Database vettoriale
+
+Una collezione Qdrant, `activities`, con un punto per ogni attività:
+
+- **vettore:** embedding di `name + description + target`;
+- **payload:** `activity_id`, `country`, `city`, `category`, `target`, `price`, con indici keyword su `country`, `city` e `category`.
+
+Il planner la interroga con le preferenze dell'utente come testo, filtrando per la città di destinazione. L'id del punto coincide con l'id dell'attività, così ogni risultato di Qdrant corrisponde direttamente a una riga di Postgres. Disponibilità e prezzo vengono sempre da Postgres, mai dal payload.
+
+## 6. Catalogo sintetico
+
+Generato dagli script in `backend/seed/`, in modo deterministico (seme casuale fisso), per i 12 mesi successivi al giorno in cui si lancia il seed.
+
+- **Aeroporti di partenza:** alcuni italiani (per esempio NAP, FCO, MXP).
+- **Destinazioni:** circa 6 paesi con 2–3 città ciascuno (per esempio Giappone, Spagna, Grecia, Portogallo, Francia, Islanda).
+- **Voli:** giornalieri o quasi, tra aeroporti di partenza e di destinazione; il prezzo varia con la stagione e il giorno della settimana; posti limitati.
+- **Hotel:** circa 4 per città, da 2 a 5 stelle; il prezzo per notte varia con la stagione.
+- **Attività:** circa 10 per città, divise per categoria (cultura, cibo, natura, sport, relax, vita notturna). Ognuna ha un target (famiglie, giovani, coppie, sportivi), un prezzo e uno schema settimanale di disponibilità con posti limitati.
+
+I dati di base sono scritti a mano (`airports.json`, `hotels.json`, `activities.json` con le descrizioni); date, prezzi e disponibilità vengono generati da `build_catalog.py`.
+
+## 7. Planner
+
+Python puro, senza LLM, interamente testabile.
+
+**Input:** requisiti già validati: budget, paese, mese, numero di notti N, aeroporto di partenza, preferenze come testo e come categorie.
+
+**Passi:**
+
+1. **Voli.** Cerca i voli di andata dall'aeroporto di partenza verso tutti gli aeroporti del paese nel mese indicato (da domani in poi). Per ciascuno cerca i voli di ritorno dalla stessa città N giorni dopo. Tiene le K coppie più economiche (K intorno a 5) con posti disponibili.
+2. **Hotel.** Per ogni coppia di voli cerca gli hotel della città di arrivo con una camera libera per tutte le N notti. Il costo è la somma dei prezzi per notte.
+3. **Attività.** Chiede al retriever RAG le attività di quella città ordinate per pertinenza rispetto alle preferenze. Per ogni giorno intero (esclusi i giorni di arrivo e di partenza) sceglie fino a 2 attività pertinenti con posti liberi in quel giorno, nei limiti del budget rimasto.
+4. **Varianti.** Tra i candidati sceglie fino a tre itinerari diversi tra loro:
+   - **Economica:** costo totale più basso.
+   - **Bilanciata:** il miglior equilibrio tra pertinenza, qualità dell'hotel e costo.
+   - **Comfort:** la migliore qualità dell'hotel, poi la pertinenza.
+5. **Controllo finale.** Ogni itinerario restituito ha un totale non superiore al budget, ogni notte coperta dall'hotel e ogni elemento disponibile nella sua data. Se nessuna combinazione funziona, restituisce un risultato "nessuna soluzione" tipizzato, con il motivo e il costo minimo possibile, così l'agente può suggerire meno notti, un altro mese o un budget più alto.
+
+I pesi per la variante bilanciata li sceglie chi implementa; i vincoli del controllo finale non sono negoziabili.
+
+## 8. Agente
+
+Un grafo di stati LangGraph, con un thread per ogni conversazione.
+
+```mermaid
+flowchart LR
+    U([Messaggio utente]) --> X[Estrai i requisiti]
+    X --> V{Completi e validi?}
+    V -- no --> Q[Fai una domanda mirata]
+    V -- sì --> P[Pianifica: chiama il planner]
+    P --> R[Presenta le proposte]
+    R --> W([Attendi l'utente])
+    W -->|chiede una modifica| X
+    W -->|sceglie un'opzione| S[Mostra il riepilogo e chiedi conferma]
+    S --> C{Conferma esplicita?}
+    C -- sì --> B[Prenota: transazione]
+    C -- no --> X
+```
+
+- **Stato:** i requisiti raccolti finora, i campi mancanti, l'insieme di proposte corrente, l'itinerario in attesa di conferma (se c'è), l'ultima prenotazione.
+- **Estrazione:** l'LLM restituisce un output strutturato (modello Pydantic), unito ai requisiti precedenti, così l'utente può cambiare una cosa alla volta.
+- **Validazione:** regole Pydantic (budget > 0, mese da 1 a 12, notti da 2 a 14, paese presente nel catalogo, categorie note). Se l'utente non indica la partenza, si usa l'aeroporto del suo profilo.
+- **Strumenti a disposizione dell'LLM:** cercare gli itinerari (richiama il planner) e leggere i dettagli di un itinerario. **La prenotazione non è uno strumento libero**: è un nodo del grafo che si raggiunge solo dopo che l'utente ha visto il riepilogo e ha confermato in modo esplicito. Così la regola "nessuna prenotazione senza conferma" è garantita dalla struttura del grafo, non dal prompt.
+- **Risposte:** l'LLM scrive il testo. Prezzi e date nel testo vengono dalla proposta strutturata che riceve, e l'interfaccia mostra le proposte a partire dagli eventi strutturati, non dal testo.
+
+## 9. API REST
+
+| Metodo e percorso | A cosa serve |
+|---|---|
+| `POST /api/auth/register` | Crea un utente (email, password, nome, aeroporto di partenza). |
+| `POST /api/auth/login` | Verifica le credenziali e imposta il cookie JWT. |
+| `POST /api/auth/logout` | Cancella il cookie. |
+| `GET /api/auth/me` | Utente corrente. |
+| `GET /api/airports` | Aeroporti per il modulo di registrazione. |
+| `GET /api/conversations` | Conversazioni dell'utente (barra della cronologia). |
+| `POST /api/conversations` | Avvia una conversazione. |
+| `GET /api/conversations/{id}` | Messaggi di una conversazione. |
+| `POST /api/conversations/{id}/messages` | Invia un messaggio; la risposta è uno stream SSE. |
+| `GET /api/itineraries/{id}` | Itinerario completo, giorno per giorno. |
+| `GET /api/bookings` | Prenotazioni dell'utente. |
+| `GET /api/bookings/{id}` | Una prenotazione con il suo itinerario. |
+| `GET /api/health` | Controllo di funzionamento. |
+
+Non c'è volutamente un endpoint pubblico per creare una prenotazione: si prenota solo tramite la chat, come chiede la spec.
+
+## 10. Protocollo di streaming (SSE)
+
+L'endpoint dei messaggi restituisce `text/event-stream`. Ogni evento ha un tipo e un payload JSON:
+
+| Evento | Payload | Effetto nell'interfaccia |
+|---|---|---|
+| `requirements` | budget, paese, mese, notti, partenza, preferenze, campi mancanti | Aggiorna i requisiti mostrati in chat. |
+| `tool_start` / `tool_end` | nome dello strumento, etichetta leggibile | Indicatori di stato ("Cerco voli…"). |
+| `itinerary` | id dell'insieme di proposte, id dell'insieme che sostituisce, opzioni con riepilogo (variante, città, hotel, totale, quota del budget) | Mostra le righe delle proposte; mette in grigio quelle sostituite. |
+| `token` | un pezzo di testo | Fa scorrere il messaggio dell'assistente. |
+| `booking` | id della prenotazione, id dell'itinerario, stato | Mostra "Prenotato" e aggiorna la dashboard. |
+| `error` | codice, messaggio | Mostra l'errore e permette di riprovare. |
+| `done` | id del messaggio salvato | Chiude lo stream. |
+
+Il client legge lo stream con `fetch` e un piccolo parser (`EventSource` supporta solo GET). I messaggi vengono salvati alla fine dello stream: ricaricando la pagina, la conversazione si ricostruisce da `GET /api/conversations/{id}`.
+
+## 11. Prenotazione e concorrenza
+
+Tutto avviene in un'unica transazione del database:
+
+1. Carica l'itinerario: deve appartenere all'utente ed essere `proposed`. Se è già `booked`, restituisce la prenotazione esistente (operazione idempotente).
+2. Blocca le righe di disponibilità con `SELECT … FOR UPDATE`, sempre nello stesso ordine (voli, poi notti d'hotel, poi posti nelle attività, ognuno ordinato per chiave), per evitare deadlock.
+3. Verifica che ogni riga abbia ancora disponibilità; se no, annulla la transazione e indica quale elemento non è più disponibile.
+4. Scala posti, camere e posti nelle attività; imposta l'itinerario come `booked`, segna come `superseded` le altre proposte dello stesso insieme; inserisce la prenotazione.
+5. Conferma la transazione (commit).
+
+In caso di errore l'agente spiega cosa è cambiato e propone di cercare di nuovo.
+
+## 12. Frontend
+
+- **Pagine:** `index.html` (login), `register.html`, `chat.html`, `bookings.html`, servite da FastAPI.
+- **Layout della chat (opzione C):** la conversazione occupa la colonna principale. Le proposte compaiono dentro il messaggio dell'assistente come righe compatte (variante, città e hotel, prezzo, "Dettagli"). "Dettagli" apre un pannello laterale con il programma giorno per giorno e il pulsante "Prenota questa opzione".
+  - Quando arrivano nuove proposte, le righe precedenti diventano grigie con l'etichetta "sostituita".
+  - Se l'itinerario aperto viene aggiornato, il pannello laterale si aggiorna sul posto con l'etichetta "aggiornata".
+  - Su mobile il pannello laterale diventa un foglio a tutto schermo.
+- **Pulsante di prenotazione:** invia un messaggio in chat ("Prenota l'opzione bilanciata"); l'agente mostra il riepilogo e chiede conferma. Un solo percorso per prenotare, sempre attraverso l'agente.
+- **Barra della cronologia:** elenco delle conversazioni passate (consigliato).
+- **Codice:** moduli ES: `api.js`, `auth.js`, `sse.js`, `chat.js`, `itinerary.js` (righe e pannello laterale, riusato dalla dashboard), `bookings.js`, `format.js`.
+- **Direzione visiva:** definita all'inizio della fase di frontend, con anteprime prima di scrivere il codice.
+
+## 13. Autenticazione
+
+- Password salvate con un algoritmo di hashing moderno (argon2 o bcrypt, a scelta di chi implementa).
+- Il login restituisce un JWT firmato (HS256, `JWT_SECRET`, scadenza 24 ore) in un cookie httpOnly con SameSite=Lax.
+- Una dipendenza FastAPI (`get_current_user`) protegge tutti gli endpoint tranne registrazione, login, aeroporti e controllo di funzionamento.
+- Le pagine chiamano `/api/auth/me` all'apertura e, se serve, rimandano al login.
+
+## 14. Test
+
+| Area | Cosa si verifica |
+|---|---|
+| Planner | Su molte richieste casuali: totale mai sopra il budget, ogni notte coperta, ogni elemento disponibile nella sua data, voli coerenti con le N notti. Risultato "nessuna soluzione" quando il budget è troppo basso. |
+| Prenotazione | Caso normale; idempotenza; due prenotazioni simultanee per l'ultima camera: ne riesce esattamente una. |
+| Requisiti | Regole di validazione e unione degli aggiornamenti parziali. |
+| Autenticazione | Registrazione, login, endpoint protetto senza e con cookie. |
+| Agente | Alcune conversazioni scriptate con un LLM finto: i dati mancanti generano una domanda; nessuna prenotazione senza conferma. |
+
+I test girano su un database PostgreSQL di test separato: il blocco delle righe non si può testare su SQLite.
+
+## 15. Consegna
+
+- README: cos'è, requisiti, come avviarlo (un comando), come provarlo (utente demo, messaggi di esempio), come lanciare i test.
+- `docs/ARCHITECTURE.md`: diagrammi e motivazioni di ogni scelta.
+- `docker-compose.yml` con `app`, `postgres` e `qdrant`; l'app aspetta che il database sia pronto e carica il catalogo al primo avvio.
+- Una breve GIF o un video del flusso completo.
+- Tag `v1.0` su `main`.
+
+## 16. Piano e calendario
+
+Un branch per fase, unito a `main` tramite pull request.
+
+| Giorno | Branch |
+|---|---|
+| Sab 14 | `chore/setup` (fatto), `docs/design` |
+| Dom 15 | `feat/database` (modelli, seed), `feat/auth` |
+| Lun 16 | `feat/planner` (con test), `feat/rag` |
+| Mar 17 | `feat/agent` (grafo, endpoint della chat, SSE), `feat/booking` (con test); avvio della struttura del frontend |
+| Mer 18 | `feat/frontend` (chat, pannello laterale, dashboard, cronologia), Docker Compose completo, `docs/final`, demo, `v1.0` |
+
+Le funzionalità facoltative partono solo quando le consegne di mercoledì sono al sicuro.
+
+## 17. Alternative valutate
+
+| Decisione | Opzioni | Scelta | Motivo |
+|---|---|---|---|
+| Framework per l'agente | LangGraph; ciclo di tool calling scritto a mano; slot-filling a regole con LLM solo per l'estrazione | LangGraph | Fasi e controlli sono espliciti nel grafo; lo stato persistente arriva con il checkpointer; è uno standard per l'AI agentica. Il ciclo scritto a mano richiede di costruire stato e controlli da zero; lo slot-filling è rigido e mostra poco della parte agentica. |
+| Database vettoriale | Qdrant; pgvector; Chroma | Qdrant | La spec descrive un database vettoriale separato; filtri potenti sui metadati; un solo container. pgvector era l'alternativa seria (un database in meno); Chroma è pensato soprattutto per i prototipi. |
+| Frontend | HTML/CSS/JS senza framework; React | Senza framework | Scelta di Ciro. Nessuno step di build; FastAPI serve i file. |
+| Layout delle proposte | A split view; B card nella chat; C righe nella chat + pannello laterale; D barra in alto; E pannello comprimibile | C | Scelta di Ciro dopo le anteprime. La chat resta al centro; i dettagli si aprono quando servono. |
+| Container | Uno per servizio; tutto in uno | Uno per servizio | Buona pratica di Docker; immagini ufficiali; cicli di vita indipendenti. |
+| Streaming | SSE; WebSocket | SSE | Basta una comunicazione dal server al client; HTTP semplice; facile da implementare in FastAPI. |
+
+## 18. Decisioni lasciate a chi implementa
+
+- Il modello di embedding esatto (un modello multilingue di fastembed, per esempio `paraphrase-multilingual-MiniLM-L12-v2`).
+- I pesi del punteggio della variante bilanciata e il numero K di coppie di voli.
+- La libreria per l'hashing delle password.
+- Il testo dei prompt.
+- Il contenuto esatto del catalogo (nomi, descrizioni, prezzi), nella forma descritta in §6.
