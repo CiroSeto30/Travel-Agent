@@ -157,10 +157,10 @@ Il planner la interroga con le preferenze dell'utente come testo, filtrando per 
 Generato dagli script in `backend/seed/`, in modo deterministico (seme casuale fisso), per i 12 mesi successivi al giorno in cui si lancia il seed.
 
 - **Aeroporti di partenza:** alcuni italiani (per esempio NAP, FCO, MXP).
-- **Destinazioni:** circa 6 paesi con 2–3 città ciascuno (per esempio Giappone, Spagna, Grecia, Portogallo, Francia, Islanda).
+- **Destinazioni:** 11 paesi con 3 città ciascuno, 33 città in totale: Giappone, Spagna, Grecia, Portogallo, Francia, Islanda, Regno Unito, Paesi Bassi, Thailandia, Stati Uniti e Italia. Le città italiane di destinazione sono diverse da quelle di partenza.
 - **Voli:** giornalieri o quasi, tra aeroporti di partenza e di destinazione; il prezzo varia con la stagione e il giorno della settimana; posti limitati.
-- **Hotel:** circa 4 per città, da 2 a 5 stelle; il prezzo per notte varia con la stagione.
-- **Attività:** circa 10 per città, divise per categoria (cultura, cibo, natura, sport, relax, vita notturna). Ognuna ha un target (famiglie, giovani, coppie, sportivi), un prezzo e uno schema settimanale di disponibilità con posti limitati.
+- **Hotel:** 200 in totale, 6 o 7 per città, da 2 a 5 stelle; il prezzo per notte varia con la stagione.
+- **Attività:** 500 in totale, 15 o 16 per città, divise per categoria (cultura, cibo, natura, sport, relax, vita notturna). Ognuna ha un target (famiglie, giovani, coppie, sportivi), un prezzo e uno schema settimanale di disponibilità con posti limitati.
 
 I dati di base sono scritti a mano (`airports.json`, `hotels.json`, `activities.json` con le descrizioni); date, prezzi e disponibilità vengono generati da `build_catalog.py`.
 
@@ -205,7 +205,8 @@ flowchart LR
 - **Stato:** i requisiti raccolti finora, i campi mancanti, l'insieme di proposte corrente, l'itinerario in attesa di conferma (se c'è), l'ultima prenotazione.
 - **Estrazione:** l'LLM restituisce un output strutturato (modello Pydantic), unito ai requisiti precedenti, così l'utente può cambiare una cosa alla volta.
 - **Validazione:** regole Pydantic (budget > 0, mese da 1 a 12, notti da 2 a 14, paese presente nel catalogo, categorie note). Se l'utente non indica la partenza, si usa l'aeroporto del suo profilo.
-- **Strumenti a disposizione dell'LLM:** cercare gli itinerari (richiama il planner) e leggere i dettagli di un itinerario. **La prenotazione non è uno strumento libero**: è un nodo del grafo che si raggiunge solo dopo che l'utente ha visto il riepilogo e ha confermato in modo esplicito. Così la regola "nessuna prenotazione senza conferma" è garantita dalla struttura del grafo, non dal prompt.
+- **Destinazioni disponibili:** l'agente sa sempre per quali paesi può creare un itinerario, perché l'elenco viene letto dal catalogo e inserito nel suo prompt di sistema (mai scritto a mano). Lo dice nel messaggio di benvenuto, quando l'utente chiede "dove posso andare?" e quando chiede un paese che non c'è: in quel caso spiega che non è disponibile e propone l'elenco, invece di inventare un itinerario.
+- **Strumenti a disposizione dell'LLM:** elencare le destinazioni disponibili (paesi e città), cercare gli itinerari (richiama il planner) e leggere i dettagli di un itinerario. **La prenotazione non è uno strumento libero**: è un nodo del grafo che si raggiunge solo dopo che l'utente ha visto il riepilogo e ha confermato in modo esplicito. Così la regola "nessuna prenotazione senza conferma" è garantita dalla struttura del grafo, non dal prompt.
 - **Risposte:** l'LLM scrive il testo. Prezzi e date nel testo vengono dalla proposta strutturata che riceve, e l'interfaccia mostra le proposte a partire dagli eventi strutturati, non dal testo.
 
 ## 9. API REST
@@ -216,7 +217,8 @@ flowchart LR
 | `POST /api/auth/login` | Verifica le credenziali e imposta il cookie JWT. |
 | `POST /api/auth/logout` | Cancella il cookie. |
 | `GET /api/auth/me` | Utente corrente. |
-| `GET /api/airports` | Aeroporti per il modulo di registrazione. |
+| `GET /api/airports` | Aeroporti di partenza per il modulo di registrazione. |
+| `GET /api/destinations` | Paesi e città disponibili, per il messaggio di benvenuto della chat. |
 | `GET /api/conversations` | Conversazioni dell'utente (barra della cronologia). |
 | `POST /api/conversations` | Avvia una conversazione. |
 | `GET /api/conversations/{id}` | Messaggi di una conversazione. |
@@ -272,7 +274,7 @@ In caso di errore l'agente spiega cosa è cambiato e propone di cercare di nuovo
 
 - Password salvate con un algoritmo di hashing moderno (argon2 o bcrypt, a scelta di chi implementa).
 - Il login restituisce un JWT firmato (HS256, `JWT_SECRET`, scadenza 24 ore) in un cookie httpOnly con SameSite=Lax.
-- Una dipendenza FastAPI (`get_current_user`) protegge tutti gli endpoint tranne registrazione, login, aeroporti e controllo di funzionamento.
+- Una dipendenza FastAPI (`get_current_user`) protegge tutti gli endpoint tranne registrazione, login, aeroporti, destinazioni e controllo di funzionamento.
 - Le pagine chiamano `/api/auth/me` all'apertura e, se serve, rimandano al login.
 
 ## 14. Test
@@ -283,7 +285,7 @@ In caso di errore l'agente spiega cosa è cambiato e propone di cercare di nuovo
 | Prenotazione | Caso normale; idempotenza; due prenotazioni simultanee per l'ultima camera: ne riesce esattamente una. |
 | Requisiti | Regole di validazione e unione degli aggiornamenti parziali. |
 | Autenticazione | Registrazione, login, endpoint protetto senza e con cookie. |
-| Agente | Alcune conversazioni scriptate con un LLM finto: i dati mancanti generano una domanda; nessuna prenotazione senza conferma. |
+| Agente | Alcune conversazioni scriptate con un LLM finto: i dati mancanti generano una domanda; un paese non disponibile riceve l'elenco dei paesi disponibili; nessuna prenotazione senza conferma. |
 
 I test girano su un database PostgreSQL di test separato: il blocco delle righe non si può testare su SQLite.
 
