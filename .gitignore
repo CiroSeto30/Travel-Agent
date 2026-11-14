@@ -4,14 +4,14 @@ __pycache__/
 .venv/
 .pytest_cache/
 
-# Segreti
+# Secrets
 .env
 
-# Dati locali
+# Local data
 data/
 qdrant_storage/
 
-# Editor e sistema
+# Editor and OS
 .vscode/
 .idea/
 Thumbs.db
