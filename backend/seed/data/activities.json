@@ -1,0 +1,8650 @@
+[
+ {
+  "name": "Mercato del pesce di Toyosu all'alba",
+  "city": "Tokyo",
+  "category": "food",
+  "target": "young",
+  "price": 35,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Si assiste all'asta del tonno dalla galleria panoramica e si fa colazione con sushi freschissimo nei banchi del mercato."
+ },
+ {
+  "name": "Tempio Senso-ji e quartiere di Asakusa",
+  "city": "Tokyo",
+  "category": "culture",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita guidata al tempio buddista più antico di Tokyo, lungo la via Nakamise tra dolci tradizionali e souvenir artigianali."
+ },
+ {
+  "name": "Corso di sushi con uno chef",
+  "city": "Tokyo",
+  "category": "food",
+  "target": "couples",
+  "price": 95,
+  "duration_hours": 3,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Uno chef di Tsukiji insegna a preparare nigiri e maki con pesce di stagione, poi si mangia insieme quello che si è preparato."
+ },
+ {
+  "name": "Museo d'arte digitale teamLab",
+  "city": "Tokyo",
+  "category": "culture",
+  "target": "young",
+  "price": 32,
+  "duration_hours": 2.5,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Installazioni immersive di luce e suono dove le opere reagiscono ai movimenti dei visitatori, perfette per foto spettacolari."
+ },
+ {
+  "name": "Tour serale dei bar di Golden Gai",
+  "city": "Tokyo",
+  "category": "nightlife",
+  "target": "young",
+  "price": 60,
+  "duration_hours": 3,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Un locale del posto accompagna tra i minuscoli bar da sei posti di Shinjuku, ciascuno con un tema diverso e clienti abituali."
+ },
+ {
+  "name": "Escursione al monte Takao",
+  "city": "Tokyo",
+  "category": "nature",
+  "target": "sporty",
+  "price": 25,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sentiero nei boschi di cedri fino alla cima del Takao, con tempio buddista e vista sul Fuji nelle giornate limpide."
+ },
+ {
+  "name": "Lezione di kendo per principianti",
+  "city": "Tokyo",
+  "category": "sport",
+  "target": "sporty",
+  "price": 70,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   3,
+   5
+  ],
+  "description": "Un maestro spiega le basi della scherma giapponese con armatura e spada di bambù in un dojo tradizionale."
+ },
+ {
+  "name": "Onsen urbano di Odaiba",
+  "city": "Tokyo",
+  "category": "relax",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Bagni termali alimentati da una sorgente profonda, con vasche all'aperto, yukata e cena leggera nell'area relax."
+ },
+ {
+  "name": "Karaoke privato a Shibuya",
+  "city": "Tokyo",
+  "category": "nightlife",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sala privata con migliaia di canzoni anche italiane, bevande illimitate e luci colorate fino a tarda notte."
+ },
+ {
+  "name": "Parco Disney del mare",
+  "city": "Tokyo",
+  "category": "sport",
+  "target": "families",
+  "price": 85,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata intera nel parco a tema sul mare di Tokyo, con attrazioni per tutte le età e spettacoli serali sull'acqua."
+ },
+ {
+  "name": "Cerimonia del tè a Hamarikyu",
+  "city": "Tokyo",
+  "category": "culture",
+  "target": "couples",
+  "price": 18,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Tè matcha e dolcetto wagashi nella casa da tè su un laghetto, all'interno di un giardino storico circondato dai grattacieli."
+ },
+ {
+  "name": "Giro in bici tra i quartieri di Yanaka",
+  "city": "Tokyo",
+  "category": "sport",
+  "target": "families",
+  "price": 45,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata tranquilla nella Tokyo di una volta, tra templi, cimiteri alberati, botteghe di artigiani e gatti di quartiere."
+ },
+ {
+  "name": "Tour gastronomico di Shinjuku Omoide Yokocho",
+  "city": "Tokyo",
+  "category": "food",
+  "target": "young",
+  "price": 75,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Spiedini yakitori, gyoza e birra nei vicoli fumosi vicino alla stazione, con una guida che racconta la storia del dopoguerra."
+ },
+ {
+  "name": "Osservatorio Shibuya Sky al tramonto",
+  "city": "Tokyo",
+  "category": "relax",
+  "target": "couples",
+  "price": 22,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Terrazza panoramica a cielo aperto a 230 metri d'altezza, da cui si vede la città accendersi mentre cala il sole."
+ },
+ {
+  "name": "Giardino nazionale di Shinjuku Gyoen",
+  "city": "Tokyo",
+  "category": "nature",
+  "target": "families",
+  "price": 5,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giardino enorme che unisce stile giapponese, inglese e francese, famoso per i ciliegi in primavera e gli aceri in autunno."
+ },
+ {
+  "name": "Spettacolo di sumo e visita a una scuderia",
+  "city": "Tokyo",
+  "category": "culture",
+  "target": "families",
+  "price": 110,
+  "duration_hours": 3,
+  "weekdays": [
+   5,
+   6
+  ],
+  "description": "Si assiste all'allenamento mattutino dei lottatori in una heya di Ryogoku e si pranza con il loro stufato chanko nabe."
+ },
+ {
+  "name": "Street food a Dotonbori",
+  "city": "Osaka",
+  "category": "food",
+  "target": "young",
+  "price": 40,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Takoyaki, okonomiyaki e kushikatsu sotto le insegne luminose del canale, assaggiando le specialità che hanno reso Osaka la cucina del Giappone."
+ },
+ {
+  "name": "Castello di Osaka e parco",
+  "city": "Osaka",
+  "category": "culture",
+  "target": "families",
+  "price": 12,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita al castello ricostruito con il museo sui samurai di Toyotomi Hideyoshi e passeggiata tra fossati e mura di pietra."
+ },
+ {
+  "name": "Gita a Nara tra cervi e templi",
+  "city": "Osaka",
+  "category": "culture",
+  "target": "families",
+  "price": 55,
+  "duration_hours": 7,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata nel parco di Nara tra centinaia di cervi liberi e il Todai-ji con il suo grande Buddha di bronzo."
+ },
+ {
+  "name": "Giornata a Kyoto e al Fushimi Inari",
+  "city": "Osaka",
+  "category": "culture",
+  "target": "couples",
+  "price": 65,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Treno veloce verso Kyoto per salire tra migliaia di torii arancioni del Fushimi Inari e visitare il quartiere di Gion."
+ },
+ {
+  "name": "Universal Studios Japan",
+  "city": "Osaka",
+  "category": "sport",
+  "target": "families",
+  "price": 90,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Parco tematico con l'area dedicata a Super Nintendo e attrazioni ispirate ai grandi film, adatto a bambini e ragazzi."
+ },
+ {
+  "name": "Corso di okonomiyaki",
+  "city": "Osaka",
+  "category": "food",
+  "target": "families",
+  "price": 45,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "In una cucina di quartiere si impara a preparare la frittata di cavolo tipica di Osaka sulla piastra, ognuno con il suo ripieno."
+ },
+ {
+  "name": "Notte a Shinsekai tra luci e kushikatsu",
+  "city": "Osaka",
+  "category": "nightlife",
+  "target": "young",
+  "price": 35,
+  "duration_hours": 3,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Quartiere retrò sotto la torre Tsutenkaku, con bar storici, sale giochi vintage e spiedini fritti da intingere una volta sola."
+ },
+ {
+  "name": "Terme di Spa World",
+  "city": "Osaka",
+  "category": "relax",
+  "target": "couples",
+  "price": 25,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Grande complesso termale con bagni ispirati a paesi diversi, sauna e piscina panoramica sul tetto."
+ },
+ {
+  "name": "Acquario Kaiyukan",
+  "city": "Osaka",
+  "category": "nature",
+  "target": "families",
+  "price": 25,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Uno dei più grandi acquari del mondo, con lo squalo balena e un percorso a spirale attraverso gli ecosistemi del Pacifico."
+ },
+ {
+  "name": "Corsa nel parco della baia al mattino",
+  "city": "Osaka",
+  "category": "sport",
+  "target": "sporty",
+  "price": 15,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   2,
+   4,
+   6
+  ],
+  "description": "Allenamento di gruppo di dieci chilometri lungo il lungomare di Osaka con un runner del posto e colazione finale."
+ },
+ {
+  "name": "Mercato di Kuromon",
+  "city": "Osaka",
+  "category": "food",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La cucina di Osaka in un mercato coperto: ricci di mare, wagyu alla piastra e frutta perfetta da mangiare tra i banchi."
+ },
+ {
+  "name": "Osservatorio Umeda Sky Building",
+  "city": "Osaka",
+  "category": "relax",
+  "target": "couples",
+  "price": 15,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il giardino galleggiante tra due torri a 170 metri, da cui al tramonto si vede tutta la baia di Osaka."
+ },
+ {
+  "name": "Escursione alle cascate di Minoo",
+  "city": "Osaka",
+  "category": "nature",
+  "target": "sporty",
+  "price": 10,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sentiero nel bosco fino a una cascata di 33 metri, famoso in autunno per le foglie d'acero fritte vendute lungo il percorso."
+ },
+ {
+  "name": "Teatro bunraku delle marionette",
+  "city": "Osaka",
+  "category": "culture",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 2.5,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Spettacolo tradizionale in cui tre burattinai muovono ogni marionetta, accompagnati dal canto narrativo e dallo shamisen."
+ },
+ {
+  "name": "Locali jazz di Kitashinchi",
+  "city": "Osaka",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 3,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Serata in piccoli club di musica dal vivo nel quartiere più elegante della città, con cocktail a base di whisky giapponese."
+ },
+ {
+  "name": "Ramen al miso nel vicolo Ramen Yokocho",
+  "city": "Sapporo",
+  "category": "food",
+  "target": "young",
+  "price": 15,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Un vicolo intero di piccole botteghe dove assaggiare il ramen al miso con burro e mais, nato proprio a Sapporo."
+ },
+ {
+  "name": "Museo e birrificio Sapporo",
+  "city": "Sapporo",
+  "category": "food",
+  "target": "couples",
+  "price": 12,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Storia della birra più antica del Giappone in un edificio in mattoni rossi, con degustazione di tre birre finali."
+ },
+ {
+  "name": "Sci a Teine",
+  "city": "Sapporo",
+  "category": "sport",
+  "target": "sporty",
+  "price": 70,
+  "duration_hours": 7,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata di sci sulle piste olimpiche del 1972, con neve farinosa e vista sulla baia di Ishikari."
+ },
+ {
+  "name": "Onsen di Jozankei",
+  "city": "Sapporo",
+  "category": "relax",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pomeriggio nella valle delle terme, tra bagni all'aperto in mezzo alla foresta e piedi a mollo nelle vasche pubbliche."
+ },
+ {
+  "name": "Festival della neve e sculture di ghiaccio",
+  "city": "Sapporo",
+  "category": "culture",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata tra le sculture di neve e ghiaccio illuminate del parco Odori e i chioschi di cibo caldo."
+ },
+ {
+  "name": "Ciaspolata sul monte Moiwa",
+  "city": "Sapporo",
+  "category": "nature",
+  "target": "sporty",
+  "price": 45,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Escursione con le racchette da neve nel bosco innevato e salita in funivia per la vista notturna sulla città."
+ },
+ {
+  "name": "Mercato di Nijo",
+  "city": "Sapporo",
+  "category": "food",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Colazione con ciotole di riso coperte di granchio, salmone e uova di riccio nel mercato del pesce del centro."
+ },
+ {
+  "name": "Villaggio storico di Hokkaido",
+  "city": "Sapporo",
+  "category": "culture",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Museo all'aperto con edifici dell'epoca della colonizzazione dell'isola, carrozze a cavallo e mestieri di una volta."
+ },
+ {
+  "name": "Barbecue Genghis Khan",
+  "city": "Sapporo",
+  "category": "food",
+  "target": "young",
+  "price": 35,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Cena di agnello alla piastra a cupola, piatto simbolo di Sapporo, in una birreria storica piena di atmosfera."
+ },
+ {
+  "name": "Notte a Susukino",
+  "city": "Sapporo",
+  "category": "nightlife",
+  "target": "young",
+  "price": 40,
+  "duration_hours": 3,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Il più grande quartiere notturno a nord di Tokyo, tra bar di whisky, izakaya e karaoke aperti fino all'alba."
+ },
+ {
+  "name": "Parco Moerenuma di Isamu Noguchi",
+  "city": "Sapporo",
+  "category": "nature",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Grande parco progettato come un'opera d'arte, con una collina artificiale, una piramide di vetro e fontane."
+ },
+ {
+  "name": "Lezione di snowboard per principianti",
+  "city": "Sapporo",
+  "category": "sport",
+  "target": "young",
+  "price": 80,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Istruttori che parlano inglese seguono i primi passi sulla tavola su una pista dolce, attrezzatura inclusa."
+ },
+ {
+  "name": "Fattoria di lavanda di Furano",
+  "city": "Sapporo",
+  "category": "nature",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita in pullman alle colline coltivate a lavanda e fiori, famose in estate per i campi a strisce colorate."
+ },
+ {
+  "name": "Spa con vista sul monte Okura",
+  "city": "Sapporo",
+  "category": "relax",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Trattamenti con prodotti a base di latte di Hokkaido e sauna panoramica sul trampolino olimpico."
+ },
+ {
+  "name": "Pattinaggio nel parco di Nakajima",
+  "city": "Sapporo",
+  "category": "sport",
+  "target": "families",
+  "price": 10,
+  "duration_hours": 2,
+  "weekdays": [
+   5,
+   6
+  ],
+  "description": "Pista di pattinaggio all'aperto tra gli alberi innevati, con noleggio pattini e cioccolata calda a fine giro."
+ },
+ {
+  "name": "Grande Palazzo e Wat Phra Kaew",
+  "city": "Bangkok",
+  "category": "culture",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita guidata alla residenza dei re del Siam e al tempio del Buddha di smeraldo, tra guglie dorate e mosaici."
+ },
+ {
+  "name": "Mercato galleggiante di Damnoen Saduak",
+  "city": "Bangkok",
+  "category": "food",
+  "target": "families",
+  "price": 45,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita in barca tra canali e venditori su piroghe, assaggiando noodle cotti al momento e frutta tropicale."
+ },
+ {
+  "name": "Street food a Chinatown",
+  "city": "Bangkok",
+  "category": "food",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La sera su Yaowarat Road tra bancarelle di granchio al curry, ostriche fritte e dolci al cocco con una guida locale."
+ },
+ {
+  "name": "Corso di cucina thai",
+  "city": "Bangkok",
+  "category": "food",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Spesa al mercato con lo chef e poi lezione per preparare pad thai, curry verde e zuppa tom yum."
+ },
+ {
+  "name": "Boxe thai al Rajadamnern Stadium",
+  "city": "Bangkok",
+  "category": "sport",
+  "target": "young",
+  "price": 55,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   2,
+   3,
+   4
+  ],
+  "description": "Una serata di incontri di muay thai nello stadio più antico del paese, con musica dal vivo e pubblico scatenato."
+ },
+ {
+  "name": "Lezione di muay thai",
+  "city": "Bangkok",
+  "category": "sport",
+  "target": "sporty",
+  "price": 25,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Allenamento in una palestra vera con un ex combattente: tecnica di base, pao e stretching finale."
+ },
+ {
+  "name": "Massaggio tradizionale al Wat Pho",
+  "city": "Bangkok",
+  "category": "relax",
+  "target": "couples",
+  "price": 15,
+  "duration_hours": 1,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Massaggio thai nella scuola del tempio dove è nata questa tecnica, accanto al grande Buddha disteso."
+ },
+ {
+  "name": "Rooftop bar sul fiume",
+  "city": "Bangkok",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Cocktail al sessantesimo piano con vista sulle luci del Chao Phraya e sui templi illuminati."
+ },
+ {
+  "name": "Giro in bici nel polmone verde di Bang Krachao",
+  "city": "Bangkok",
+  "category": "nature",
+  "target": "sporty",
+  "price": 35,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si attraversa il fiume in barca e si pedala su passerelle sopraelevate tra palme, frutteti e villaggi."
+ },
+ {
+  "name": "Antica capitale di Ayutthaya",
+  "city": "Bangkok",
+  "category": "culture",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 8,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata tra le rovine dei templi in mattoni rossi della capitale distrutta nel Settecento, con rientro in barca."
+ },
+ {
+  "name": "Mercato del weekend di Chatuchak",
+  "city": "Bangkok",
+  "category": "culture",
+  "target": "young",
+  "price": 0,
+  "duration_hours": 4,
+  "weekdays": [
+   5,
+   6
+  ],
+  "description": "Quindicimila bancarelle di vestiti, artigianato e cibo nel mercato più grande del Sud-est asiatico."
+ },
+ {
+  "name": "Crociera con cena sul Chao Phraya",
+  "city": "Bangkok",
+  "category": "relax",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Cena a buffet di cucina thai su un battello che passa davanti al Wat Arun e al Grande Palazzo illuminati."
+ },
+ {
+  "name": "Notte a Sukhumvit Soi 11",
+  "city": "Bangkok",
+  "category": "nightlife",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 4,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Locali con DJ, club all'aperto e bar con musica dal vivo nella strada più animata della vita notturna di Bangkok."
+ },
+ {
+  "name": "Parco Lumphini e varani",
+  "city": "Bangkok",
+  "category": "nature",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata nel grande parco cittadino tra laghetti, gente che fa tai chi al mattino e varani che prendono il sole."
+ },
+ {
+  "name": "Safari World",
+  "city": "Bangkok",
+  "category": "nature",
+  "target": "families",
+  "price": 40,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Parco con safari in auto tra giraffe e zebre e spettacoli con delfini e oranghi, adatto ai bambini."
+ },
+ {
+  "name": "Gita in barca alle isole Phi Phi",
+  "city": "Phuket",
+  "category": "nature",
+  "target": "young",
+  "price": 75,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Motoscafo verso Maya Bay e le lagune turchesi di Phi Phi, con snorkeling tra pesci tropicali e pranzo in spiaggia."
+ },
+ {
+  "name": "Kayak nella baia di Phang Nga",
+  "city": "Phuket",
+  "category": "nature",
+  "target": "couples",
+  "price": 85,
+  "duration_hours": 8,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Tra faraglioni di calcare e grotte marine si entra in kayak nelle lagune nascoste, fino all'isola di James Bond."
+ },
+ {
+  "name": "Immersioni alle isole Similan",
+  "city": "Phuket",
+  "category": "sport",
+  "target": "sporty",
+  "price": 160,
+  "duration_hours": 10,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Due immersioni guidate in uno dei parchi marini più belli al mondo, tra mante, tartarughe e coralli."
+ },
+ {
+  "name": "Lezione di surf a Kata",
+  "city": "Phuket",
+  "category": "sport",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Durante la stagione delle onde, istruttori locali insegnano a stare in piedi sulla tavola nella baia di Kata."
+ },
+ {
+  "name": "Grande Buddha di Phuket",
+  "city": "Phuket",
+  "category": "culture",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Statua di marmo bianco alta 45 metri in cima alla collina di Nakkerd, con vista su tutte le baie del sud."
+ },
+ {
+  "name": "Centro storico di Phuket Town",
+  "city": "Phuket",
+  "category": "culture",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata tra le case sino-portoghesi color pastello, i santuari cinesi e i caffè di Thalang Road."
+ },
+ {
+  "name": "Mercato notturno della domenica",
+  "city": "Phuket",
+  "category": "food",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 2.5,
+  "weekdays": [
+   6
+  ],
+  "description": "Il mercato a piedi della città vecchia, con spiedini, frutta tagliata, artigianato e musicisti di strada."
+ },
+ {
+  "name": "Spa thai con erbe calde",
+  "city": "Phuket",
+  "category": "relax",
+  "target": "couples",
+  "price": 55,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Massaggio con fagottini di erbe calde e olio di cocco in un padiglione di legno nella giungla."
+ },
+ {
+  "name": "Notte su Bangla Road",
+  "city": "Phuket",
+  "category": "nightlife",
+  "target": "young",
+  "price": 35,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La strada pedonale di Patong che di notte si riempie di club, bar con musica e spettacoli fino all'alba."
+ },
+ {
+  "name": "Santuario etico degli elefanti",
+  "city": "Phuket",
+  "category": "nature",
+  "target": "families",
+  "price": 70,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si osservano da vicino elefanti salvati dal lavoro nei campi, preparando il loro cibo senza cavalcarli."
+ },
+ {
+  "name": "Corso di cucina del sud della Thailandia",
+  "city": "Phuket",
+  "category": "food",
+  "target": "couples",
+  "price": 45,
+  "duration_hours": 4,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Lezione su curry di pesce, insalata di mango verde e dolci al cocco con ingredienti del mercato locale."
+ },
+ {
+  "name": "Tramonto a Promthep Cape",
+  "city": "Phuket",
+  "category": "relax",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il promontorio più a sud dell'isola, dove si guarda il sole calare nel mare tra le barche dei pescatori."
+ },
+ {
+  "name": "Beach club a Kamala",
+  "city": "Phuket",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 45,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pomeriggio e sera in un beach club con piscina, DJ set e cena sulla sabbia sotto le lanterne."
+ },
+ {
+  "name": "Escursione nel parco di Khao Phra Thaeo",
+  "city": "Phuket",
+  "category": "nature",
+  "target": "sporty",
+  "price": 25,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sentiero nella foresta pluviale fino a due cascate, con un centro di recupero per gibboni lungo il percorso."
+ },
+ {
+  "name": "Parco acquatico Andamanda",
+  "city": "Phuket",
+  "category": "sport",
+  "target": "families",
+  "price": 45,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Scivoli, fiume lento e piscina con le onde in un grande parco acquatico ispirato alle leggende thai."
+ },
+ {
+  "name": "Tempio Doi Suthep",
+  "city": "Chiang Mai",
+  "category": "culture",
+  "target": "families",
+  "price": 10,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si salgono i 306 gradini della scalinata dei naga fino al tempio dorato sulla montagna, con vista su tutta la valle."
+ },
+ {
+  "name": "Tour dei templi della città vecchia",
+  "city": "Chiang Mai",
+  "category": "culture",
+  "target": "couples",
+  "price": 25,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Wat Chedi Luang, Wat Phra Singh e templi minori dentro le mura, con un monaco che risponde alle domande dei visitatori."
+ },
+ {
+  "name": "Corso di cucina in una fattoria",
+  "city": "Chiang Mai",
+  "category": "food",
+  "target": "families",
+  "price": 40,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si raccolgono erbe e verdure nell'orto e si cucinano khao soi, curry e involtini in una cucina all'aperto."
+ },
+ {
+  "name": "Mercato notturno della domenica",
+  "city": "Chiang Mai",
+  "category": "food",
+  "target": "young",
+  "price": 10,
+  "duration_hours": 3,
+  "weekdays": [
+   6
+  ],
+  "description": "Lungo Ratchadamnoen Road tra artigianato delle tribù di montagna, salsiccia sai ua e massaggi ai piedi."
+ },
+ {
+  "name": "Trekking tra i villaggi delle colline",
+  "city": "Chiang Mai",
+  "category": "nature",
+  "target": "sporty",
+  "price": 60,
+  "duration_hours": 8,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata a piedi tra foreste di bambù e villaggi Karen, con bagno nella cascata e pranzo cucinato sul fuoco."
+ },
+ {
+  "name": "Volo in zipline nella giungla",
+  "city": "Chiang Mai",
+  "category": "sport",
+  "target": "young",
+  "price": 80,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Percorso di teleferiche sospese tra gli alberi della foresta pluviale, con il ponte tibetano più lungo della regione."
+ },
+ {
+  "name": "Cascate appiccicose di Bua Thong",
+  "city": "Chiang Mai",
+  "category": "nature",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Cascata di roccia calcarea su cui si può camminare in salita senza scivolare, a un'ora dalla città."
+ },
+ {
+  "name": "Massaggio dalle ex detenute",
+  "city": "Chiang Mai",
+  "category": "relax",
+  "target": "couples",
+  "price": 12,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Massaggio thai in un centro sociale che dà lavoro a donne uscite dal carcere, tecnica ottima e prezzi onesti."
+ },
+ {
+  "name": "Meditazione con i monaci",
+  "city": "Chiang Mai",
+  "category": "relax",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Conversazione e meditazione guidata con i monaci di un tempio della città, aperta a tutti."
+ },
+ {
+  "name": "Ciclismo sulla montagna Doi Suthep",
+  "city": "Chiang Mai",
+  "category": "sport",
+  "target": "sporty",
+  "price": 70,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Discesa in mountain bike su sentieri tra la foresta, dal tempio sulla vetta fino alle risaie della valle."
+ },
+ {
+  "name": "Bar di Nimmanhaemin",
+  "city": "Chiang Mai",
+  "category": "nightlife",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 3,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Locali con birre artigianali, musica dal vivo e cocktail nel quartiere universitario e creativo della città."
+ },
+ {
+  "name": "Serata al Warorot Market",
+  "city": "Chiang Mai",
+  "category": "food",
+  "target": "couples",
+  "price": 15,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il mercato coperto dei cinesi di Chiang Mai, dove si comprano spezie e si cena con piatti tipici del nord."
+ },
+ {
+  "name": "Festival delle lanterne di Yi Peng",
+  "city": "Chiang Mai",
+  "category": "culture",
+  "target": "couples",
+  "price": 90,
+  "duration_hours": 4,
+  "weekdays": [
+   5,
+   6
+  ],
+  "description": "Serata in cui migliaia di lanterne di carta vengono liberate nel cielo, una delle feste più suggestive dell'Asia."
+ },
+ {
+  "name": "Lezione di intaglio del legno a Ban Tawai",
+  "city": "Chiang Mai",
+  "category": "culture",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Villaggio di artigiani dove si prova a intagliare un piccolo elefante sotto la guida di un maestro."
+ },
+ {
+  "name": "Concerto jazz al North Gate",
+  "city": "Chiang Mai",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 10,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "description": "Il locale jazz più famoso del nord della Thailandia, piccolo e affollato, con jam session aperte ogni sera."
+ },
+ {
+  "name": "Statua della Libertà ed Ellis Island",
+  "city": "New York",
+  "category": "culture",
+  "target": "families",
+  "price": 25,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Traghetto verso la statua con salita al piedistallo e visita al museo dell'immigrazione di Ellis Island."
+ },
+ {
+  "name": "Metropolitan Museum of Art",
+  "city": "New York",
+  "category": "culture",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Uno dei più grandi musei del mondo, dal tempio egizio di Dendur ai Van Gogh, con visita guidata ai capolavori."
+ },
+ {
+  "name": "Musical a Broadway",
+  "city": "New York",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 150,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Una serata in uno dei teatri storici di Broadway per vedere uno dei musical più amati del momento."
+ },
+ {
+  "name": "Tour gastronomico del Greenwich Village",
+  "city": "New York",
+  "category": "food",
+  "target": "young",
+  "price": 70,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pizza a fette, cannoli, bagel e dolci in un quartiere storico, raccontato da una guida che ci vive da anni."
+ },
+ {
+  "name": "Bici a Central Park",
+  "city": "New York",
+  "category": "sport",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giro in bici di dieci chilometri nel parco, tra il laghetto delle barche, Strawberry Fields e il castello Belvedere."
+ },
+ {
+  "name": "Passeggiata sulla High Line",
+  "city": "New York",
+  "category": "nature",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Parco sopraelevato su una vecchia ferrovia, con piante selvatiche, installazioni d'arte e vista sul fiume Hudson."
+ },
+ {
+  "name": "Osservatorio Top of the Rock",
+  "city": "New York",
+  "category": "relax",
+  "target": "families",
+  "price": 45,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Terrazza panoramica del Rockefeller Center con la vista più bella sull'Empire State Building e su Central Park."
+ },
+ {
+  "name": "Jazz dal vivo a Harlem",
+  "city": "New York",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Concerto in un club storico di Harlem dove hanno suonato i grandi del jazz, con cena soul food."
+ },
+ {
+  "name": "Gospel la domenica mattina",
+  "city": "New York",
+  "category": "culture",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   6
+  ],
+  "description": "Si partecipa alla messa cantata in una chiesa battista di Harlem, con cori gospel travolgenti."
+ },
+ {
+  "name": "Chelsea Market e Meatpacking",
+  "city": "New York",
+  "category": "food",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Mercato coperto in una vecchia fabbrica di biscotti, con aragoste, tacos e dolci, poi i locali del quartiere vicino."
+ },
+ {
+  "name": "Kayak gratuito sull'Hudson",
+  "city": "New York",
+  "category": "sport",
+  "target": "sporty",
+  "price": 0,
+  "duration_hours": 1.5,
+  "weekdays": [
+   5,
+   6
+  ],
+  "description": "In estate i volontari del molo 26 prestano kayak per pagaiare sul fiume con lo skyline davanti."
+ },
+ {
+  "name": "Spa coreana di Koreatown",
+  "city": "New York",
+  "category": "relax",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Saune di pietre, vasche calde e massaggi in un grande centro benessere aperto fino a tardi."
+ },
+ {
+  "name": "Corsa sul ponte di Brooklyn all'alba",
+  "city": "New York",
+  "category": "sport",
+  "target": "sporty",
+  "price": 20,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   2,
+   4,
+   6
+  ],
+  "description": "Corsa di gruppo con un allenatore del posto da Manhattan a Brooklyn mentre il sole sorge sulla baia."
+ },
+ {
+  "name": "Museo di storia naturale",
+  "city": "New York",
+  "category": "nature",
+  "target": "families",
+  "price": 28,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Dinosauri, la balena azzurra appesa al soffitto e il planetario, uno dei musei preferiti dai bambini."
+ },
+ {
+  "name": "Rooftop bar a Midtown",
+  "city": "New York",
+  "category": "nightlife",
+  "target": "young",
+  "price": 35,
+  "duration_hours": 3,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Aperitivo su una terrazza tra i grattacieli con vista sull'Empire State Building illuminato."
+ },
+ {
+  "name": "Giro in elicottero su Manhattan",
+  "city": "New York",
+  "category": "relax",
+  "target": "couples",
+  "price": 230,
+  "duration_hours": 0.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Volo di un quarto d'ora sopra la Statua della Libertà, Wall Street e Central Park."
+ },
+ {
+  "name": "Bici sul Golden Gate Bridge",
+  "city": "San Francisco",
+  "category": "sport",
+  "target": "families",
+  "price": 40,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si pedala dal molo fino al ponte e lo si attraversa fino a Sausalito, rientrando in traghetto."
+ },
+ {
+  "name": "Visita ad Alcatraz",
+  "city": "San Francisco",
+  "category": "culture",
+  "target": "families",
+  "price": 45,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Traghetto verso l'isola del carcere più famoso d'America, con audioguida raccontata dagli ex detenuti."
+ },
+ {
+  "name": "Sequoie di Muir Woods",
+  "city": "San Francisco",
+  "category": "nature",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata tra sequoie alte più di settanta metri in una foresta protetta a mezz'ora dalla città."
+ },
+ {
+  "name": "Tour dei murales del Mission",
+  "city": "San Francisco",
+  "category": "culture",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gli artisti di strada spiegano i murales politici e colorati del quartiere latino, tra Balmy Alley e Clarion Alley."
+ },
+ {
+  "name": "Degustazione nella Napa Valley",
+  "city": "San Francisco",
+  "category": "food",
+  "target": "couples",
+  "price": 140,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata tra le vigne della Napa Valley con degustazioni in tre cantine e pranzo nel vigneto."
+ },
+ {
+  "name": "Ferry Building Marketplace",
+  "city": "San Francisco",
+  "category": "food",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il mercato dei produttori locali nell'edificio dei traghetti, con ostriche, pane al lievito madre e cioccolato."
+ },
+ {
+  "name": "Tramonto a Twin Peaks",
+  "city": "San Francisco",
+  "category": "relax",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Le due colline al centro della città, da cui si vedono la baia, il ponte e i quartieri accendersi al tramonto."
+ },
+ {
+  "name": "Locali di North Beach",
+  "city": "San Francisco",
+  "category": "nightlife",
+  "target": "young",
+  "price": 35,
+  "duration_hours": 3,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Bar storici della generazione beat, club di jazz e locali italiani nel quartiere di Little Italy."
+ },
+ {
+  "name": "Surf a Ocean Beach",
+  "city": "San Francisco",
+  "category": "sport",
+  "target": "sporty",
+  "price": 90,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Lezione per surfisti già un po' esperti sulle onde fredde e potenti dell'oceano Pacifico."
+ },
+ {
+  "name": "Golden Gate Park e giardino giapponese",
+  "city": "San Francisco",
+  "category": "nature",
+  "target": "families",
+  "price": 10,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Parco enorme con bisonti, un giardino giapponese con casa da tè e la serra dei fiori vittoriana."
+ },
+ {
+  "name": "Cable car e quartiere di Chinatown",
+  "city": "San Francisco",
+  "category": "culture",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giro sul tram a fune più famoso del mondo e passeggiata nella Chinatown più antica del Nord America."
+ },
+ {
+  "name": "Kayak nella baia con i leoni marini",
+  "city": "San Francisco",
+  "category": "sport",
+  "target": "couples",
+  "price": 75,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pagaiata nella baia di Sausalito tra le case galleggianti e i leoni marini che si riposano sulle boe."
+ },
+ {
+  "name": "Spa termale a Calistoga",
+  "city": "San Francisco",
+  "category": "relax",
+  "target": "couples",
+  "price": 120,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Bagno di fango vulcanico e acque minerali calde in un paesino termale a nord della Napa Valley."
+ },
+ {
+  "name": "Cena di sushi a Japantown",
+  "city": "San Francisco",
+  "category": "food",
+  "target": "young",
+  "price": 50,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sushi e ramen nel quartiere giapponese più antico degli Stati Uniti, con mercato e negozi di manga."
+ },
+ {
+  "name": "Club di musica elettronica a SoMa",
+  "city": "San Francisco",
+  "category": "nightlife",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 5,
+  "weekdays": [
+   4,
+   5
+  ],
+  "description": "Serate con DJ internazionali nei club industriali del quartiere tecnologico della città."
+ },
+ {
+  "name": "Tour art déco di South Beach",
+  "city": "Miami",
+  "category": "culture",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata tra gli edifici color pastello degli anni Trenta di Ocean Drive con una guida della fondazione per il restauro."
+ },
+ {
+  "name": "Murales di Wynwood Walls",
+  "city": "Miami",
+  "category": "culture",
+  "target": "young",
+  "price": 15,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Museo a cielo aperto con le opere dei più famosi artisti di strada del mondo, in un vecchio quartiere di magazzini."
+ },
+ {
+  "name": "Airboat nelle Everglades",
+  "city": "Miami",
+  "category": "nature",
+  "target": "families",
+  "price": 50,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giro in idroscivolo tra le paludi delle Everglades, tra alligatori, aironi e mangrovie."
+ },
+ {
+  "name": "Snorkeling a Key Largo",
+  "city": "Miami",
+  "category": "sport",
+  "target": "sporty",
+  "price": 70,
+  "duration_hours": 7,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita nelle Keys per nuotare tra i coralli del primo parco marino sottomarino degli Stati Uniti."
+ },
+ {
+  "name": "Cucina cubana a Little Havana",
+  "city": "Miami",
+  "category": "food",
+  "target": "young",
+  "price": 60,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Tour di Calle Ocho tra sandwich cubani, empanadas e caffè cortadito, con visita a una fabbrica di sigari."
+ },
+ {
+  "name": "Lezione di salsa",
+  "city": "Miami",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 25,
+  "duration_hours": 2,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Un'ora di lezione con ballerini cubani e poi serata in un locale con musica dal vivo."
+ },
+ {
+  "name": "Giornata in spiaggia a South Beach",
+  "city": "Miami",
+  "category": "relax",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Ombrellone, lettini e bagno nell'oceano caldo davanti alle torrette dei bagnini colorate."
+ },
+ {
+  "name": "Paddle board nella baia di Biscayne",
+  "city": "Miami",
+  "category": "sport",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si pagaia in piedi sulla tavola nelle acque calme della baia, spesso in compagnia dei lamantini."
+ },
+ {
+  "name": "Club di South Beach",
+  "city": "Miami",
+  "category": "nightlife",
+  "target": "young",
+  "price": 50,
+  "duration_hours": 5,
+  "weekdays": [
+   4,
+   5
+  ],
+  "description": "Notte nei club più famosi di Miami, con DJ di fama mondiale e locali aperti fino al mattino."
+ },
+ {
+  "name": "Giardini di Vizcaya",
+  "city": "Miami",
+  "category": "culture",
+  "target": "couples",
+  "price": 25,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Villa in stile rinascimentale italiano sulla baia, con giardini all'italiana e arredi d'epoca."
+ },
+ {
+  "name": "Pesca d'altura nell'oceano",
+  "city": "Miami",
+  "category": "sport",
+  "target": "sporty",
+  "price": 150,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Uscita in barca con il capitano per pescare pesci vela, dorado e tonni nella corrente del Golfo."
+ },
+ {
+  "name": "Brunch con vista oceano",
+  "city": "Miami",
+  "category": "food",
+  "target": "couples",
+  "price": 55,
+  "duration_hours": 2,
+  "weekdays": [
+   5,
+   6
+  ],
+  "description": "Il rito del brunch del fine settimana su una terrazza sul mare, con aragosta, mimosa e musica dal vivo."
+ },
+ {
+  "name": "Zoo di Miami",
+  "city": "Miami",
+  "category": "nature",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Grande zoo all'aperto dove gli animali vivono in ambienti simili a quelli naturali, senza gabbie."
+ },
+ {
+  "name": "Spa sull'oceano",
+  "city": "Miami",
+  "category": "relax",
+  "target": "couples",
+  "price": 140,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Massaggi e piscine idroterapiche in un centro benessere affacciato sull'Atlantico."
+ },
+ {
+  "name": "Cena di frutti di mare a Coconut Grove",
+  "city": "Miami",
+  "category": "food",
+  "target": "families",
+  "price": 60,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Ristorante sul porticciolo del quartiere più antico della città, con granchi di pietra e pesce del giorno."
+ },
+ {
+  "name": "Museo del Prado",
+  "city": "Madrid",
+  "category": "culture",
+  "target": "couples",
+  "price": 15,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Velázquez, Goya ed El Greco in uno dei musei di pittura più importanti al mondo, con una guida esperta d'arte spagnola."
+ },
+ {
+  "name": "Tour di tapas a La Latina",
+  "city": "Madrid",
+  "category": "food",
+  "target": "young",
+  "price": 55,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giro di bar storici del quartiere più antico della città, tra patatas bravas, croquetas e vermut alla spina."
+ },
+ {
+  "name": "Barca a remi nel parco del Retiro",
+  "city": "Madrid",
+  "category": "relax",
+  "target": "families",
+  "price": 8,
+  "duration_hours": 1,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si noleggia una barca sul grande lago del parco davanti al monumento ad Alfonso XII, tra pavoni e artisti di strada."
+ },
+ {
+  "name": "Stadio Santiago Bernabéu",
+  "city": "Madrid",
+  "category": "sport",
+  "target": "young",
+  "price": 35,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita allo stadio del Real Madrid tra spogliatoi, panchina, sala dei trofei e campo da gioco."
+ },
+ {
+  "name": "Spettacolo di flamenco in un tablao",
+  "city": "Madrid",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 45,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Chitarra, canto e ballo flamenco dal vivo in un locale storico del centro, con un bicchiere di vino incluso."
+ },
+ {
+  "name": "Palazzo Reale di Madrid",
+  "city": "Madrid",
+  "category": "culture",
+  "target": "families",
+  "price": 14,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La residenza ufficiale della corona spagnola, con la sala del trono, l'armeria reale e la farmacia storica."
+ },
+ {
+  "name": "Mercato di San Miguel",
+  "city": "Madrid",
+  "category": "food",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Mercato in ferro battuto dove assaggiare ostriche, jamón ibérico, olive ripiene e vini spagnoli al bancone."
+ },
+ {
+  "name": "Churros con cioccolata a San Ginés",
+  "city": "Madrid",
+  "category": "food",
+  "target": "families",
+  "price": 6,
+  "duration_hours": 1,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La cioccolateria aperta dal 1894 dove i madrileni chiudono la serata con churros caldi da intingere."
+ },
+ {
+  "name": "Museo Reina Sofía e Guernica",
+  "city": "Madrid",
+  "category": "culture",
+  "target": "young",
+  "price": 12,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Arte moderna spagnola con Dalí, Miró e il Guernica di Picasso, raccontato nel suo contesto storico."
+ },
+ {
+  "name": "Notte a Malasaña",
+  "city": "Madrid",
+  "category": "nightlife",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 4,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Bar con musica rock e indie, locali di cocktail e discoteche nel quartiere della movida madrilena."
+ },
+ {
+  "name": "Gita a Toledo",
+  "city": "Madrid",
+  "category": "culture",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 8,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata nella città delle tre culture, tra cattedrale gotica, sinagoghe medievali e botteghe di spade."
+ },
+ {
+  "name": "Escursione nella Sierra de Guadarrama",
+  "city": "Madrid",
+  "category": "nature",
+  "target": "sporty",
+  "price": 50,
+  "duration_hours": 7,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sentiero di montagna a un'ora da Madrid tra pinete e granito, fino alla vetta della Bola del Mundo."
+ },
+ {
+  "name": "Bagni arabi Hammam al Ándalus",
+  "city": "Madrid",
+  "category": "relax",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Bagni in vasche a diverse temperature sotto archi moreschi, con massaggio con oli aromatici."
+ },
+ {
+  "name": "Giro in bici lungo il Madrid Río",
+  "city": "Madrid",
+  "category": "sport",
+  "target": "families",
+  "price": 25,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata sul parco lineare lungo il fiume Manzanares, tra ponti storici, giochi per bambini e spiagge urbane."
+ },
+ {
+  "name": "Giardino botanico reale",
+  "city": "Madrid",
+  "category": "nature",
+  "target": "couples",
+  "price": 6,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Oltre cinquemila specie di piante in un giardino del Settecento accanto al Prado, con serre tropicali."
+ },
+ {
+  "name": "Sagrada Família con guida",
+  "city": "Barcellona",
+  "category": "culture",
+  "target": "families",
+  "price": 40,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La basilica incompiuta di Gaudí con accesso alle torri, raccontata da una guida che ne spiega simboli e geometrie."
+ },
+ {
+  "name": "Parc Güell",
+  "city": "Barcellona",
+  "category": "culture",
+  "target": "couples",
+  "price": 13,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il parco di Gaudí con la salamandra di mosaico, la terrazza ondulata sulla città e le case di pan di zenzero."
+ },
+ {
+  "name": "Mercato della Boqueria",
+  "city": "Barcellona",
+  "category": "food",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Il mercato più famoso della città, tra succhi di frutta, jamón e piccoli bar dove si mangia pesce appena cucinato."
+ },
+ {
+  "name": "Corso di paella con vista mare",
+  "city": "Barcellona",
+  "category": "food",
+  "target": "families",
+  "price": 65,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si prepara una paella di pesce con uno chef catalano su una terrazza, con sangria e crema catalana."
+ },
+ {
+  "name": "Lezione di vela al Port Olímpic",
+  "city": "Barcellona",
+  "category": "sport",
+  "target": "sporty",
+  "price": 70,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Uscita in barca a vela con istruttore lungo la costa, con vista sulle spiagge e sui grattacieli del lungomare."
+ },
+ {
+  "name": "Giornata in spiaggia alla Barceloneta",
+  "city": "Barcellona",
+  "category": "relax",
+  "target": "young",
+  "price": 15,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Lettino, mare e chiringuito sulla spiaggia più vivace della città, con pallavolo e musica nel pomeriggio."
+ },
+ {
+  "name": "Casa Batlló di sera",
+  "city": "Barcellona",
+  "category": "culture",
+  "target": "couples",
+  "price": 45,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita serale alla casa del drago di Gaudí, con concerto sulla terrazza e un bicchiere di cava."
+ },
+ {
+  "name": "Camp Nou Experience",
+  "city": "Barcellona",
+  "category": "sport",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il museo e lo stadio del Barcellona, con i trofei, gli spogliatoi e il tunnel che porta al campo."
+ },
+ {
+  "name": "Tour di tapas nel Born",
+  "city": "Barcellona",
+  "category": "food",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pintxos, vermut e vini catalani in bar storici e nuovi del quartiere del Born, con una guida gastronoma."
+ },
+ {
+  "name": "Notte a Port Olímpic",
+  "city": "Barcellona",
+  "category": "nightlife",
+  "target": "young",
+  "price": 35,
+  "duration_hours": 5,
+  "weekdays": [
+   4,
+   5
+  ],
+  "description": "Discoteche sul mare dove si balla fino all'alba e si esce direttamente sulla spiaggia."
+ },
+ {
+  "name": "Monastero di Montserrat",
+  "city": "Barcellona",
+  "category": "nature",
+  "target": "families",
+  "price": 55,
+  "duration_hours": 7,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita alla montagna seghettata con il monastero della Madonna nera, funicolare e sentieri panoramici."
+ },
+ {
+  "name": "Bici lungo la costa e il Poblenou",
+  "city": "Barcellona",
+  "category": "sport",
+  "target": "families",
+  "price": 25,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata lungo il mare dalla Barceloneta fino al Poblenou, quartiere di vecchie fabbriche diventate studi creativi."
+ },
+ {
+  "name": "Fontana magica di Montjuïc",
+  "city": "Barcellona",
+  "category": "relax",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 1,
+  "weekdays": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Spettacolo serale di acqua, luci e musica ai piedi del Museo nazionale d'arte della Catalogna."
+ },
+ {
+  "name": "Museo Picasso",
+  "city": "Barcellona",
+  "category": "culture",
+  "target": "young",
+  "price": 15,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Le opere giovanili di Picasso in cinque palazzi medievali del Born, per capire come è nato il genio."
+ },
+ {
+  "name": "Bar di cocktail del Raval",
+  "city": "Barcellona",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 3,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Cocktail d'autore in bar nascosti e storici del Raval, dove ogni locale ha la sua storia."
+ },
+ {
+  "name": "Spa Aire nel Born",
+  "city": "Barcellona",
+  "category": "relax",
+  "target": "couples",
+  "price": 75,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Bagni termali in un antico magazzino in pietra, con vasche calde e fredde a lume di candela."
+ },
+ {
+  "name": "Real Alcázar di Siviglia",
+  "city": "Siviglia",
+  "category": "culture",
+  "target": "couples",
+  "price": 15,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Palazzo reale moresco con cortili decorati e giardini di aranci, ancora oggi residenza dei re di Spagna."
+ },
+ {
+  "name": "Cattedrale e salita sulla Giralda",
+  "city": "Siviglia",
+  "category": "culture",
+  "target": "families",
+  "price": 12,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La più grande cattedrale gotica del mondo con la tomba di Colombo e la salita sul campanile senza scale."
+ },
+ {
+  "name": "Flamenco nel quartiere di Triana",
+  "city": "Siviglia",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Spettacolo di flamenco puro in una peña di Triana, il quartiere dove questa arte è nata."
+ },
+ {
+  "name": "Tapas a Triana con una guida",
+  "city": "Siviglia",
+  "category": "food",
+  "target": "young",
+  "price": 50,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pescaíto frito, salmorejo e montaditos nel mercato e nei bar storici del quartiere sul fiume."
+ },
+ {
+  "name": "Plaza de España in barca",
+  "city": "Siviglia",
+  "category": "relax",
+  "target": "families",
+  "price": 6,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si rema nel canale della grande piazza semicircolare decorata con le ceramiche di tutte le province."
+ },
+ {
+  "name": "Corso di cucina andalusa",
+  "city": "Siviglia",
+  "category": "food",
+  "target": "couples",
+  "price": 70,
+  "duration_hours": 3.5,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Spesa al mercato di Triana e lezione per preparare gazpacho, tortilla e dolci di arancia."
+ },
+ {
+  "name": "Giro in bici sul lungofiume",
+  "city": "Siviglia",
+  "category": "sport",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata sulla pista ciclabile lungo il Guadalquivir fino al parco di María Luisa."
+ },
+ {
+  "name": "Kayak sul Guadalquivir",
+  "city": "Siviglia",
+  "category": "sport",
+  "target": "sporty",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pagaiata al tramonto sul fiume, passando sotto i ponti e davanti alla Torre del Oro illuminata."
+ },
+ {
+  "name": "Metropol Parasol al tramonto",
+  "city": "Siviglia",
+  "category": "relax",
+  "target": "couples",
+  "price": 15,
+  "duration_hours": 1,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La grande struttura in legno a forma di funghi, con una passeggiata panoramica sopra i tetti del centro."
+ },
+ {
+  "name": "Bagni arabi di Siviglia",
+  "city": "Siviglia",
+  "category": "relax",
+  "target": "couples",
+  "price": 45,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Vasche termali e massaggio in un palazzo del Cinquecento, sotto volte illuminate da piccole stelle."
+ },
+ {
+  "name": "Notte all'Alameda de Hércules",
+  "city": "Siviglia",
+  "category": "nightlife",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 4,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "La piazza della movida sivigliana, con bar all'aperto, locali alternativi e musica fino a tardi."
+ },
+ {
+  "name": "Gita a Cordova e alla Mezquita",
+  "city": "Siviglia",
+  "category": "culture",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata nella moschea-cattedrale con la foresta di archi bianchi e rossi e nei patios fioriti di Cordova."
+ },
+ {
+  "name": "Parco nazionale di Doñana",
+  "city": "Siviglia",
+  "category": "nature",
+  "target": "sporty",
+  "price": 65,
+  "duration_hours": 6,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Safari in fuoristrada tra dune, paludi e boschi, dove vivono fenicotteri e la rara lince iberica."
+ },
+ {
+  "name": "Lezione di sevillanas",
+  "city": "Siviglia",
+  "category": "culture",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 1.5,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "description": "Si imparano i passi del ballo tipico della Feria di aprile con un'insegnante andalusa."
+ },
+ {
+  "name": "Degustazione di sherry e jamón",
+  "city": "Siviglia",
+  "category": "food",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Assaggio guidato di vini di Jerez e prosciutto ibérico in una bottega storica del centro."
+ },
+ {
+  "name": "Tram 28 e quartiere dell'Alfama",
+  "city": "Lisbona",
+  "category": "culture",
+  "target": "families",
+  "price": 10,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giro sul tram giallo d'epoca tra salite e curve strette, poi a piedi nell'Alfama fino al castello di San Giorgio."
+ },
+ {
+  "name": "Pastéis de Belém e Monastero dos Jerónimos",
+  "city": "Lisbona",
+  "category": "food",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Le paste alla crema più famose del Portogallo appena sfornate e il monastero manuelino dei navigatori."
+ },
+ {
+  "name": "Serata di fado nell'Alfama",
+  "city": "Lisbona",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 45,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Cena in una casa de fado dove cantanti dal vivo interpretano la musica malinconica di Lisbona."
+ },
+ {
+  "name": "Tour gastronomico della Mouraria",
+  "city": "Lisbona",
+  "category": "food",
+  "target": "young",
+  "price": 60,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il quartiere più multiculturale della città tra sardine, vinho verde, ginjinha e piatti di Capo Verde."
+ },
+ {
+  "name": "Gita a Sintra e ai suoi palazzi",
+  "city": "Lisbona",
+  "category": "culture",
+  "target": "couples",
+  "price": 55,
+  "duration_hours": 8,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata tra il Palácio da Pena colorato in cima alla collina e la Quinta da Regaleira con il suo pozzo iniziatico."
+ },
+ {
+  "name": "Surf a Carcavelos",
+  "city": "Lisbona",
+  "category": "sport",
+  "target": "sporty",
+  "price": 40,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Lezione di surf sulla spiaggia più vicina a Lisbona, raggiungibile in treno lungo la costa."
+ },
+ {
+  "name": "Miradouros al tramonto",
+  "city": "Lisbona",
+  "category": "relax",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata tra le terrazze panoramiche della città per vedere il sole calare sul Tago e sui tetti rossi."
+ },
+ {
+  "name": "Oceanário di Lisbona",
+  "city": "Lisbona",
+  "category": "nature",
+  "target": "families",
+  "price": 25,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Grande acquario con una vasca centrale che riproduce l'oceano aperto, tra squali, razze e pesci luna."
+ },
+ {
+  "name": "Notte al Bairro Alto",
+  "city": "Lisbona",
+  "category": "nightlife",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 4,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Centinaia di piccoli bar dove si beve in strada e si passa da un locale all'altro fino a tardi."
+ },
+ {
+  "name": "Bici lungo il Tago fino a Belém",
+  "city": "Lisbona",
+  "category": "sport",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pista ciclabile sul fiume dalla piazza del Commercio alla Torre di Belém, passando per il museo MAAT."
+ },
+ {
+  "name": "LX Factory",
+  "city": "Lisbona",
+  "category": "culture",
+  "target": "young",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Vecchio complesso industriale con librerie, gallerie, mercati e ristoranti creativi sotto il ponte."
+ },
+ {
+  "name": "Degustazione di vini portoghesi",
+  "city": "Lisbona",
+  "category": "food",
+  "target": "couples",
+  "price": 35,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Assaggio guidato di cinque vini dal Douro all'Alentejo, con formaggi e salumi tradizionali."
+ },
+ {
+  "name": "Spiagge della Costa da Caparica",
+  "city": "Lisbona",
+  "category": "relax",
+  "target": "families",
+  "price": 10,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Chilometri di sabbia dorata sull'altra sponda del fiume, con chioschi di pesce e acqua dell'Atlantico."
+ },
+ {
+  "name": "Escursione a Cabo da Roca",
+  "city": "Lisbona",
+  "category": "nature",
+  "target": "sporty",
+  "price": 30,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sentiero lungo le scogliere fino al punto più occidentale dell'Europa continentale, sopra l'oceano."
+ },
+ {
+  "name": "Museo degli azulejos",
+  "city": "Lisbona",
+  "category": "culture",
+  "target": "couples",
+  "price": 8,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Cinque secoli di piastrelle dipinte in un antico convento, con un panorama di Lisbona prima del terremoto."
+ },
+ {
+  "name": "Cantine di vino Porto a Gaia",
+  "city": "Porto",
+  "category": "food",
+  "target": "couples",
+  "price": 25,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita a una cantina storica tra le botti, con degustazione di porto tawny, ruby e bianco."
+ },
+ {
+  "name": "Crociera dei sei ponti",
+  "city": "Porto",
+  "category": "relax",
+  "target": "families",
+  "price": 18,
+  "duration_hours": 1,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giro sul fiume Douro a bordo di una barca rabelo, passando sotto i sei ponti che uniscono le due rive."
+ },
+ {
+  "name": "Libreria Lello e centro storico",
+  "city": "Porto",
+  "category": "culture",
+  "target": "young",
+  "price": 10,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La libreria neogotica con la scala rossa che ha ispirato tanti scrittori, e il quartiere della Ribeira."
+ },
+ {
+  "name": "Francesinha in una tasca locale",
+  "city": "Porto",
+  "category": "food",
+  "target": "young",
+  "price": 15,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il sandwich di Porto con carne, formaggio fuso e salsa piccante, servito in una trattoria di quartiere."
+ },
+ {
+  "name": "Gita nella valle del Douro",
+  "city": "Porto",
+  "category": "nature",
+  "target": "couples",
+  "price": 90,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata tra i vigneti terrazzati patrimonio Unesco, con degustazioni in quinta e giro in barca sul fiume."
+ },
+ {
+  "name": "Surf a Matosinhos",
+  "city": "Porto",
+  "category": "sport",
+  "target": "sporty",
+  "price": 35,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Lezione di surf sulla grande spiaggia di Matosinhos, con onde regolari adatte anche ai principianti."
+ },
+ {
+  "name": "Fado a Porto",
+  "city": "Porto",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Concerto intimo di fado in una sala storica, con un bicchiere di vino porto incluso."
+ },
+ {
+  "name": "Notte in Rua da Galeria de Paris",
+  "city": "Porto",
+  "category": "nightlife",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 4,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "La strada dei bar del centro, dove i locali sono pieni di oggetti curiosi e la musica va avanti fino a tardi."
+ },
+ {
+  "name": "Giardini del Palácio de Cristal",
+  "city": "Porto",
+  "category": "nature",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giardini con pavoni e alberi secolari sopra il fiume, con uno dei panorami più belli della città."
+ },
+ {
+  "name": "Bici lungo il mare fino a Foz",
+  "city": "Porto",
+  "category": "sport",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata sul lungofiume fino alla foce del Douro e lungo la passeggiata a mare di Foz."
+ },
+ {
+  "name": "Serralves e il suo parco",
+  "city": "Porto",
+  "category": "culture",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Museo d'arte contemporanea in una villa art déco, con un grande parco e una passerella tra gli alberi."
+ },
+ {
+  "name": "Mercato del Bolhão",
+  "city": "Porto",
+  "category": "food",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Il mercato storico appena restaurato, con baccalà, formaggi, fiori e piccoli banchi dove mangiare."
+ },
+ {
+  "name": "Spa con vista sul Douro",
+  "city": "Porto",
+  "category": "relax",
+  "target": "couples",
+  "price": 70,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Massaggio con oli a base di vinaccia e piscina riscaldata affacciata sul fiume."
+ },
+ {
+  "name": "Corso di cucina portoghese",
+  "city": "Porto",
+  "category": "food",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Si preparano caldo verde, baccalà alla Gomes de Sá e pastéis de nata con una cuoca del posto."
+ },
+ {
+  "name": "Escursione sui sentieri del Gerês",
+  "city": "Porto",
+  "category": "nature",
+  "target": "sporty",
+  "price": 75,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata nel parco nazionale del nord, tra cascate, villaggi di pietra e cavalli selvatici."
+ },
+ {
+  "name": "Barca nella Ria Formosa",
+  "city": "Faro",
+  "category": "nature",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giro in barca nella laguna protetta tra isolotti di sabbia, fenicotteri e allevamenti di vongole."
+ },
+ {
+  "name": "Grotta di Benagil in kayak",
+  "city": "Faro",
+  "category": "sport",
+  "target": "sporty",
+  "price": 45,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pagaiata lungo la costa di scogliere fino alla famosa grotta con il buco nel soffitto aperto sul cielo."
+ },
+ {
+  "name": "Sentiero dei sette valli sospesi",
+  "city": "Faro",
+  "category": "nature",
+  "target": "sporty",
+  "price": 0,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Uno dei sentieri costieri più belli d'Europa, sulle scogliere tra calette e archi di roccia."
+ },
+ {
+  "name": "Spiaggia dell'isola Deserta",
+  "city": "Faro",
+  "category": "relax",
+  "target": "couples",
+  "price": 25,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Traghetto verso un'isola senza case nella laguna, con chilometri di sabbia bianca quasi vuota."
+ },
+ {
+  "name": "Città vecchia di Faro",
+  "city": "Faro",
+  "category": "culture",
+  "target": "families",
+  "price": 5,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata tra le mura, la cattedrale con vista sulla laguna e la cappella delle ossa nella chiesa del Carmo."
+ },
+ {
+  "name": "Cataplana di pesce a Olhão",
+  "city": "Faro",
+  "category": "food",
+  "target": "couples",
+  "price": 35,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pranzo nel porto dei pescatori di Olhão con la cataplana, lo stufato di pesce cotto nella pentola di rame."
+ },
+ {
+  "name": "Lezione di golf a Vilamoura",
+  "city": "Faro",
+  "category": "sport",
+  "target": "couples",
+  "price": 80,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Un maestro insegna le basi del golf su uno dei campi più famosi d'Europa, attrezzatura inclusa."
+ },
+ {
+  "name": "Avvistamento dei delfini",
+  "city": "Faro",
+  "category": "nature",
+  "target": "families",
+  "price": 45,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Uscita in gommone in mare aperto per vedere i delfini che vivono al largo della costa dell'Algarve."
+ },
+ {
+  "name": "Notte ad Albufeira",
+  "city": "Faro",
+  "category": "nightlife",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 5,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "La strada dei locali di Albufeira, con bar sulla spiaggia e discoteche aperte fino al mattino in estate."
+ },
+ {
+  "name": "Spa termale di Monchique",
+  "city": "Faro",
+  "category": "relax",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Le terme storiche sulla montagna dell'Algarve, con acque calde e massaggi tra gli alberi di sughero."
+ },
+ {
+  "name": "Degustazione di vini dell'Algarve",
+  "city": "Faro",
+  "category": "food",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita a una piccola cantina della regione con assaggio di bianchi e rosati da bere freddi d'estate."
+ },
+ {
+  "name": "Parco acquatico Zoomarine",
+  "city": "Faro",
+  "category": "sport",
+  "target": "families",
+  "price": 35,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Parco con piscine, scivoli e spettacoli con foche e uccelli tropicali, molto amato dalle famiglie."
+ },
+ {
+  "name": "Mercato di Loulé",
+  "city": "Faro",
+  "category": "food",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   5
+  ],
+  "description": "Il mercato del sabato nella città vecchia, con formaggi di capra, miele, mandorle e terracotte."
+ },
+ {
+  "name": "Stand up paddle al tramonto",
+  "city": "Faro",
+  "category": "sport",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si pagaia in piedi sulla tavola nella laguna calma mentre il sole tramonta dietro le saline."
+ },
+ {
+  "name": "Fortezza di Sagres e capo San Vincenzo",
+  "city": "Faro",
+  "category": "culture",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La punta sud-occidentale d'Europa, con la fortezza dei navigatori e un faro sulle scogliere a picco."
+ },
+ {
+  "name": "Museo del Louvre con guida",
+  "city": "Parigi",
+  "category": "culture",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Percorso tra la Gioconda, la Venere di Milo e la Nike di Samotracia, con una storica dell'arte che evita le code."
+ },
+ {
+  "name": "Torre Eiffel fino alla cima",
+  "city": "Parigi",
+  "category": "culture",
+  "target": "families",
+  "price": 35,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Salita al secondo piano e poi alla cima della torre, con vista su tutta Parigi e sulla Senna."
+ },
+ {
+  "name": "Crociera sulla Senna di sera",
+  "city": "Parigi",
+  "category": "relax",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Battello che passa sotto i ponti illuminati, davanti a Notre-Dame, al Louvre e alla torre che scintilla."
+ },
+ {
+  "name": "Tour gastronomico di Montmartre",
+  "city": "Parigi",
+  "category": "food",
+  "target": "young",
+  "price": 85,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Formaggi, baguette premiata, macarons e vino in botteghe del quartiere degli artisti, con una guida parigina."
+ },
+ {
+  "name": "Corso di croissant",
+  "city": "Parigi",
+  "category": "food",
+  "target": "families",
+  "price": 95,
+  "duration_hours": 3,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Un pasticcere insegna a fare la pasta sfoglia e a preparare croissant e pain au chocolat da portare via."
+ },
+ {
+  "name": "Reggia di Versailles",
+  "city": "Parigi",
+  "category": "culture",
+  "target": "families",
+  "price": 45,
+  "duration_hours": 6,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gli appartamenti reali, la Galleria degli specchi e i giardini con le fontane di Luigi XIV."
+ },
+ {
+  "name": "Museo d'Orsay",
+  "city": "Parigi",
+  "category": "culture",
+  "target": "couples",
+  "price": 16,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La più grande raccolta di impressionisti al mondo in una vecchia stazione ferroviaria sulla Senna."
+ },
+ {
+  "name": "Cabaret al Moulin Rouge",
+  "city": "Parigi",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 120,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Lo spettacolo di cabaret più famoso di Parigi, con il can can, piume e paillettes e una coppa di champagne."
+ },
+ {
+  "name": "Bar a vino di Le Marais",
+  "city": "Parigi",
+  "category": "nightlife",
+  "target": "young",
+  "price": 40,
+  "duration_hours": 3,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Giro di wine bar naturali e cocktail bar nascosti nel quartiere più vivace della rive droite."
+ },
+ {
+  "name": "Bici lungo la Senna",
+  "city": "Parigi",
+  "category": "sport",
+  "target": "families",
+  "price": 35,
+  "duration_hours": 3.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata lungo le rive pedonali del fiume, dall'isola della Cité al Trocadéro, con soste per le foto."
+ },
+ {
+  "name": "Picnic al Jardin du Luxembourg",
+  "city": "Parigi",
+  "category": "relax",
+  "target": "families",
+  "price": 25,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Cestino con prodotti dei mercati parigini e sedie di ferro verde nel giardino amato dagli studenti."
+ },
+ {
+  "name": "Corsa mattutina da Notre-Dame al Louvre",
+  "city": "Parigi",
+  "category": "sport",
+  "target": "sporty",
+  "price": 25,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   2,
+   4,
+   6
+  ],
+  "description": "Allenamento di gruppo sulle rive della Senna mentre la città si sveglia, con colazione francese finale."
+ },
+ {
+  "name": "Disneyland Paris",
+  "city": "Parigi",
+  "category": "sport",
+  "target": "families",
+  "price": 90,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata nei due parchi Disney alle porte di Parigi, con parate, attrazioni e fuochi d'artificio sul castello."
+ },
+ {
+  "name": "Spa in un hammam parigino",
+  "city": "Parigi",
+  "category": "relax",
+  "target": "couples",
+  "price": 70,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Vapore, scrub con sapone nero e massaggio in un hammam storico vicino alla Grande Moschea."
+ },
+ {
+  "name": "Bois de Vincennes in barca",
+  "city": "Parigi",
+  "category": "nature",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Barca a remi sul lago Daumesnil e passeggiata nel bosco più grande di Parigi, con il castello medievale."
+ },
+ {
+  "name": "Jazz club a Saint-Germain",
+  "city": "Parigi",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 35,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "description": "Una cave a volta in pietra dove si ascolta jazz dal vivo come ai tempi di Sartre e Juliette Gréco."
+ },
+ {
+  "name": "Mercato del Cours Saleya",
+  "city": "Nizza",
+  "category": "food",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 1.5,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il mercato dei fiori e dei prodotti provenzali, con socca calda, olive, lavanda e frutta di stagione."
+ },
+ {
+  "name": "Tour del Vieux Nice",
+  "city": "Nizza",
+  "category": "culture",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata tra i vicoli dai colori italiani della città vecchia, la cattedrale e i palazzi barocchi."
+ },
+ {
+  "name": "Collina del Castello",
+  "city": "Nizza",
+  "category": "nature",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Salita a piedi o in ascensore al parco sopra la città, con cascata e vista sulla Baia degli Angeli."
+ },
+ {
+  "name": "Gita a Monaco e Èze",
+  "city": "Nizza",
+  "category": "culture",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 7,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata tra il borgo arroccato di Èze e il principato di Monaco, con il cambio della guardia e il casinò."
+ },
+ {
+  "name": "Snorkeling a Villefranche",
+  "city": "Nizza",
+  "category": "sport",
+  "target": "sporty",
+  "price": 40,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Nuoto con maschera nella baia di Villefranche, tra posidonie, polpi e pesci colorati."
+ },
+ {
+  "name": "Spiaggia privata sulla Promenade",
+  "city": "Nizza",
+  "category": "relax",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Lettino e ombrellone su una spiaggia attrezzata con ristorante, sul lungomare più famoso della Costa Azzurra."
+ },
+ {
+  "name": "Museo Matisse",
+  "city": "Nizza",
+  "category": "culture",
+  "target": "young",
+  "price": 12,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La villa genovese sulla collina di Cimiez con le opere che Matisse ha creato negli anni passati a Nizza."
+ },
+ {
+  "name": "Degustazione di vini di Bellet",
+  "city": "Nizza",
+  "category": "food",
+  "target": "couples",
+  "price": 35,
+  "duration_hours": 2.5,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita alle vigne sulle colline sopra Nizza, una delle denominazioni più piccole e antiche di Francia."
+ },
+ {
+  "name": "Cena di cucina nizzarda",
+  "city": "Nizza",
+  "category": "food",
+  "target": "families",
+  "price": 40,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pissaladière, salade niçoise e ravioli alla daube in una trattoria della città vecchia."
+ },
+ {
+  "name": "Bar della città vecchia",
+  "city": "Nizza",
+  "category": "nightlife",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 4,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Pub, bar di cocktail e locali con musica dal vivo nei vicoli del Vieux Nice, pieni di studenti e viaggiatori."
+ },
+ {
+  "name": "Profumeria a Grasse",
+  "city": "Nizza",
+  "category": "culture",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita nella capitale mondiale del profumo, con laboratorio per creare la propria fragranza."
+ },
+ {
+  "name": "Kayak lungo la costa del Cap Ferrat",
+  "city": "Nizza",
+  "category": "sport",
+  "target": "young",
+  "price": 45,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pagaiata tra le ville dei miliardari e le calette nascoste della penisola del Cap Ferrat."
+ },
+ {
+  "name": "Sentiero del litorale di Cap Ferrat",
+  "city": "Nizza",
+  "category": "nature",
+  "target": "sporty",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata sugli scogli intorno alla penisola, tra pini, faro e acqua trasparente."
+ },
+ {
+  "name": "Spa con talassoterapia",
+  "city": "Nizza",
+  "category": "relax",
+  "target": "couples",
+  "price": 90,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Trattamenti con acqua di mare e alghe in un centro di talassoterapia affacciato sulla costa."
+ },
+ {
+  "name": "Paracadute ascensionale sulla baia",
+  "city": "Nizza",
+  "category": "sport",
+  "target": "young",
+  "price": 70,
+  "duration_hours": 1,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Volo trainati da un motoscafo sopra la Baia degli Angeli, con la città e le Alpi sullo sfondo."
+ },
+ {
+  "name": "Cena in un bouchon lionese",
+  "city": "Lione",
+  "category": "food",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Quenelle, salsiccia e tarte aux pralines in una trattoria tradizionale con tovaglie a quadretti."
+ },
+ {
+  "name": "Mercato Les Halles Paul Bocuse",
+  "city": "Lione",
+  "category": "food",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il mercato coperto dei buongustai, con ostriche, formaggi, salumi e pasticceria da mangiare sul posto."
+ },
+ {
+  "name": "Traboules della Croix-Rousse",
+  "city": "Lione",
+  "category": "culture",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passaggi segreti tra i palazzi dei setaioli, usati per trasportare la seta e durante la Resistenza."
+ },
+ {
+  "name": "Basilica di Fourvière e teatri romani",
+  "city": "Lione",
+  "category": "culture",
+  "target": "couples",
+  "price": 10,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La basilica sulla collina con vista sulla città e i resti del teatro romano di Lugdunum."
+ },
+ {
+  "name": "Corso di cucina con uno chef lionese",
+  "city": "Lione",
+  "category": "food",
+  "target": "couples",
+  "price": 110,
+  "duration_hours": 4,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Lezione in una scuola di cucina della capitale gastronomica di Francia, con pranzo finale."
+ },
+ {
+  "name": "Bici lungo le rive del Rodano",
+  "city": "Lione",
+  "category": "sport",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata sulle rive ciclabili del Rodano fino al parco della Tête d'Or."
+ },
+ {
+  "name": "Parco della Tête d'Or",
+  "city": "Lione",
+  "category": "nature",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Grande parco con lago, roseto, serre e uno zoo gratuito con giraffe e leoni."
+ },
+ {
+  "name": "Museo delle Confluenze",
+  "city": "Lione",
+  "category": "culture",
+  "target": "young",
+  "price": 12,
+  "duration_hours": 2.5,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Museo di scienze e società in un edificio futuristico di vetro e acciaio sulla punta della penisola."
+ },
+ {
+  "name": "Péniche bar sul Rodano",
+  "city": "Lione",
+  "category": "nightlife",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 4,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "I bar e i club sulle chiatte ormeggiate lungo il fiume, dove la sera si balla sull'acqua."
+ },
+ {
+  "name": "Degustazione di vini del Beaujolais",
+  "city": "Lione",
+  "category": "food",
+  "target": "couples",
+  "price": 80,
+  "duration_hours": 7,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita tra i villaggi di pietra dorata del Beaujolais, con degustazione in due cantine."
+ },
+ {
+  "name": "Kayak sulla Saona",
+  "city": "Lione",
+  "category": "sport",
+  "target": "sporty",
+  "price": 25,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pagaiata sul fiume più tranquillo di Lione, passando sotto i ponti della città vecchia."
+ },
+ {
+  "name": "Festa delle luci",
+  "city": "Lione",
+  "category": "culture",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Quattro sere di dicembre in cui i monumenti diventano schermi per proiezioni e installazioni luminose."
+ },
+ {
+  "name": "Spa con piscina sui tetti",
+  "city": "Lione",
+  "category": "relax",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Piscina riscaldata all'aperto e hammam su una terrazza con vista sulla collina di Fourvière."
+ },
+ {
+  "name": "Cocktail bar della Presqu'île",
+  "city": "Lione",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 35,
+  "duration_hours": 3,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Bar nascosti e terrazze tra i palazzi eleganti del centro, per una serata di cocktail creativi."
+ },
+ {
+  "name": "Escursione sul monte d'Or",
+  "city": "Lione",
+  "category": "nature",
+  "target": "sporty",
+  "price": 10,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sentiero sulle colline a nord della città, tra cave di pietra dorata e vista sulle Alpi."
+ },
+ {
+  "name": "Acropoli e Partenone all'apertura",
+  "city": "Atene",
+  "category": "culture",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Salita alla rocca sacra di Atene appena apre, prima del caldo e delle folle, con un archeologo che racconta il Partenone."
+ },
+ {
+  "name": "Museo dell'Acropoli",
+  "city": "Atene",
+  "category": "culture",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Le statue originali del Partenone in un museo di vetro costruito sopra gli scavi dell'antica città."
+ },
+ {
+  "name": "Tour gastronomico del mercato centrale",
+  "city": "Atene",
+  "category": "food",
+  "target": "young",
+  "price": 55,
+  "duration_hours": 3.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Il mercato della carne e del pesce di Varvakios, poi souvlaki, loukoumades e ouzo in botteghe storiche."
+ },
+ {
+  "name": "Corso di cucina greca",
+  "city": "Atene",
+  "category": "food",
+  "target": "families",
+  "price": 65,
+  "duration_hours": 3.5,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Si preparano moussaka, tzatziki e spanakopita con una cuoca ateniese, pranzando poi insieme."
+ },
+ {
+  "name": "Tramonto a Capo Sounion",
+  "city": "Atene",
+  "category": "relax",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita lungo la costa fino al tempio di Poseidone sulla scogliera, dove il sole tramonta nel mare Egeo."
+ },
+ {
+  "name": "Crociera alle isole del golfo Saronico",
+  "city": "Atene",
+  "category": "relax",
+  "target": "families",
+  "price": 110,
+  "duration_hours": 11,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata in nave tra Egina, Poros e Idra, isole senza auto con porticcioli e case bianche."
+ },
+ {
+  "name": "Notte a Psiri",
+  "city": "Atene",
+  "category": "nightlife",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 4,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Il quartiere dei locali di Atene, con bar di cocktail, rebetiko dal vivo e club fino all'alba."
+ },
+ {
+  "name": "Corsa sul percorso della maratona",
+  "city": "Atene",
+  "category": "sport",
+  "target": "sporty",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   2,
+   4,
+   6
+  ],
+  "description": "Allenamento guidato sull'ultimo tratto del percorso originale, con arrivo nello stadio di marmo Panathinaiko."
+ },
+ {
+  "name": "Escursione sul monte Imitos",
+  "city": "Atene",
+  "category": "nature",
+  "target": "sporty",
+  "price": 20,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sentiero tra pini e timo sulla montagna di Atene, con un monastero bizantino e vista sul golfo."
+ },
+ {
+  "name": "Spiaggia di Vouliagmeni e lago termale",
+  "city": "Atene",
+  "category": "relax",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Bagno nel lago di acqua salmastra e tiepida tra le rocce, poi spiaggia sulla riviera di Atene."
+ },
+ {
+  "name": "Cinema all'aperto Thission",
+  "city": "Atene",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 10,
+  "duration_hours": 2.5,
+  "weekdays": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Un film d'estate sotto le stelle in un cinema all'aperto storico, con l'Acropoli illuminata sullo sfondo."
+ },
+ {
+  "name": "Museo archeologico nazionale",
+  "city": "Atene",
+  "category": "culture",
+  "target": "young",
+  "price": 12,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La maschera di Agamennone, il bronzo di Poseidone e il meccanismo di Anticitera, il primo computer della storia."
+ },
+ {
+  "name": "Giro in bici tra i monumenti",
+  "city": "Atene",
+  "category": "sport",
+  "target": "families",
+  "price": 35,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata sulla grande passeggiata pedonale intorno all'Acropoli, fino al tempio di Zeus e allo stadio."
+ },
+ {
+  "name": "Delfi e l'oracolo",
+  "city": "Atene",
+  "category": "culture",
+  "target": "couples",
+  "price": 90,
+  "duration_hours": 11,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata al santuario di Apollo sul monte Parnaso, dove gli antichi greci consultavano l'oracolo."
+ },
+ {
+  "name": "Bagni turchi nel centro storico",
+  "city": "Atene",
+  "category": "relax",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Hammam con sauna, bagno di vapore e massaggio in un edificio restaurato della Atene ottomana."
+ },
+ {
+  "name": "Tramonto a Oia",
+  "city": "Santorini",
+  "category": "relax",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il tramonto più famoso della Grecia, dalle terrazze bianche e blu del villaggio sulla punta nord dell'isola."
+ },
+ {
+  "name": "Catamarano intorno alla caldera",
+  "city": "Santorini",
+  "category": "relax",
+  "target": "couples",
+  "price": 120,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Navigazione a vela con bagno nelle sorgenti calde del vulcano, cena a bordo e tramonto in mare."
+ },
+ {
+  "name": "Escursione sul vulcano Nea Kameni",
+  "city": "Santorini",
+  "category": "nature",
+  "target": "sporty",
+  "price": 30,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si sbarca sull'isolotto vulcanico al centro della caldera e si sale fino al cratere ancora fumante."
+ },
+ {
+  "name": "Sentiero da Fira a Oia",
+  "city": "Santorini",
+  "category": "nature",
+  "target": "sporty",
+  "price": 0,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Dieci chilometri lungo il bordo della caldera, tra chiese dalle cupole blu e viste vertiginose sul mare."
+ },
+ {
+  "name": "Degustazione di vini vulcanici",
+  "city": "Santorini",
+  "category": "food",
+  "target": "couples",
+  "price": 45,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita a una cantina con le viti coltivate a cesto contro il vento, e assaggio di vini bianchi minerali."
+ },
+ {
+  "name": "Scavi di Akrotiri",
+  "city": "Santorini",
+  "category": "culture",
+  "target": "families",
+  "price": 12,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "La Pompei dell'Egeo, una città dell'età del bronzo sepolta dalla cenere di un'eruzione e perfettamente conservata."
+ },
+ {
+  "name": "Spiaggia rossa",
+  "city": "Santorini",
+  "category": "relax",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Una spiaggia sotto una scogliera di roccia rossa vulcanica, raggiungibile con una breve passeggiata."
+ },
+ {
+  "name": "Immersione nella caldera",
+  "city": "Santorini",
+  "category": "sport",
+  "target": "sporty",
+  "price": 90,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Immersione guidata lungo le pareti sommerse del vulcano, tra grotte e formazioni di lava."
+ },
+ {
+  "name": "Corso di cucina in una fattoria",
+  "city": "Santorini",
+  "category": "food",
+  "target": "families",
+  "price": 75,
+  "duration_hours": 4,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Si raccolgono pomodorini e capperi dell'isola e si cucinano fava, polpette di pomodoro e pesce."
+ },
+ {
+  "name": "Bar con vista caldera a Fira",
+  "city": "Santorini",
+  "category": "nightlife",
+  "target": "young",
+  "price": 35,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Locali di cocktail sospesi sulla scogliera, dove la sera si balla con il vulcano illuminato davanti."
+ },
+ {
+  "name": "Giro dell'isola in quad",
+  "city": "Santorini",
+  "category": "sport",
+  "target": "young",
+  "price": 40,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Noleggio di un quad per esplorare villaggi, spiagge nere e punti panoramici a ritmo libero."
+ },
+ {
+  "name": "Villaggio di Pyrgos",
+  "city": "Santorini",
+  "category": "culture",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il borgo medievale arroccato sulla collina, tra vicoli stretti, chiese e il castello veneziano."
+ },
+ {
+  "name": "Equitazione sulla spiaggia nera",
+  "city": "Santorini",
+  "category": "sport",
+  "target": "families",
+  "price": 60,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata a cavallo lungo la costa sud, tra sabbia vulcanica e campi di vigne."
+ },
+ {
+  "name": "Spa con vista sul mare",
+  "city": "Santorini",
+  "category": "relax",
+  "target": "couples",
+  "price": 90,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Massaggio con olio d'oliva e sale marino in una spa scavata nella roccia sopra la caldera."
+ },
+ {
+  "name": "Cena di pesce ad Ammoudi",
+  "city": "Santorini",
+  "category": "food",
+  "target": "couples",
+  "price": 55,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il piccolo porto sotto Oia, dove si cena con il pesce del giorno a pochi metri dall'acqua."
+ },
+ {
+  "name": "Palazzo di Cnosso",
+  "city": "Heraklion",
+  "category": "culture",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il palazzo del re Minosse e del mito del Minotauro, con affreschi colorati e magazzini di grandi giare."
+ },
+ {
+  "name": "Museo archeologico di Heraklion",
+  "city": "Heraklion",
+  "category": "culture",
+  "target": "couples",
+  "price": 12,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il tesoro della civiltà minoica, con il disco di Festo, gli affreschi dei delfini e le dee dei serpenti."
+ },
+ {
+  "name": "Gola di Samaria",
+  "city": "Heraklion",
+  "category": "nature",
+  "target": "sporty",
+  "price": 60,
+  "duration_hours": 10,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sedici chilometri a piedi nella gola più lunga d'Europa, dalle montagne fino al mare libico."
+ },
+ {
+  "name": "Spiaggia di Balos",
+  "city": "Heraklion",
+  "category": "relax",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita in barca alla laguna di Balos, con acqua turchese bassa e sabbia rosa tra due promontori."
+ },
+ {
+  "name": "Isola di Spinalonga",
+  "city": "Heraklion",
+  "category": "culture",
+  "target": "families",
+  "price": 35,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La fortezza veneziana su un isolotto che fu l'ultima colonia di lebbrosi d'Europa."
+ },
+ {
+  "name": "Corso di cucina cretese",
+  "city": "Heraklion",
+  "category": "food",
+  "target": "families",
+  "price": 60,
+  "duration_hours": 4,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "In un villaggio di montagna si preparano dakos, kalitsounia e agnello con erbe selvatiche."
+ },
+ {
+  "name": "Degustazione di raki e olio d'oliva",
+  "city": "Heraklion",
+  "category": "food",
+  "target": "couples",
+  "price": 35,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita a un frantoio e a una distilleria di raki, con assaggi e meze nella campagna cretese."
+ },
+ {
+  "name": "Immersione a Elounda",
+  "city": "Heraklion",
+  "category": "sport",
+  "target": "sporty",
+  "price": 80,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Immersione nella baia di Elounda tra grotte e resti di un'antica città sommersa."
+ },
+ {
+  "name": "Notte a Hersonissos",
+  "city": "Heraklion",
+  "category": "nightlife",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 5,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "La strada dei club di Creta, con locali sulla spiaggia e discoteche aperte fino al mattino."
+ },
+ {
+  "name": "Mountain bike sull'altopiano di Lasithi",
+  "city": "Heraklion",
+  "category": "sport",
+  "target": "sporty",
+  "price": 70,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata tra i mulini a vento e i frutteti dell'altopiano, con visita alla grotta dove nacque Zeus."
+ },
+ {
+  "name": "Parco acquatico di Hersonissos",
+  "city": "Heraklion",
+  "category": "sport",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Scivoli, piscine e fiume lento in uno dei parchi acquatici più grandi della Grecia."
+ },
+ {
+  "name": "Spiaggia di Matala e grotte",
+  "city": "Heraklion",
+  "category": "relax",
+  "target": "young",
+  "price": 0,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Spiaggia del sud con grotte scavate nella roccia, abitate dagli hippie negli anni Sessanta."
+ },
+ {
+  "name": "Monastero di Arkadi",
+  "city": "Heraklion",
+  "category": "culture",
+  "target": "couples",
+  "price": 5,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il monastero simbolo della resistenza cretese, con una chiesa veneziana e una storia drammatica."
+ },
+ {
+  "name": "Acquario di Creta",
+  "city": "Heraklion",
+  "category": "nature",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il grande acquario del Mediterraneo con squali, tartarughe e la vita marina delle coste cretesi."
+ },
+ {
+  "name": "Spa termale in un resort",
+  "city": "Heraklion",
+  "category": "relax",
+  "target": "couples",
+  "price": 80,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Hammam, piscina interna e massaggio con oli di erbe di montagna in un resort sul mare."
+ },
+ {
+  "name": "Laguna Blu",
+  "city": "Reykjavik",
+  "category": "relax",
+  "target": "couples",
+  "price": 75,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Bagno nelle acque geotermiche azzurre e lattiginose tra campi di lava, con maschera di fango di silice."
+ },
+ {
+  "name": "Circolo d'oro",
+  "city": "Reykjavik",
+  "category": "nature",
+  "target": "families",
+  "price": 85,
+  "duration_hours": 8,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il parco di Thingvellir, il geyser Strokkur che erutta ogni pochi minuti e la cascata di Gullfoss."
+ },
+ {
+  "name": "Caccia all'aurora boreale",
+  "city": "Reykjavik",
+  "category": "nature",
+  "target": "couples",
+  "price": 70,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Uscita notturna in minibus lontano dalle luci della città, con una guida che segue le previsioni dell'aurora."
+ },
+ {
+  "name": "Avvistamento balene dal porto",
+  "city": "Reykjavik",
+  "category": "nature",
+  "target": "families",
+  "price": 90,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Uscita in barca nella baia di Faxaflói per vedere megattere, delfini e pulcinelle di mare in estate."
+ },
+ {
+  "name": "Snorkeling nella faglia di Silfra",
+  "city": "Reykjavik",
+  "category": "sport",
+  "target": "sporty",
+  "price": 160,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si nuota con la muta stagna nell'acqua più limpida del mondo, nella fessura tra le placche americana ed euroasiatica."
+ },
+ {
+  "name": "Tour gastronomico di Reykjavik",
+  "city": "Reykjavik",
+  "category": "food",
+  "target": "young",
+  "price": 110,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Zuppa d'agnello, skyr, pesce affumicato e il famoso hot dog islandese, con un po' di storia vichinga."
+ },
+ {
+  "name": "Notte sul Laugavegur",
+  "city": "Reykjavik",
+  "category": "nightlife",
+  "target": "young",
+  "price": 40,
+  "duration_hours": 4,
+  "weekdays": [
+   4,
+   5
+  ],
+  "description": "Il runtur islandese, il giro dei bar del centro nelle notti di fine settimana, con musica dal vivo e locali pieni."
+ },
+ {
+  "name": "Escursione sul ghiacciaio Sólheimajökull",
+  "city": "Reykjavik",
+  "category": "sport",
+  "target": "sporty",
+  "price": 120,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Camminata con ramponi e piccozza su una lingua di ghiaccio, tra crepacci e formazioni azzurre."
+ },
+ {
+  "name": "Hallgrímskirkja e quartiere storico",
+  "city": "Reykjavik",
+  "category": "culture",
+  "target": "families",
+  "price": 10,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Salita sulla torre della chiesa per la vista sui tetti colorati, poi passeggiata nel centro storico."
+ },
+ {
+  "name": "Sky Lagoon con rituale",
+  "city": "Reykjavik",
+  "category": "relax",
+  "target": "couples",
+  "price": 80,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Piscina geotermica a sfioro sull'oceano, con il rituale in sette passi tra sauna, acqua fredda e scrub."
+ },
+ {
+  "name": "Museo nazionale d'Islanda",
+  "city": "Reykjavik",
+  "category": "culture",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La storia dell'isola dai vichinghi a oggi, con saghe, spade e la vita dura dei pescatori."
+ },
+ {
+  "name": "Equitazione su cavalli islandesi",
+  "city": "Reykjavik",
+  "category": "sport",
+  "target": "families",
+  "price": 90,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata tra i campi di lava sui piccoli cavalli islandesi, famosi per la loro andatura speciale."
+ },
+ {
+  "name": "Costa sud e cascate",
+  "city": "Reykjavik",
+  "category": "nature",
+  "target": "couples",
+  "price": 100,
+  "duration_hours": 10,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Seljalandsfoss da attraversare dietro la cascata, Skógafoss e la spiaggia nera di Reynisfjara."
+ },
+ {
+  "name": "Concerto alla Harpa",
+  "city": "Reykjavik",
+  "category": "culture",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 2,
+  "weekdays": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Un concerto dell'orchestra sinfonica islandese nella sala di vetro colorato sul porto."
+ },
+ {
+  "name": "Speleologia in un tunnel di lava",
+  "city": "Reykjavik",
+  "category": "sport",
+  "target": "young",
+  "price": 60,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si entra con casco e torcia in un tunnel scavato da un'eruzione, tra stalattiti di lava e colori della roccia."
+ },
+ {
+  "name": "Bagni naturali di Mývatn",
+  "city": "Akureyri",
+  "category": "relax",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La laguna blu del nord, più tranquilla e selvaggia, con acqua calda azzurra vicino al lago vulcanico."
+ },
+ {
+  "name": "Cascata degli dei Goðafoss",
+  "city": "Akureyri",
+  "category": "nature",
+  "target": "families",
+  "price": 40,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La cascata dove nel 1000 il capo islandese gettò gli idoli pagani dopo la conversione al cristianesimo."
+ },
+ {
+  "name": "Balene nel fiordo di Eyjafjörður",
+  "city": "Akureyri",
+  "category": "nature",
+  "target": "families",
+  "price": 90,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Uscita in barca dal porto di Akureyri per vedere megattere che si nutrono a pochi metri dalla barca."
+ },
+ {
+  "name": "Sci sul monte Hlíðarfjall",
+  "city": "Akureyri",
+  "category": "sport",
+  "target": "sporty",
+  "price": 50,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La stazione sciistica principale d'Islanda, con piste sopra il fiordo e luce bassa invernale."
+ },
+ {
+  "name": "Crateri e campi di lava di Dimmuborgir",
+  "city": "Akureyri",
+  "category": "nature",
+  "target": "sporty",
+  "price": 40,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sentiero tra torri e archi di lava nera, che secondo la leggenda sono la casa dei troll di Natale."
+ },
+ {
+  "name": "Piscina geotermica di Akureyri",
+  "city": "Akureyri",
+  "category": "relax",
+  "target": "families",
+  "price": 10,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La piscina pubblica della città, con acqua calda all'aperto, scivoli e vasche idromassaggio sotto la neve."
+ },
+ {
+  "name": "Birreria Kaldi",
+  "city": "Akureyri",
+  "category": "food",
+  "target": "young",
+  "price": 45,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Visita a un piccolo birrificio del nord e bagno in vasche piene di birra calda, una tradizione locale."
+ },
+ {
+  "name": "Cena di salmerino artico",
+  "city": "Akureyri",
+  "category": "food",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pesce del lago cucinato alla maniera del nord, con patate e salsa allo skyr, in un ristorante sul porto."
+ },
+ {
+  "name": "Casa del Natale",
+  "city": "Akureyri",
+  "category": "culture",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 1,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Una casetta rossa nel bosco dove è Natale tutto l'anno, con decorazioni e dolci islandesi."
+ },
+ {
+  "name": "Motoslitta su un ghiacciaio",
+  "city": "Akureyri",
+  "category": "sport",
+  "target": "young",
+  "price": 180,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Guida di una motoslitta su un altopiano innevato, con panorami vastissimi e silenzio totale."
+ },
+ {
+  "name": "Aurora boreale dal fiordo",
+  "city": "Akureyri",
+  "category": "nature",
+  "target": "couples",
+  "price": 70,
+  "duration_hours": 3.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Uscita notturna sopra il fiordo, in una delle zone migliori dell'isola per vedere l'aurora."
+ },
+ {
+  "name": "Museo di Akureyri",
+  "city": "Akureyri",
+  "category": "culture",
+  "target": "couples",
+  "price": 15,
+  "duration_hours": 1.5,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La storia del nord dell'Islanda dai coloni vichinghi alla nascita della città mercantile."
+ },
+ {
+  "name": "Locali del centro di Akureyri",
+  "city": "Akureyri",
+  "category": "nightlife",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 3,
+  "weekdays": [
+   4,
+   5
+  ],
+  "description": "I pochi ma vivaci bar della città del nord, con musica dal vivo e gente del posto il fine settimana."
+ },
+ {
+  "name": "Equitazione nella valle di Eyjafjörður",
+  "city": "Akureyri",
+  "category": "sport",
+  "target": "families",
+  "price": 80,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata a cavallo tra le fattorie della valle, con vista sul fiordo e sulle montagne."
+ },
+ {
+  "name": "Isola di Hrísey",
+  "city": "Akureyri",
+  "category": "nature",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita sull'isola delle pernici bianche, senza auto e con sentieri tra uccelli marini e prati."
+ },
+ {
+  "name": "Piscine galleggianti Vök",
+  "city": "Egilsstaðir",
+  "category": "relax",
+  "target": "couples",
+  "price": 45,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Vasche di acqua calda galleggianti sul lago Urriðavatn, con un bar di tisane alle erbe islandesi."
+ },
+ {
+  "name": "Villaggio di Seyðisfjörður",
+  "city": "Egilsstaðir",
+  "category": "culture",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il villaggio di case di legno colorate in fondo al fiordo, con la strada arcobaleno e gallerie d'arte."
+ },
+ {
+  "name": "Cascata di Hengifoss",
+  "city": "Egilsstaðir",
+  "category": "nature",
+  "target": "sporty",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sentiero in salita fino a una delle cascate più alte d'Islanda, tra strati di basalto rosso e nero."
+ },
+ {
+  "name": "Foresta di Hallormsstaður",
+  "city": "Egilsstaðir",
+  "category": "nature",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata nella foresta più grande del paese, con un arboreto e un lago per il picnic."
+ },
+ {
+  "name": "Avvistamento delle renne",
+  "city": "Egilsstaðir",
+  "category": "nature",
+  "target": "families",
+  "price": 80,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita in fuoristrada sugli altopiani dell'est, l'unica regione d'Islanda dove vivono le renne selvatiche."
+ },
+ {
+  "name": "Kayak sul fiordo",
+  "city": "Egilsstaðir",
+  "category": "sport",
+  "target": "sporty",
+  "price": 70,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pagaiata nel fiordo di Seyðisfjörður, tra montagne, cascate e foche curiose."
+ },
+ {
+  "name": "Pulcinelle di mare a Borgarfjörður",
+  "city": "Egilsstaðir",
+  "category": "nature",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "In estate si osservano da vicino migliaia di pulcinelle di mare che nidificano su un isolotto."
+ },
+ {
+  "name": "Cena alla fattoria",
+  "city": "Egilsstaðir",
+  "category": "food",
+  "target": "families",
+  "price": 55,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Agnello, formaggi e pane di segale cotto nel terreno caldo in una fattoria della valle."
+ },
+ {
+  "name": "Festival d'arte LungA",
+  "city": "Egilsstaðir",
+  "category": "culture",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 4,
+  "weekdays": [
+   4,
+   5,
+   6
+  ],
+  "description": "Il festival estivo di arte e musica che porta artisti da tutto il mondo nel piccolo villaggio sul fiordo."
+ },
+ {
+  "name": "Super jeep sul ghiacciaio Vatnajökull",
+  "city": "Egilsstaðir",
+  "category": "sport",
+  "target": "young",
+  "price": 200,
+  "duration_hours": 8,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Fuoristrada attrezzati per la neve fino al ghiacciaio più grande d'Europa, con passeggiata sul ghiaccio."
+ },
+ {
+  "name": "Laghetto di birra e storie di troll",
+  "city": "Egilsstaðir",
+  "category": "nightlife",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 3,
+  "weekdays": [
+   4,
+   5
+  ],
+  "description": "Serata in un piccolo pub di paese con birra locale e un narratore che racconta le leggende dell'est."
+ },
+ {
+  "name": "Spiaggia di Stokksnes e Vestrahorn",
+  "city": "Egilsstaðir",
+  "category": "nature",
+  "target": "couples",
+  "price": 90,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita alla spiaggia nera con le dune e la montagna seghettata che si riflette sulla sabbia bagnata."
+ },
+ {
+  "name": "Pesca nel lago Lagarfljót",
+  "city": "Egilsstaðir",
+  "category": "sport",
+  "target": "families",
+  "price": 60,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Una mattinata di pesca alla trota con una guida del posto, che racconta il mostro del lago."
+ },
+ {
+  "name": "Cascate di basalto di Stuðlagil",
+  "city": "Egilsstaðir",
+  "category": "nature",
+  "target": "sporty",
+  "price": 40,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Canyon con colonne di basalto esagonali e un fiume color turchese, scoperto solo pochi anni fa."
+ },
+ {
+  "name": "Sauna sul lago al tramonto",
+  "city": "Egilsstaðir",
+  "category": "relax",
+  "target": "couples",
+  "price": 35,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sauna in legno sulla riva del lago e tuffo nell'acqua fredda, alla maniera nordica."
+ },
+ {
+  "name": "British Museum",
+  "city": "Londra",
+  "category": "culture",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La Stele di Rosetta, le mummie egizie e i marmi del Partenone in uno dei musei più grandi del mondo."
+ },
+ {
+  "name": "Torre di Londra e gioielli della corona",
+  "city": "Londra",
+  "category": "culture",
+  "target": "families",
+  "price": 40,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La fortezza medievale con i guardiani in costume, i corvi e i gioielli della corona britannica."
+ },
+ {
+  "name": "Musical nel West End",
+  "city": "Londra",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 90,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Una serata in un teatro storico di Londra per uno dei musical più longevi e amati."
+ },
+ {
+  "name": "Tè del pomeriggio",
+  "city": "Londra",
+  "category": "food",
+  "target": "couples",
+  "price": 65,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Tramezzini, scone con panna e marmellata e pasticcini su un'alzata a tre piani, in un salone elegante."
+ },
+ {
+  "name": "Borough Market",
+  "city": "Londra",
+  "category": "food",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il mercato più antico della città, con formaggi inglesi, pasticci di carne, ostriche e cibo di strada da tutto il mondo."
+ },
+ {
+  "name": "Bici a Hyde Park e Kensington Gardens",
+  "city": "Londra",
+  "category": "sport",
+  "target": "families",
+  "price": 25,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata nei due grandi parchi reali, tra il lago Serpentine, Kensington Palace e il memoriale di Diana."
+ },
+ {
+  "name": "Pub storici della City",
+  "city": "Londra",
+  "category": "nightlife",
+  "target": "young",
+  "price": 40,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Giro tra pub dove bevevano Dickens e Shakespeare, con ale inglesi e storie di Londra antica."
+ },
+ {
+  "name": "Tate Modern",
+  "city": "Londra",
+  "category": "culture",
+  "target": "young",
+  "price": 0,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il museo d'arte moderna in una vecchia centrale elettrica, con la Turbine Hall e una terrazza sul fiume."
+ },
+ {
+  "name": "Stadio di Wembley",
+  "city": "Londra",
+  "category": "sport",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita allo stadio della nazionale inglese, tra spogliatoi, sala stampa e il tunnel dei giocatori."
+ },
+ {
+  "name": "Kew Gardens",
+  "city": "Londra",
+  "category": "nature",
+  "target": "couples",
+  "price": 25,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "I giardini botanici reali, con le serre vittoriane di vetro e la passerella tra le cime degli alberi."
+ },
+ {
+  "name": "London Eye al tramonto",
+  "city": "Londra",
+  "category": "relax",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 1,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giro sulla grande ruota panoramica sul Tamigi, mentre il sole tramonta sul Big Ben."
+ },
+ {
+  "name": "Crociera sul Tamigi fino a Greenwich",
+  "city": "Londra",
+  "category": "relax",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Battello lungo il fiume fino al meridiano di Greenwich e all'osservatorio reale."
+ },
+ {
+  "name": "Mercato di Camden e locali",
+  "city": "Londra",
+  "category": "nightlife",
+  "target": "young",
+  "price": 20,
+  "duration_hours": 4,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Il mercato alternativo più famoso di Londra, poi concerti nei locali storici del rock britannico."
+ },
+ {
+  "name": "Museo di storia naturale",
+  "city": "Londra",
+  "category": "nature",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il grande scheletro di balena nella sala centrale, i dinosauri e la sezione dei terremoti."
+ },
+ {
+  "name": "Lezione di cricket",
+  "city": "Londra",
+  "category": "sport",
+  "target": "sporty",
+  "price": 40,
+  "duration_hours": 2,
+  "weekdays": [
+   5,
+   6
+  ],
+  "description": "Un allenatore spiega le regole e la tecnica dello sport più inglese di tutti, in un club di quartiere."
+ },
+ {
+  "name": "Spa nei vecchi bagni vittoriani",
+  "city": "Londra",
+  "category": "relax",
+  "target": "couples",
+  "price": 55,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Bagno turco e sauna in un edificio vittoriano restaurato, con piastrelle originali dell'Ottocento."
+ },
+ {
+  "name": "Castello di Edimburgo",
+  "city": "Edimburgo",
+  "category": "culture",
+  "target": "families",
+  "price": 25,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La fortezza sulla roccia vulcanica, con i gioielli della corona scozzese e il colpo di cannone dell'una."
+ },
+ {
+  "name": "Salita ad Arthur's Seat",
+  "city": "Edimburgo",
+  "category": "nature",
+  "target": "sporty",
+  "price": 0,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Escursione sul vulcano spento nel cuore della città, con vista sul mare e sui tetti di Edimburgo."
+ },
+ {
+  "name": "Degustazione di whisky scozzese",
+  "city": "Edimburgo",
+  "category": "food",
+  "target": "couples",
+  "price": 45,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Assaggio guidato di whisky delle diverse regioni, dalle Lowlands torbate alle isole."
+ },
+ {
+  "name": "Tour dei fantasmi della città vecchia",
+  "city": "Edimburgo",
+  "category": "nightlife",
+  "target": "young",
+  "price": 20,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata serale nei vicoli e nei sotterranei della città vecchia, tra storie di streghe e pestilenze."
+ },
+ {
+  "name": "Gita nelle Highlands e a Loch Ness",
+  "city": "Edimburgo",
+  "category": "nature",
+  "target": "couples",
+  "price": 70,
+  "duration_hours": 12,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata tra le montagne di Glencoe, i castelli e il lago del mostro più famoso del mondo."
+ },
+ {
+  "name": "Haggis in un pub tradizionale",
+  "city": "Edimburgo",
+  "category": "food",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il piatto nazionale scozzese con purè di rape e patate, accompagnato da birra scura locale."
+ },
+ {
+  "name": "Palazzo di Holyrood",
+  "city": "Edimburgo",
+  "category": "culture",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La residenza scozzese dei reali, con gli appartamenti di Maria Stuarda e l'abbazia in rovina."
+ },
+ {
+  "name": "Festival Fringe",
+  "city": "Edimburgo",
+  "category": "nightlife",
+  "target": "young",
+  "price": 15,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Ad agosto la città si riempie di spettacoli di comicità, teatro e musica in ogni sala e cortile."
+ },
+ {
+  "name": "Giardino botanico reale",
+  "city": "Edimburgo",
+  "category": "nature",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giardino con serre vittoriane, rododendri e vista sullo skyline della città vecchia."
+ },
+ {
+  "name": "Bici lungo il Water of Leith",
+  "city": "Edimburgo",
+  "category": "sport",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata lungo il fiume che attraversa la città, passando per il villaggio di Dean fino al porto."
+ },
+ {
+  "name": "Musica folk nei pub",
+  "city": "Edimburgo",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Serate di musica tradizionale scozzese dal vivo, con violini e cornamuse, in pub del centro."
+ },
+ {
+  "name": "Spa con piscina sui tetti",
+  "city": "Edimburgo",
+  "category": "relax",
+  "target": "couples",
+  "price": 70,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Piscina riscaldata all'aperto con vista sul castello, anche quando fuori piove."
+ },
+ {
+  "name": "Golf a St Andrews",
+  "city": "Edimburgo",
+  "category": "sport",
+  "target": "sporty",
+  "price": 120,
+  "duration_hours": 8,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita nella patria del golf, con una partita su un campo pubblico e visita al vecchio campo storico."
+ },
+ {
+  "name": "Museo nazionale di Scozia",
+  "city": "Edimburgo",
+  "category": "culture",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La storia della Scozia, dalla pecora Dolly ai pezzi degli scacchi di Lewis, con terrazza panoramica."
+ },
+ {
+  "name": "Mercato del pesce a Leith",
+  "city": "Edimburgo",
+  "category": "food",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 2,
+  "weekdays": [
+   5,
+   6
+  ],
+  "description": "Pranzo di pesce e frutti di mare scozzesi sul porto di Leith, con le cozze tra i piatti migliori."
+ },
+ {
+  "name": "Stadio di Old Trafford",
+  "city": "Manchester",
+  "category": "sport",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il teatro dei sogni del Manchester United, con il museo, gli spogliatoi e il tunnel verso il campo."
+ },
+ {
+  "name": "Etihad Stadium",
+  "city": "Manchester",
+  "category": "sport",
+  "target": "young",
+  "price": 28,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Lo stadio del Manchester City, con i trofei recenti e una visita dietro le quinte del club."
+ },
+ {
+  "name": "Museo della scienza e dell'industria",
+  "city": "Manchester",
+  "category": "culture",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La città della rivoluzione industriale, con macchine a vapore, telai e il primo computer programmabile."
+ },
+ {
+  "name": "Murales del Northern Quarter",
+  "city": "Manchester",
+  "category": "culture",
+  "target": "young",
+  "price": 15,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata tra le opere di street art del quartiere e i negozi di dischi che hanno fatto la storia del brit pop."
+ },
+ {
+  "name": "Concerti nei locali storici",
+  "city": "Manchester",
+  "category": "nightlife",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 3,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Serata di musica dal vivo nella città degli Oasis e dei Joy Division, in piccoli club del centro."
+ },
+ {
+  "name": "Curry Mile",
+  "city": "Manchester",
+  "category": "food",
+  "target": "families",
+  "price": 25,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Una strada intera di ristoranti indiani e pakistani, con curry e piatti alla griglia a prezzi bassi."
+ },
+ {
+  "name": "Mercato di Mackie Mayor",
+  "city": "Manchester",
+  "category": "food",
+  "target": "couples",
+  "price": 25,
+  "duration_hours": 2,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Mercato coperto in un vecchio edificio vittoriano, con banchi di cibo di produttori del nord."
+ },
+ {
+  "name": "Biblioteca John Rylands",
+  "city": "Manchester",
+  "category": "culture",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Una biblioteca neogotica che sembra una cattedrale, con libri antichi e sale di lettura incantevoli."
+ },
+ {
+  "name": "Escursione nel Peak District",
+  "city": "Manchester",
+  "category": "nature",
+  "target": "sporty",
+  "price": 25,
+  "duration_hours": 7,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata a piedi nel primo parco nazionale inglese, tra colline, villaggi di pietra e muretti a secco."
+ },
+ {
+  "name": "Bici lungo i canali",
+  "city": "Manchester",
+  "category": "sport",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata sui sentieri dei canali industriali, dai magazzini di Castlefield ai moli di Salford."
+ },
+ {
+  "name": "Club del Gay Village",
+  "city": "Manchester",
+  "category": "nightlife",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 5,
+  "weekdays": [
+   4,
+   5
+  ],
+  "description": "La zona di Canal Street, con bar e club colorati che si riempiono il fine settimana."
+ },
+ {
+  "name": "Spa in una vecchia fabbrica",
+  "city": "Manchester",
+  "category": "relax",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Piscine e sauna in un mulino di cotone restaurato, con mattoni a vista e luci soffuse."
+ },
+ {
+  "name": "Galleria d'arte di Manchester",
+  "city": "Manchester",
+  "category": "culture",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pittura preraffaellita e arte moderna in un edificio neoclassico del centro."
+ },
+ {
+  "name": "Lezione di calcio con un allenatore",
+  "city": "Manchester",
+  "category": "sport",
+  "target": "sporty",
+  "price": 45,
+  "duration_hours": 2,
+  "weekdays": [
+   5,
+   6
+  ],
+  "description": "Allenamento di gruppo su un campo cittadino, con esercizi tecnici e partita finale."
+ },
+ {
+  "name": "Lago di Dovestone",
+  "city": "Manchester",
+  "category": "nature",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Passeggiata intorno a un lago tra le colline a mezz'ora dalla città, con cascate e brughiera."
+ },
+ {
+  "name": "Rijksmuseum",
+  "city": "Amsterdam",
+  "category": "culture",
+  "target": "couples",
+  "price": 22,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La Ronda di notte di Rembrandt, la Lattaia di Vermeer e il secolo d'oro olandese in un museo splendido."
+ },
+ {
+  "name": "Museo Van Gogh",
+  "city": "Amsterdam",
+  "category": "culture",
+  "target": "young",
+  "price": 22,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La più grande collezione al mondo di Van Gogh, dai primi quadri scuri ai girasoli e agli ultimi campi di grano."
+ },
+ {
+  "name": "Casa di Anna Frank",
+  "city": "Amsterdam",
+  "category": "culture",
+  "target": "families",
+  "price": 16,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il nascondiglio dove Anna Frank scrisse il suo diario, conservato com'era durante la guerra."
+ },
+ {
+  "name": "Bici nella campagna dei mulini",
+  "city": "Amsterdam",
+  "category": "sport",
+  "target": "families",
+  "price": 35,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata fuori città tra polder, mucche e mulini a vento, con sosta in una fattoria di formaggi."
+ },
+ {
+  "name": "Barca sui canali al tramonto",
+  "city": "Amsterdam",
+  "category": "relax",
+  "target": "couples",
+  "price": 25,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giro su una piccola barca aperta tra le case sul canale, con vino e formaggi a bordo."
+ },
+ {
+  "name": "Tour gastronomico del Jordaan",
+  "city": "Amsterdam",
+  "category": "food",
+  "target": "young",
+  "price": 70,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Aringa cruda, formaggio olandese, apple pie e birra artigianale nel quartiere più pittoresco della città."
+ },
+ {
+  "name": "Mercato Albert Cuyp",
+  "city": "Amsterdam",
+  "category": "food",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Il mercato più famoso di Amsterdam, con stroopwafel caldi, poffertjes e formaggi di ogni tipo."
+ },
+ {
+  "name": "Notte a Leidseplein",
+  "city": "Amsterdam",
+  "category": "nightlife",
+  "target": "young",
+  "price": 35,
+  "duration_hours": 4,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "La piazza dei locali di Amsterdam, con club, teatri e bar con musica dal vivo fino a tardi."
+ },
+ {
+  "name": "Concerto al Concertgebouw",
+  "city": "Amsterdam",
+  "category": "culture",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 2,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Musica classica in una delle sale da concerto con l'acustica migliore del mondo."
+ },
+ {
+  "name": "Kayak sui canali",
+  "city": "Amsterdam",
+  "category": "sport",
+  "target": "sporty",
+  "price": 35,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pagaiata tra le barche e i ponti dei canali, vedendo la città da una prospettiva diversa."
+ },
+ {
+  "name": "Vondelpark",
+  "city": "Amsterdam",
+  "category": "nature",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il grande parco della città, con laghetti, caffè all'aperto e concerti gratuiti d'estate."
+ },
+ {
+  "name": "Campi di tulipani di Keukenhof",
+  "city": "Amsterdam",
+  "category": "nature",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "In primavera, milioni di tulipani, giacinti e narcisi in un parco fiorito vicino ad Amsterdam."
+ },
+ {
+  "name": "Brouwerij 't IJ e birre locali",
+  "city": "Amsterdam",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Birrificio sotto un mulino a vento, con degustazione delle birre artigianali della città."
+ },
+ {
+  "name": "Sauna e spa nordica",
+  "city": "Amsterdam",
+  "category": "relax",
+  "target": "couples",
+  "price": 45,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Saune, bagni turchi e piscine all'aperto in un centro benessere nel verde di Amsterdam."
+ },
+ {
+  "name": "Museo NEMO della scienza",
+  "city": "Amsterdam",
+  "category": "culture",
+  "target": "families",
+  "price": 18,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Museo interattivo per bambini e ragazzi in un edificio a forma di nave, con terrazza sul porto."
+ },
+ {
+  "name": "Markthal",
+  "city": "Rotterdam",
+  "category": "food",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il mercato coperto sotto un arco abitato decorato da un enorme affresco di frutta e verdura."
+ },
+ {
+  "name": "Case cubo e architettura moderna",
+  "city": "Rotterdam",
+  "category": "culture",
+  "target": "young",
+  "price": 15,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Tour delle architetture più audaci d'Europa, nate dopo la distruzione della guerra."
+ },
+ {
+  "name": "Crociera nel porto",
+  "city": "Rotterdam",
+  "category": "relax",
+  "target": "families",
+  "price": 18,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giro in battello nel porto più grande d'Europa, tra navi container, gru e moli giganti."
+ },
+ {
+  "name": "Mulini di Kinderdijk",
+  "city": "Rotterdam",
+  "category": "nature",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "I diciannove mulini a vento del Settecento che proteggono i polder, patrimonio Unesco."
+ },
+ {
+  "name": "Museo Boijmans e deposito",
+  "city": "Rotterdam",
+  "category": "culture",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 2.5,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il primo deposito d'arte visitabile al mondo, un edificio a specchio con terrazza alberata."
+ },
+ {
+  "name": "Bici lungo la Mosa",
+  "city": "Rotterdam",
+  "category": "sport",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata sul lungofiume e sui ponti della città, fino al vecchio quartiere di Delfshaven."
+ },
+ {
+  "name": "Locali di Witte de Withstraat",
+  "city": "Rotterdam",
+  "category": "nightlife",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 4,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "La via dei bar, delle gallerie e dei ristoranti dove la sera si ritrovano i giovani di Rotterdam."
+ },
+ {
+  "name": "Euromast",
+  "city": "Rotterdam",
+  "category": "relax",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La torre panoramica alta 185 metri, con una cabina girevole che sale fino alla cima."
+ },
+ {
+  "name": "Surf sulle onde artificiali",
+  "city": "Rotterdam",
+  "category": "sport",
+  "target": "sporty",
+  "price": 50,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Una piscina con onde artificiali in centro città, per surfare senza andare al mare."
+ },
+ {
+  "name": "Zoo di Rotterdam",
+  "city": "Rotterdam",
+  "category": "nature",
+  "target": "families",
+  "price": 25,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Lo zoo Blijdorp con l'oceanario, gli elefanti e una sezione dedicata ai bambini."
+ },
+ {
+  "name": "Cena di cucina del mondo a Fenix",
+  "city": "Rotterdam",
+  "category": "food",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Un vecchio magazzino del porto con banchi di cibo di tutto il mondo, come la città multiculturale."
+ },
+ {
+  "name": "Club di musica elettronica",
+  "city": "Rotterdam",
+  "category": "nightlife",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 5,
+  "weekdays": [
+   4,
+   5
+  ],
+  "description": "Notte in un club in un'ex centrale o capannone portuale, con DJ techno della scena olandese."
+ },
+ {
+  "name": "Delfshaven e il vecchio porto",
+  "city": "Rotterdam",
+  "category": "culture",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "L'unico quartiere sopravvissuto ai bombardamenti, con case del Seicento e un birrificio storico."
+ },
+ {
+  "name": "Spa su una barca",
+  "city": "Rotterdam",
+  "category": "relax",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sauna e vasche calde su un battello ormeggiato nel porto, con vista sulla città."
+ },
+ {
+  "name": "Spiaggia di Hoek van Holland",
+  "city": "Rotterdam",
+  "category": "nature",
+  "target": "couples",
+  "price": 10,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Spiaggia ampia sul mare del Nord dove la Mosa sfocia, con dune e chioschi."
+ },
+ {
+  "name": "Museo Philips",
+  "city": "Eindhoven",
+  "category": "culture",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La storia della lampadina e dell'azienda che ha fatto nascere la città, nella prima fabbrica Philips."
+ },
+ {
+  "name": "Museo Van Abbe",
+  "city": "Eindhoven",
+  "category": "culture",
+  "target": "couples",
+  "price": 15,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Arte moderna e contemporanea, da Picasso a Kandinsky, in un museo noto per le sue mostre audaci."
+ },
+ {
+  "name": "Dutch Design Week",
+  "city": "Eindhoven",
+  "category": "culture",
+  "target": "young",
+  "price": 0,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La più grande fiera di design del nord Europa, con mostre e installazioni in tutta la città."
+ },
+ {
+  "name": "Bar di Stratumseind",
+  "city": "Eindhoven",
+  "category": "nightlife",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 4,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "La via dei locali di Eindhoven, con decine di bar uno accanto all'altro e musica fino a tardi."
+ },
+ {
+  "name": "Parco De Efteling",
+  "city": "Eindhoven",
+  "category": "sport",
+  "target": "families",
+  "price": 45,
+  "duration_hours": 8,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il parco delle fiabe più amato d'Olanda, con montagne russe e un bosco incantato."
+ },
+ {
+  "name": "Bici nella brughiera di Strabrechtse Heide",
+  "city": "Eindhoven",
+  "category": "sport",
+  "target": "sporty",
+  "price": 20,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata tra brughiere viola, dune di sabbia e laghetti, con pecore e cavalli liberi."
+ },
+ {
+  "name": "Stadio del PSV",
+  "city": "Eindhoven",
+  "category": "sport",
+  "target": "young",
+  "price": 15,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita allo stadio Philips del PSV Eindhoven, con il museo dei campioni d'Europa del 1988."
+ },
+ {
+  "name": "Mercato di Strijp-S",
+  "city": "Eindhoven",
+  "category": "food",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 2,
+  "weekdays": [
+   5,
+   6
+  ],
+  "description": "Mercato del fine settimana nelle vecchie fabbriche, con cibo di strada, birra locale e design."
+ },
+ {
+  "name": "Festival delle luci GLOW",
+  "city": "Eindhoven",
+  "category": "culture",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "A novembre la città si illumina con installazioni di luce lungo un percorso a piedi."
+ },
+ {
+  "name": "Cena brabantina",
+  "city": "Eindhoven",
+  "category": "food",
+  "target": "families",
+  "price": 35,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Specialità del Brabante come lo stufato di manzo e le salsicce al forno, con birre trappiste."
+ },
+ {
+  "name": "Abbazia trappista di Koningshoeven",
+  "city": "Eindhoven",
+  "category": "food",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "L'unico birrificio trappista dei Paesi Bassi, dove i monaci producono la birra La Trappe."
+ },
+ {
+  "name": "Spa in un bosco",
+  "city": "Eindhoven",
+  "category": "relax",
+  "target": "couples",
+  "price": 45,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Saune nel bosco e piscine all'aperto in un centro benessere nella campagna del Brabante."
+ },
+ {
+  "name": "Lago di Genneper Parken",
+  "city": "Eindhoven",
+  "category": "nature",
+  "target": "families",
+  "price": 0,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Parco con mulino ad acqua, fattoria con animali e sentieri lungo il fiume Dommel."
+ },
+ {
+  "name": "Sala da concerti Muziekgebouw",
+  "city": "Eindhoven",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Concerti di musica classica, jazz e pop in una sala moderna del centro."
+ },
+ {
+  "name": "Arrampicata indoor",
+  "city": "Eindhoven",
+  "category": "sport",
+  "target": "sporty",
+  "price": 20,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Una delle palestre di arrampicata più grandi del paese, con pareti alte e corsi per principianti."
+ },
+ {
+  "name": "Galleria degli Uffizi",
+  "city": "Firenze",
+  "category": "culture",
+  "target": "couples",
+  "price": 25,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La Venere di Botticelli, Leonardo e Caravaggio nel museo che racconta il Rinascimento fiorentino."
+ },
+ {
+  "name": "Cupola del Brunelleschi",
+  "city": "Firenze",
+  "category": "culture",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si salgono i 463 gradini tra le due cupole fino alla lanterna, con vista su tutta Firenze."
+ },
+ {
+  "name": "David all'Accademia",
+  "city": "Firenze",
+  "category": "culture",
+  "target": "young",
+  "price": 16,
+  "duration_hours": 1.5,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il capolavoro di Michelangelo visto da vicino, insieme ai Prigioni non finiti che sembrano uscire dal marmo."
+ },
+ {
+  "name": "Corso di pasta fresca",
+  "city": "Firenze",
+  "category": "food",
+  "target": "families",
+  "price": 70,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Si impara a fare tagliatelle e ravioli con una cuoca fiorentina, poi si mangia con vino del Chianti."
+ },
+ {
+  "name": "Bistecca alla fiorentina",
+  "city": "Firenze",
+  "category": "food",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Cena in una trattoria storica con la bistecca di chianina alta tre dita, cotta alla brace."
+ },
+ {
+  "name": "Mercato centrale e lampredotto",
+  "city": "Firenze",
+  "category": "food",
+  "target": "young",
+  "price": 20,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il panino con lampredotto al chiosco e poi il piano superiore del mercato con il cibo di tutta Italia."
+ },
+ {
+  "name": "Degustazione nel Chianti",
+  "city": "Firenze",
+  "category": "food",
+  "target": "couples",
+  "price": 90,
+  "duration_hours": 7,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita tra le colline del Chianti con visita a due cantine, olio nuovo e pranzo in fattoria."
+ },
+ {
+  "name": "Tramonto a piazzale Michelangelo",
+  "city": "Firenze",
+  "category": "relax",
+  "target": "couples",
+  "price": 0,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La terrazza più famosa della città, con il sole che cala dietro il Ponte Vecchio e il Duomo."
+ },
+ {
+  "name": "Giardino di Boboli",
+  "city": "Firenze",
+  "category": "nature",
+  "target": "families",
+  "price": 10,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il grande giardino dei Medici dietro Palazzo Pitti, con grotte, fontane e statue tra i cipressi."
+ },
+ {
+  "name": "Bici sulle colline di Fiesole",
+  "city": "Firenze",
+  "category": "sport",
+  "target": "sporty",
+  "price": 45,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Salita in bici fino a Fiesole tra ville e ulivi, con discesa panoramica verso la città."
+ },
+ {
+  "name": "Aperitivo in Santo Spirito",
+  "city": "Firenze",
+  "category": "nightlife",
+  "target": "young",
+  "price": 15,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La piazza dove i fiorentini si ritrovano la sera, con bar, musica e gente seduta sui gradini della chiesa."
+ },
+ {
+  "name": "Laboratorio di pelletteria",
+  "city": "Firenze",
+  "category": "culture",
+  "target": "couples",
+  "price": 60,
+  "duration_hours": 2,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "In una bottega dell'Oltrarno si realizza un piccolo oggetto in cuoio con un artigiano."
+ },
+ {
+  "name": "Kayak sull'Arno",
+  "city": "Firenze",
+  "category": "sport",
+  "target": "young",
+  "price": 30,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pagaiata sul fiume sotto i ponti storici, con il Ponte Vecchio visto dall'acqua."
+ },
+ {
+  "name": "Terme di Saturnia",
+  "city": "Firenze",
+  "category": "relax",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 9,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Gita alle cascate termali calde della Maremma, con acqua sulfurea che scorre tra le rocce bianche."
+ },
+ {
+  "name": "Jazz club in centro",
+  "city": "Firenze",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Musica dal vivo in un locale sotterraneo del centro storico, con cocktail e atmosfera intima."
+ },
+ {
+  "name": "Basilica di San Marco e palazzo Ducale",
+  "city": "Venezia",
+  "category": "culture",
+  "target": "families",
+  "price": 35,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "I mosaici d'oro della basilica e le sale del Doge, fino al ponte dei Sospiri e alle prigioni."
+ },
+ {
+  "name": "Giro in gondola",
+  "city": "Venezia",
+  "category": "relax",
+  "target": "couples",
+  "price": 90,
+  "duration_hours": 0.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Mezz'ora in gondola nei canali silenziosi, lontano dalla folla, con il gondoliere che racconta Venezia."
+ },
+ {
+  "name": "Giro dei bacari con cicchetti",
+  "city": "Venezia",
+  "category": "food",
+  "target": "young",
+  "price": 50,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Ombre di vino e cicchetti come baccalà mantecato e sarde in saor nei bar più antichi della città."
+ },
+ {
+  "name": "Murano e Burano",
+  "city": "Venezia",
+  "category": "culture",
+  "target": "families",
+  "price": 25,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Le fornaci del vetro di Murano e le case colorate dei pescatori di Burano, famose per il merletto."
+ },
+ {
+  "name": "Corso di voga alla veneta",
+  "city": "Venezia",
+  "category": "sport",
+  "target": "sporty",
+  "price": 80,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Lezione di voga in piedi su una barca tradizionale con un'associazione di vogatori veneziani."
+ },
+ {
+  "name": "Collezione Peggy Guggenheim",
+  "city": "Venezia",
+  "category": "culture",
+  "target": "couples",
+  "price": 16,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Arte moderna da Pollock a Magritte nella villa sul Canal Grande della collezionista americana."
+ },
+ {
+  "name": "Kayak nella laguna",
+  "city": "Venezia",
+  "category": "sport",
+  "target": "young",
+  "price": 85,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pagaiata nei canali minori e nella laguna con una guida, vedendo la città da una prospettiva rara."
+ },
+ {
+  "name": "Mercato di Rialto e corso di cucina",
+  "city": "Venezia",
+  "category": "food",
+  "target": "couples",
+  "price": 110,
+  "duration_hours": 4,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Spesa al mercato del pesce di Rialto con lo chef e lezione di risotto in una casa veneziana."
+ },
+ {
+  "name": "Spiaggia del Lido",
+  "city": "Venezia",
+  "category": "relax",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giornata in spiaggia sull'isola del Lido, tra capanni a righe e l'Adriatico a pochi minuti dalla città."
+ },
+ {
+  "name": "Concerto di Vivaldi",
+  "city": "Venezia",
+  "category": "culture",
+  "target": "couples",
+  "price": 30,
+  "duration_hours": 1.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Le Quattro stagioni eseguite da un'orchestra in costume in una chiesa barocca."
+ },
+ {
+  "name": "Spritz al Campo Santa Margherita",
+  "city": "Venezia",
+  "category": "nightlife",
+  "target": "young",
+  "price": 10,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La piazza degli studenti universitari, con bar all'aperto e spritz a prezzi da veneziani."
+ },
+ {
+  "name": "Isola di Torcello e laguna nord",
+  "city": "Venezia",
+  "category": "nature",
+  "target": "couples",
+  "price": 25,
+  "duration_hours": 5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "L'isola quasi disabitata dove nacque Venezia, con la cattedrale bizantina e le barene della laguna."
+ },
+ {
+  "name": "Teatro La Fenice",
+  "city": "Venezia",
+  "category": "culture",
+  "target": "couples",
+  "price": 80,
+  "duration_hours": 3,
+  "weekdays": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Una serata d'opera nel teatro più elegante d'Italia, ricostruito com'era dopo l'incendio."
+ },
+ {
+  "name": "Bici sul Lido e a Pellestrina",
+  "city": "Venezia",
+  "category": "sport",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata lungo il Lido fino all'isola dei pescatori di Pellestrina, tra la laguna e il mare."
+ },
+ {
+  "name": "Cocktail sulla terrazza di un palazzo",
+  "city": "Venezia",
+  "category": "nightlife",
+  "target": "couples",
+  "price": 35,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Aperitivo al tramonto su un'altana, la terrazza in legno sui tetti tipica delle case veneziane."
+ },
+ {
+  "name": "Mercato di Ballarò con street food",
+  "city": "Palermo",
+  "category": "food",
+  "target": "young",
+  "price": 25,
+  "duration_hours": 2.5,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Arancine, panelle, sfincione e pane con la milza tra le grida dei venditori del mercato più antico."
+ },
+ {
+  "name": "Cattedrale e Cappella Palatina",
+  "city": "Palermo",
+  "category": "culture",
+  "target": "couples",
+  "price": 20,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "I mosaici d'oro arabo-normanni della Cappella Palatina e la cattedrale con le tombe dei re."
+ },
+ {
+  "name": "Monreale",
+  "city": "Palermo",
+  "category": "culture",
+  "target": "families",
+  "price": 20,
+  "duration_hours": 4,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Il duomo con i mosaici più grandi del Mediterraneo e il chiostro con duecento colonne decorate."
+ },
+ {
+  "name": "Spiaggia di Mondello",
+  "city": "Palermo",
+  "category": "relax",
+  "target": "families",
+  "price": 15,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "La spiaggia di sabbia bianca dei palermitani, con acqua trasparente e ville liberty sul lungomare."
+ },
+ {
+  "name": "Riserva dello Zingaro",
+  "city": "Palermo",
+  "category": "nature",
+  "target": "sporty",
+  "price": 5,
+  "duration_hours": 6,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Sette chilometri di sentiero costiero tra calette turchesi, palme nane e scogliere."
+ },
+ {
+  "name": "Corso di cannoli e cassata",
+  "city": "Palermo",
+  "category": "food",
+  "target": "families",
+  "price": 60,
+  "duration_hours": 3,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "description": "Una pasticcera insegna a preparare i dolci siciliani con la ricotta di pecora."
+ },
+ {
+  "name": "Catacombe dei Cappuccini",
+  "city": "Palermo",
+  "category": "culture",
+  "target": "young",
+  "price": 5,
+  "duration_hours": 1,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Migliaia di corpi mummificati e vestiti dell'Ottocento, una delle visite più insolite d'Europa."
+ },
+ {
+  "name": "Teatro Massimo",
+  "city": "Palermo",
+  "category": "culture",
+  "target": "couples",
+  "price": 12,
+  "duration_hours": 1,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Visita al teatro d'opera più grande d'Italia, con la sala rossa e oro e il palco reale."
+ },
+ {
+  "name": "Snorkeling a Capo Gallo",
+  "city": "Palermo",
+  "category": "sport",
+  "target": "sporty",
+  "price": 40,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Nuoto con maschera nella riserva marina, tra grotte e fondali con ricci, polpi e pesci colorati."
+ },
+ {
+  "name": "Notte alla Vucciria",
+  "city": "Palermo",
+  "category": "nightlife",
+  "target": "young",
+  "price": 15,
+  "duration_hours": 4,
+  "weekdays": [
+   3,
+   4,
+   5
+  ],
+  "description": "Il vecchio mercato che la sera diventa il ritrovo dei giovani, con musica, birra e pesce alla brace."
+ },
+ {
+  "name": "Degustazione di vini dell'Etna e della Sicilia",
+  "city": "Palermo",
+  "category": "food",
+  "target": "couples",
+  "price": 40,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Assaggio guidato di nero d'Avola, grillo e vini vulcanici in un'enoteca del centro."
+ },
+ {
+  "name": "Giro in barca lungo la costa",
+  "city": "Palermo",
+  "category": "relax",
+  "target": "couples",
+  "price": 50,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Navigazione da Mondello verso Capo Gallo e l'isola delle Femmine, con bagno in mare."
+ },
+ {
+  "name": "Tour in bici del centro storico",
+  "city": "Palermo",
+  "category": "sport",
+  "target": "families",
+  "price": 30,
+  "duration_hours": 3,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Pedalata tra palazzi barocchi, mercati, giardini e il lungomare del Foro Italico."
+ },
+ {
+  "name": "Orto botanico di Palermo",
+  "city": "Palermo",
+  "category": "nature",
+  "target": "families",
+  "price": 7,
+  "duration_hours": 2,
+  "weekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Giardino del Settecento con alberi tropicali giganti, ficus centenari e piante del mondo."
+ },
+ {
+  "name": "Spettacolo dell'opera dei pupi",
+  "city": "Palermo",
+  "category": "culture",
+  "target": "families",
+  "price": 10,
+  "duration_hours": 1,
+  "weekdays": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "description": "Teatro di marionette siciliane che raccontano le battaglie dei paladini di Carlo Magno."
+ }
+]

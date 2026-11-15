@@ -8,7 +8,7 @@ __pycache__/
 .env
 
 # Local data
-data/
+/data/
 qdrant_storage/
 
 # Editor and OS

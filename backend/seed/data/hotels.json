@@ -1,0 +1,1402 @@
+[
+ {
+  "name": "Capsule Kiwami Shinjuku",
+  "city": "Tokyo",
+  "stars": 2,
+  "base_price": 45,
+  "description": "Capsule moderne a due passi dalla stazione di Shinjuku, ideali per chi viaggia leggero e vuole spendere poco."
+ },
+ {
+  "name": "Asakusa Hanabi Inn",
+  "city": "Tokyo",
+  "stars": 3,
+  "base_price": 85,
+  "description": "Piccolo hotel familiare vicino al tempio Senso-ji, con camere in stile giapponese e tè verde offerto la sera."
+ },
+ {
+  "name": "Ueno Garden Hotel",
+  "city": "Tokyo",
+  "stars": 3,
+  "base_price": 95,
+  "description": "Camere essenziali e silenziose affacciate sul parco di Ueno, comode per musei e mercato di Ameyoko."
+ },
+ {
+  "name": "Shibuya Crossing Tower",
+  "city": "Tokyo",
+  "stars": 4,
+  "base_price": 180,
+  "description": "Hotel di design ai piani alti sopra l'incrocio di Shibuya, con vista notturna sulle luci della città."
+ },
+ {
+  "name": "Ginza Kaede Residence",
+  "city": "Tokyo",
+  "stars": 4,
+  "base_price": 210,
+  "description": "Eleganti suite nel quartiere dello shopping di lusso, con bagno in legno di hinoki e colazione kaiseki."
+ },
+ {
+  "name": "Hotel Sumida Riverside",
+  "city": "Tokyo",
+  "stars": 4,
+  "base_price": 165,
+  "description": "Struttura sul fiume Sumida con vista sulla Skytree e terrazza per l'aperitivo al tramonto."
+ },
+ {
+  "name": "Imperial Moat Palace Tokyo",
+  "city": "Tokyo",
+  "stars": 5,
+  "base_price": 420,
+  "description": "Albergo di gran lusso affacciato sui giardini del Palazzo Imperiale, con spa e ristorante stellato."
+ },
+ {
+  "name": "Namba Backpackers Lodge",
+  "city": "Osaka",
+  "stars": 2,
+  "base_price": 40,
+  "description": "Ostello curato con camerate e stanze private nel cuore di Namba, vicino ai locali di Dotonbori."
+ },
+ {
+  "name": "Hotel Tenma Riverside",
+  "city": "Osaka",
+  "stars": 3,
+  "base_price": 80,
+  "description": "Albergo semplice e luminoso lungo il fiume Okawa, comodo per i treni verso Kyoto e Nara."
+ },
+ {
+  "name": "Umeda Sky Inn",
+  "city": "Osaka",
+  "stars": 3,
+  "base_price": 90,
+  "description": "Camere compatte vicino alla stazione di Umeda, con colazione a buffet giapponese e occidentale."
+ },
+ {
+  "name": "Osaka Castle View Hotel",
+  "city": "Osaka",
+  "stars": 4,
+  "base_price": 170,
+  "description": "Camere ampie con vista sul castello di Osaka e sul parco, piacevole soprattutto durante la fioritura."
+ },
+ {
+  "name": "Kitashinchi Grand Hotel",
+  "city": "Osaka",
+  "stars": 4,
+  "base_price": 190,
+  "description": "Hotel raffinato nel quartiere dei ristoranti di lusso, con bar al trentesimo piano."
+ },
+ {
+  "name": "Ryokan Minami Fuji",
+  "city": "Osaka",
+  "stars": 5,
+  "base_price": 380,
+  "description": "Ryokan di lusso con camere in tatami, bagni privati in pietra e cene kaiseki servite in camera."
+ },
+ {
+  "name": "Susukino Budget Stay",
+  "city": "Sapporo",
+  "stars": 2,
+  "base_price": 38,
+  "description": "Camere semplici nel quartiere dei locali di Susukino, a pochi passi dai ristoranti di ramen."
+ },
+ {
+  "name": "Odori Park Hotel",
+  "city": "Sapporo",
+  "stars": 3,
+  "base_price": 75,
+  "description": "Albergo pratico sul parco Odori, centro del festival della neve e dei mercatini invernali."
+ },
+ {
+  "name": "Hokkaido Pine Lodge",
+  "city": "Sapporo",
+  "stars": 3,
+  "base_price": 85,
+  "description": "Struttura accogliente in legno con camino comune, apprezzata da chi va a sciare nelle stazioni vicine."
+ },
+ {
+  "name": "Sapporo Clock Tower Hotel",
+  "city": "Sapporo",
+  "stars": 4,
+  "base_price": 150,
+  "description": "Hotel elegante vicino alla torre dell'orologio, con colazione a base di latticini e frutti di mare di Hokkaido."
+ },
+ {
+  "name": "Maruyama Forest Resort",
+  "city": "Sapporo",
+  "stars": 4,
+  "base_price": 175,
+  "description": "Resort ai piedi del monte Maruyama, con camere con vista sul bosco e onsen privato su prenotazione."
+ },
+ {
+  "name": "Jozankei Onsen Grand Ryokan",
+  "city": "Sapporo",
+  "stars": 5,
+  "base_price": 360,
+  "description": "Ryokan di lusso nella valle termale di Jozankei, con vasche all'aperto sul fiume e cucina di montagna."
+ },
+ {
+  "name": "Khao San Hostel Club",
+  "city": "Bangkok",
+  "stars": 2,
+  "base_price": 18,
+  "description": "Ostello vivace sulla via dei viaggiatori, con piscina sul tetto e serate organizzate ogni giorno."
+ },
+ {
+  "name": "Riverside Teak House",
+  "city": "Bangkok",
+  "stars": 3,
+  "base_price": 45,
+  "description": "Antica casa in legno di teak sul fiume Chao Phraya, con barca navetta gratuita per i templi."
+ },
+ {
+  "name": "Silom Garden Hotel",
+  "city": "Bangkok",
+  "stars": 3,
+  "base_price": 55,
+  "description": "Hotel tranquillo nel quartiere degli affari, comodo per la metropolitana sopraelevata e i mercati notturni."
+ },
+ {
+  "name": "Sukhumvit Sky Suites",
+  "city": "Bangkok",
+  "stars": 4,
+  "base_price": 110,
+  "description": "Suite moderne con cucina e piscina a sfioro panoramica sopra la zona dei ristoranti internazionali."
+ },
+ {
+  "name": "Chao Phraya Grand",
+  "city": "Bangkok",
+  "stars": 4,
+  "base_price": 125,
+  "description": "Hotel affacciato sul fiume con ristorante thai sulla terrazza e spa con massaggi tradizionali."
+ },
+ {
+  "name": "Siam Royal Orchid Palace",
+  "city": "Bangkok",
+  "stars": 5,
+  "base_price": 260,
+  "description": "Albergo storico di gran lusso, con maggiordomo, giardino tropicale e scuola di cucina interna."
+ },
+ {
+  "name": "Patong Beach Hostel",
+  "city": "Phuket",
+  "stars": 2,
+  "base_price": 20,
+  "description": "Ostello a cento metri dalla spiaggia di Patong, con bar sul tetto e noleggio motorini."
+ },
+ {
+  "name": "Kata Palm Bungalows",
+  "city": "Phuket",
+  "stars": 3,
+  "base_price": 50,
+  "description": "Bungalow tra le palme a pochi passi dalla spiaggia di Kata, con piscina e colazione in giardino."
+ },
+ {
+  "name": "Old Town Sino House",
+  "city": "Phuket",
+  "stars": 3,
+  "base_price": 45,
+  "description": "Hotel in una casa sino-portoghese restaurata nel centro storico colorato di Phuket Town."
+ },
+ {
+  "name": "Karon Bay Resort",
+  "city": "Phuket",
+  "stars": 4,
+  "base_price": 120,
+  "description": "Resort con piscine a cascata e camere vista mare sulla baia di Karon, ideale per famiglie."
+ },
+ {
+  "name": "Kamala Cliff Villas",
+  "city": "Phuket",
+  "stars": 4,
+  "base_price": 150,
+  "description": "Ville con piscina privata sulla scogliera di Kamala, con tramonti sul mare delle Andamane."
+ },
+ {
+  "name": "Andaman Pearl Resort & Spa",
+  "city": "Phuket",
+  "stars": 5,
+  "base_price": 320,
+  "description": "Resort di lusso su una spiaggia privata, con spa nella giungla e ristorante sul pontile."
+ },
+ {
+  "name": "Nimman Hostel",
+  "city": "Chiang Mai",
+  "stars": 2,
+  "base_price": 15,
+  "description": "Ostello di design nel quartiere dei caffè di Nimmanhaemin, con biciclette gratuite per gli ospiti."
+ },
+ {
+  "name": "Old City Lanna House",
+  "city": "Chiang Mai",
+  "stars": 3,
+  "base_price": 40,
+  "description": "Casa in stile Lanna dentro le antiche mura, con cortile di frangipani e colazione thai."
+ },
+ {
+  "name": "Ping River Boutique",
+  "city": "Chiang Mai",
+  "stars": 3,
+  "base_price": 50,
+  "description": "Piccolo albergo sul fiume Ping con amache sulla veranda e terrazza per la colazione."
+ },
+ {
+  "name": "Doi Suthep Mountain Lodge",
+  "city": "Chiang Mai",
+  "stars": 4,
+  "base_price": 95,
+  "description": "Lodge immerso nel verde ai piedi della montagna sacra, con piscina di acqua di fonte."
+ },
+ {
+  "name": "Chiang Mai Rice Terrace Resort",
+  "city": "Chiang Mai",
+  "stars": 4,
+  "base_price": 130,
+  "description": "Resort con ville affacciate su risaie e lezioni di yoga al mattino."
+ },
+ {
+  "name": "Lanna Royal Retreat",
+  "city": "Chiang Mai",
+  "stars": 5,
+  "base_price": 280,
+  "description": "Ritiro di lusso tra le colline, con spa ispirata alla medicina tradizionale del nord e cucina degli chef locali."
+ },
+ {
+  "name": "Harlem Brownstone Hostel",
+  "city": "New York",
+  "stars": 2,
+  "base_price": 60,
+  "description": "Ostello in una casa in pietra arenaria di Harlem, vicino alla metropolitana e ai locali di jazz."
+ },
+ {
+  "name": "Brooklyn Bridge Inn",
+  "city": "New York",
+  "stars": 3,
+  "base_price": 150,
+  "description": "Albergo semplice a Dumbo, sotto il ponte di Brooklyn, con vista sullo skyline di Manhattan."
+ },
+ {
+  "name": "Midtown Pocket Hotel",
+  "city": "New York",
+  "stars": 3,
+  "base_price": 170,
+  "description": "Camere piccole ma curate a due isolati da Times Square, con lounge aperta tutto il giorno."
+ },
+ {
+  "name": "Chelsea Highline Suites",
+  "city": "New York",
+  "stars": 4,
+  "base_price": 280,
+  "description": "Hotel moderno accanto alla High Line, con terrazza sul tetto e camere luminose."
+ },
+ {
+  "name": "SoHo Cast Iron Hotel",
+  "city": "New York",
+  "stars": 4,
+  "base_price": 320,
+  "description": "Edificio industriale in ghisa trasformato in hotel di design tra le gallerie di SoHo."
+ },
+ {
+  "name": "Upper West Park Hotel",
+  "city": "New York",
+  "stars": 4,
+  "base_price": 260,
+  "description": "Albergo elegante vicino a Central Park e al Museo di storia naturale, perfetto per le famiglie."
+ },
+ {
+  "name": "Fifth Avenue Plaza Royale",
+  "city": "New York",
+  "stars": 5,
+  "base_price": 650,
+  "description": "Hotel di gran lusso sulla Quinta Strada, con suite su Central Park e servizio di maggiordomo."
+ },
+ {
+  "name": "Haight Street Hostel",
+  "city": "San Francisco",
+  "stars": 2,
+  "base_price": 55,
+  "description": "Ostello colorato nel quartiere hippie di Haight-Ashbury, con colazione e tour a piedi gratuiti."
+ },
+ {
+  "name": "Mission District Inn",
+  "city": "San Francisco",
+  "stars": 3,
+  "base_price": 140,
+  "description": "Hotel semplice tra i murales e le taquerie del Mission, vicino al parco Dolores."
+ },
+ {
+  "name": "Nob Hill Cable Car Hotel",
+  "city": "San Francisco",
+  "stars": 3,
+  "base_price": 160,
+  "description": "Camere classiche sulla collina di Nob Hill, con la fermata del cable car davanti alla porta."
+ },
+ {
+  "name": "Fisherman's Wharf Bayview",
+  "city": "San Francisco",
+  "stars": 4,
+  "base_price": 230,
+  "description": "Hotel sul lungomare con vista su Alcatraz e sui leoni marini del molo 39."
+ },
+ {
+  "name": "Union Square Grand",
+  "city": "San Francisco",
+  "stars": 4,
+  "base_price": 260,
+  "description": "Albergo storico ristrutturato vicino ai negozi e ai teatri di Union Square."
+ },
+ {
+  "name": "Golden Gate Heights Resort",
+  "city": "San Francisco",
+  "stars": 5,
+  "base_price": 520,
+  "description": "Hotel di lusso con vista sul Golden Gate, spa e ristorante di cucina californiana."
+ },
+ {
+  "name": "South Beach Surf Hostel",
+  "city": "Miami",
+  "stars": 2,
+  "base_price": 50,
+  "description": "Ostello a un isolato dalla spiaggia, con piscina, tavole da surf e serate in compagnia."
+ },
+ {
+  "name": "Little Havana Casa",
+  "city": "Miami",
+  "stars": 3,
+  "base_price": 120,
+  "description": "Piccolo hotel colorato tra i caffè cubani e i giocatori di domino di Calle Ocho."
+ },
+ {
+  "name": "Wynwood Art Hotel",
+  "city": "Miami",
+  "stars": 3,
+  "base_price": 140,
+  "description": "Albergo ispirato all'arte di strada nel quartiere dei murales di Wynwood."
+ },
+ {
+  "name": "Ocean Drive Deco Hotel",
+  "city": "Miami",
+  "stars": 4,
+  "base_price": 240,
+  "description": "Hotel art déco color pastello sul lungomare di South Beach, con terrazza e bar sulla spiaggia."
+ },
+ {
+  "name": "Brickell Bay Tower",
+  "city": "Miami",
+  "stars": 4,
+  "base_price": 220,
+  "description": "Camere moderne in un grattacielo del centro, con piscina panoramica sulla baia di Biscayne."
+ },
+ {
+  "name": "Key Biscayne Ocean Resort",
+  "city": "Miami",
+  "stars": 5,
+  "base_price": 480,
+  "description": "Resort di lusso su un'isola tranquilla, con spiaggia privata, spa e ristorante di pesce."
+ },
+ {
+  "name": "Malasaña Hostel",
+  "city": "Madrid",
+  "stars": 2,
+  "base_price": 30,
+  "description": "Ostello allegro nel quartiere alternativo di Malasaña, tra negozi vintage e bar di musica indie."
+ },
+ {
+  "name": "Hostal Puerta del Sol",
+  "city": "Madrid",
+  "stars": 2,
+  "base_price": 50,
+  "description": "Pensione semplice e pulita in un palazzo storico a pochi passi dalla piazza centrale di Madrid."
+ },
+ {
+  "name": "Hotel Lavapiés Plaza",
+  "city": "Madrid",
+  "stars": 3,
+  "base_price": 80,
+  "description": "Albergo moderno nel quartiere multiculturale di Lavapiés, vicino al museo Reina Sofía."
+ },
+ {
+  "name": "Gran Vía Mirador",
+  "city": "Madrid",
+  "stars": 4,
+  "base_price": 150,
+  "description": "Hotel con terrazza sul tetto affacciata sulla Gran Vía, ideale per un cocktail al tramonto."
+ },
+ {
+  "name": "Retiro Park Residence",
+  "city": "Madrid",
+  "stars": 4,
+  "base_price": 170,
+  "description": "Camere eleganti di fronte al parco del Retiro, a pochi minuti dal Prado."
+ },
+ {
+  "name": "Palacio de la Castellana",
+  "city": "Madrid",
+  "stars": 5,
+  "base_price": 340,
+  "description": "Palazzo nobiliare dell'Ottocento trasformato in hotel di lusso, con spa e cortile interno."
+ },
+ {
+  "name": "Gràcia Garden Hostel",
+  "city": "Barcellona",
+  "stars": 2,
+  "base_price": 35,
+  "description": "Ostello con giardino nel quartiere bohémien di Gràcia, tra piazzette e bar con i tavoli all'aperto."
+ },
+ {
+  "name": "Barri Gòtic Inn",
+  "city": "Barcellona",
+  "stars": 3,
+  "base_price": 95,
+  "description": "Piccolo albergo in un vicolo del quartiere gotico, a pochi passi dalla cattedrale."
+ },
+ {
+  "name": "Hotel Eixample Modernista",
+  "city": "Barcellona",
+  "stars": 3,
+  "base_price": 110,
+  "description": "Camere luminose in un palazzo modernista con soffitti decorati, vicino al Passeig de Gràcia."
+ },
+ {
+  "name": "Barceloneta Beach Hotel",
+  "city": "Barcellona",
+  "stars": 4,
+  "base_price": 190,
+  "description": "Hotel sul lungomare della Barceloneta con piscina sul tetto e vista sul porto."
+ },
+ {
+  "name": "Sagrada Vista Suites",
+  "city": "Barcellona",
+  "stars": 4,
+  "base_price": 170,
+  "description": "Suite moderne con terrazza da cui si vedono le torri della Sagrada Família."
+ },
+ {
+  "name": "Montjuïc Palace",
+  "city": "Barcellona",
+  "stars": 5,
+  "base_price": 380,
+  "description": "Albergo di lusso sulla collina di Montjuïc, con giardini, spa e vista sulla città e sul mare."
+ },
+ {
+  "name": "Triana Hostel",
+  "city": "Siviglia",
+  "stars": 2,
+  "base_price": 28,
+  "description": "Ostello nel quartiere dei ceramisti e del flamenco, dall'altra parte del fiume Guadalquivir."
+ },
+ {
+  "name": "Hostal Santa Cruz",
+  "city": "Siviglia",
+  "stars": 2,
+  "base_price": 55,
+  "description": "Pensione con patio fiorito nel vecchio quartiere ebraico, tra vicoli bianchi e aranci."
+ },
+ {
+  "name": "Hotel Alameda",
+  "city": "Siviglia",
+  "stars": 3,
+  "base_price": 85,
+  "description": "Albergo moderno sulla piazza più vivace della città, circondato da bar e ristoranti."
+ },
+ {
+  "name": "Casa Palacio Giralda",
+  "city": "Siviglia",
+  "stars": 4,
+  "base_price": 160,
+  "description": "Palazzo andaluso con patio di marmo e terrazza con vista sulla Giralda."
+ },
+ {
+  "name": "Hotel Río Guadalquivir",
+  "city": "Siviglia",
+  "stars": 4,
+  "base_price": 140,
+  "description": "Camere affacciate sul fiume e sulla Torre del Oro, con piscina sul tetto."
+ },
+ {
+  "name": "Real Alcázar Palace Hotel",
+  "city": "Siviglia",
+  "stars": 5,
+  "base_price": 320,
+  "description": "Albergo di lusso in stile neomoresco, con giardini, fontane e una cucina andalusa raffinata."
+ },
+ {
+  "name": "Bairro Alto Hostel",
+  "city": "Lisbona",
+  "stars": 2,
+  "base_price": 30,
+  "description": "Ostello con terrazza sul quartiere della vita notturna, a pochi minuti dai miradouros."
+ },
+ {
+  "name": "Alfama Guesthouse",
+  "city": "Lisbona",
+  "stars": 2,
+  "base_price": 55,
+  "description": "Piccola pensione tra le stradine dell'Alfama, dove la sera si sente il fado dalle finestre."
+ },
+ {
+  "name": "Hotel Baixa Pombalina",
+  "city": "Lisbona",
+  "stars": 3,
+  "base_price": 90,
+  "description": "Albergo nel quartiere ricostruito dopo il terremoto, comodo per tram e traghetti."
+ },
+ {
+  "name": "Chiado Design Hotel",
+  "city": "Lisbona",
+  "stars": 4,
+  "base_price": 160,
+  "description": "Hotel elegante tra librerie e caffè storici del Chiado, con terrazza sul fiume Tago."
+ },
+ {
+  "name": "Belém River Lodge",
+  "city": "Lisbona",
+  "stars": 4,
+  "base_price": 140,
+  "description": "Struttura moderna vicino al Monastero dos Jerónimos e alle pasticcerie di Belém."
+ },
+ {
+  "name": "Palácio do Tejo",
+  "city": "Lisbona",
+  "stars": 5,
+  "base_price": 330,
+  "description": "Palazzo storico con piscina, giardini e vista sul ponte 25 de Abril."
+ },
+ {
+  "name": "Ribeira Hostel",
+  "city": "Porto",
+  "stars": 2,
+  "base_price": 25,
+  "description": "Ostello in un edificio colorato sul lungofiume, con terrazza sul ponte Dom Luís I."
+ },
+ {
+  "name": "Casa dos Clérigos",
+  "city": "Porto",
+  "stars": 3,
+  "base_price": 75,
+  "description": "Guesthouse con stanze in legno vicino alla Torre dos Clérigos e alla libreria Lello."
+ },
+ {
+  "name": "Hotel Bolhão",
+  "city": "Porto",
+  "stars": 3,
+  "base_price": 80,
+  "description": "Albergo moderno accanto al mercato del Bolhão, nel centro commerciale della città."
+ },
+ {
+  "name": "Douro River Suites",
+  "city": "Porto",
+  "stars": 4,
+  "base_price": 140,
+  "description": "Suite eleganti affacciate sul fiume e sulle cantine di Vila Nova de Gaia."
+ },
+ {
+  "name": "Foz Ocean Hotel",
+  "city": "Porto",
+  "stars": 4,
+  "base_price": 130,
+  "description": "Hotel sulla foce del fiume Douro, dove la città incontra l'oceano e le spiagge."
+ },
+ {
+  "name": "Palácio das Cardosas",
+  "city": "Porto",
+  "stars": 5,
+  "base_price": 290,
+  "description": "Palazzo storico in piazza della Libertà trasformato in albergo di lusso con spa."
+ },
+ {
+  "name": "Faro Old Town Hostel",
+  "city": "Faro",
+  "stars": 2,
+  "base_price": 25,
+  "description": "Ostello dentro le mura della città vecchia, con terrazza da cui si vedono le cicogne."
+ },
+ {
+  "name": "Casa da Ria",
+  "city": "Faro",
+  "stars": 3,
+  "base_price": 70,
+  "description": "Guesthouse affacciata sulla laguna della Ria Formosa, con colazione a base di frutta dell'Algarve."
+ },
+ {
+  "name": "Hotel Marina Faro",
+  "city": "Faro",
+  "stars": 3,
+  "base_price": 85,
+  "description": "Albergo moderno sul porticciolo, vicino ai battelli per le isole."
+ },
+ {
+  "name": "Algarve Cliffs Resort",
+  "city": "Faro",
+  "stars": 4,
+  "base_price": 160,
+  "description": "Resort con piscine sulla scogliera, a pochi minuti dalle calette dorate dell'Algarve."
+ },
+ {
+  "name": "Vilamoura Golf Hotel",
+  "city": "Faro",
+  "stars": 4,
+  "base_price": 150,
+  "description": "Hotel tra i campi da golf di Vilamoura, con spa e spiaggia privata."
+ },
+ {
+  "name": "Quinta do Algarve Palace",
+  "city": "Faro",
+  "stars": 5,
+  "base_price": 300,
+  "description": "Tenuta di lusso tra aranceti e mare, con ville private e cucina di pesce."
+ },
+ {
+  "name": "Montmartre Hostel",
+  "city": "Parigi",
+  "stars": 2,
+  "base_price": 45,
+  "description": "Ostello ai piedi della collina di Montmartre, con bar e terrazza sui tetti di Parigi."
+ },
+ {
+  "name": "Hôtel du Canal Saint-Martin",
+  "city": "Parigi",
+  "stars": 3,
+  "base_price": 130,
+  "description": "Albergo semplice sul canale, tra bistrot, panetterie e negozi di design."
+ },
+ {
+  "name": "Hôtel Latin Quarter",
+  "city": "Parigi",
+  "stars": 3,
+  "base_price": 140,
+  "description": "Camere piccole e accoglienti nel quartiere latino, a pochi passi da Notre-Dame."
+ },
+ {
+  "name": "Le Marais Boutique",
+  "city": "Parigi",
+  "stars": 4,
+  "base_price": 230,
+  "description": "Hotel di charme in un palazzo del Seicento del Marais, con cortile e colazione con croissant caldi."
+ },
+ {
+  "name": "Hôtel Tour Eiffel Vue",
+  "city": "Parigi",
+  "stars": 4,
+  "base_price": 260,
+  "description": "Camere con balcone da cui si vede la Torre Eiffel, nel quartiere tranquillo del Champ de Mars."
+ },
+ {
+  "name": "Palais Vendôme Paris",
+  "city": "Parigi",
+  "stars": 5,
+  "base_price": 720,
+  "description": "Albergo di gran lusso su place Vendôme, con spa, ristorante stellato e suite storiche."
+ },
+ {
+  "name": "Vieux Nice Hostel",
+  "city": "Nizza",
+  "stars": 2,
+  "base_price": 35,
+  "description": "Ostello nella città vecchia, tra i vicoli colorati e il mercato dei fiori."
+ },
+ {
+  "name": "Hôtel Port Lympia",
+  "city": "Nizza",
+  "stars": 3,
+  "base_price": 110,
+  "description": "Albergo affacciato sul porto, con barche e yacht davanti alle finestre."
+ },
+ {
+  "name": "Hôtel Garibaldi",
+  "city": "Nizza",
+  "stars": 3,
+  "base_price": 100,
+  "description": "Camere semplici sulla piazza Garibaldi, punto di partenza per i tram verso la spiaggia."
+ },
+ {
+  "name": "Promenade Azur Hotel",
+  "city": "Nizza",
+  "stars": 4,
+  "base_price": 210,
+  "description": "Hotel sulla Promenade des Anglais con terrazza vista mare e spiaggia privata."
+ },
+ {
+  "name": "Cimiez Belle Époque",
+  "city": "Nizza",
+  "stars": 4,
+  "base_price": 180,
+  "description": "Villa Belle Époque sulla collina di Cimiez, vicino al museo Matisse, con giardino e piscina."
+ },
+ {
+  "name": "Riviera Grand Palace",
+  "city": "Nizza",
+  "stars": 5,
+  "base_price": 520,
+  "description": "Albergo storico di lusso sul mare, con cupola rosa, spiaggia privata e ristorante stellato."
+ },
+ {
+  "name": "Croix-Rousse Hostel",
+  "city": "Lione",
+  "stars": 2,
+  "base_price": 30,
+  "description": "Ostello sulla collina dei setaioli, con terrazza e vista sui tetti di Lione."
+ },
+ {
+  "name": "Hôtel Vieux Lyon",
+  "city": "Lione",
+  "stars": 3,
+  "base_price": 95,
+  "description": "Albergo in un palazzo rinascimentale della città vecchia, con cortile e scala a chiocciola."
+ },
+ {
+  "name": "Hôtel Presqu'île",
+  "city": "Lione",
+  "stars": 3,
+  "base_price": 90,
+  "description": "Camere moderne sulla penisola tra i due fiumi, vicino ai negozi e ai teatri."
+ },
+ {
+  "name": "Hôtel Fourvière Panorama",
+  "city": "Lione",
+  "stars": 4,
+  "base_price": 170,
+  "description": "Hotel in un antico convento sulla collina di Fourvière, con vista su tutta la città."
+ },
+ {
+  "name": "Confluence River Hotel",
+  "city": "Lione",
+  "stars": 4,
+  "base_price": 150,
+  "description": "Albergo di design nel quartiere contemporaneo dove si incontrano Rodano e Saona."
+ },
+ {
+  "name": "Grand Hôtel des Soyeux",
+  "city": "Lione",
+  "stars": 5,
+  "base_price": 330,
+  "description": "Albergo di lusso in un palazzo ottocentesco, con un ristorante del grande chef della città."
+ },
+ {
+  "name": "Plaka Rooftop Hostel",
+  "city": "Atene",
+  "stars": 2,
+  "base_price": 28,
+  "description": "Ostello nel quartiere della Plaka con una terrazza da cui si vede l'Acropoli illuminata."
+ },
+ {
+  "name": "Hotel Monastiraki",
+  "city": "Atene",
+  "stars": 3,
+  "base_price": 80,
+  "description": "Albergo semplice sulla piazza del mercato delle pulci, comodo per la metropolitana."
+ },
+ {
+  "name": "Koukaki Home Hotel",
+  "city": "Atene",
+  "stars": 3,
+  "base_price": 85,
+  "description": "Camere accoglienti nel quartiere residenziale sotto l'Acropoli, tra caffè e panetterie."
+ },
+ {
+  "name": "Syntagma Grand View",
+  "city": "Atene",
+  "stars": 4,
+  "base_price": 160,
+  "description": "Hotel elegante sulla piazza del Parlamento, con piscina sul tetto e cambio della guardia sotto le finestre."
+ },
+ {
+  "name": "Athens Riviera Suites",
+  "city": "Atene",
+  "stars": 4,
+  "base_price": 150,
+  "description": "Suite sul mare della riviera di Atene, a mezz'ora dal centro e vicino alle spiagge."
+ },
+ {
+  "name": "Acropolis Royal Palace",
+  "city": "Atene",
+  "stars": 5,
+  "base_price": 350,
+  "description": "Albergo di lusso con ristorante panoramico di fronte al Partenone e spa con prodotti all'olio d'oliva."
+ },
+ {
+  "name": "Perissa Beach Hostel",
+  "city": "Santorini",
+  "stars": 2,
+  "base_price": 30,
+  "description": "Ostello vicino alla spiaggia di sabbia nera di Perissa, con piscina e serate in compagnia."
+ },
+ {
+  "name": "Kamari Blue Studios",
+  "city": "Santorini",
+  "stars": 3,
+  "base_price": 90,
+  "description": "Studi con cucina a pochi passi dalla spiaggia di Kamari e dai suoi ristoranti."
+ },
+ {
+  "name": "Fira Cave Rooms",
+  "city": "Santorini",
+  "stars": 3,
+  "base_price": 120,
+  "description": "Camere scavate nella roccia vulcanica sopra la caldera, nella città principale dell'isola."
+ },
+ {
+  "name": "Imerovigli Sunset Suites",
+  "city": "Santorini",
+  "stars": 4,
+  "base_price": 280,
+  "description": "Suite bianche con vasca idromassaggio privata affacciata sulla caldera e sul vulcano."
+ },
+ {
+  "name": "Pyrgos Vineyard Hotel",
+  "city": "Santorini",
+  "stars": 4,
+  "base_price": 220,
+  "description": "Hotel tra le vigne del villaggio più alto dell'isola, con degustazioni di vino Assyrtiko."
+ },
+ {
+  "name": "Oia Cliff Palace",
+  "city": "Santorini",
+  "stars": 5,
+  "base_price": 650,
+  "description": "Albergo di gran lusso a Oia, con piscina a sfioro sulla caldera e i tramonti più famosi del mondo."
+ },
+ {
+  "name": "Heraklion Port Hostel",
+  "city": "Heraklion",
+  "stars": 2,
+  "base_price": 25,
+  "description": "Ostello vicino al porto veneziano, comodo per i traghetti e per il centro."
+ },
+ {
+  "name": "Hotel Lions Square",
+  "city": "Heraklion",
+  "stars": 3,
+  "base_price": 70,
+  "description": "Albergo sulla piazza della fontana dei leoni, cuore della città cretese."
+ },
+ {
+  "name": "Hersonissos Beach Hotel",
+  "city": "Heraklion",
+  "stars": 3,
+  "base_price": 80,
+  "description": "Albergo sulla spiaggia di Hersonissos, con piscina e animazione per bambini."
+ },
+ {
+  "name": "Knossos Olive Grove Resort",
+  "city": "Heraklion",
+  "stars": 4,
+  "base_price": 150,
+  "description": "Resort tra gli ulivi vicino al palazzo di Cnosso, con piscina e cucina cretese."
+ },
+ {
+  "name": "Elounda Bay Suites",
+  "city": "Heraklion",
+  "stars": 4,
+  "base_price": 200,
+  "description": "Suite sulla baia di Elounda con vista sull'isola di Spinalonga."
+ },
+ {
+  "name": "Minoan Royal Resort",
+  "city": "Heraklion",
+  "stars": 5,
+  "base_price": 420,
+  "description": "Resort di lusso con spiaggia privata, ville con piscina e spa ispirata alla medicina antica."
+ },
+ {
+  "name": "Reykjavik Harbour Hostel",
+  "city": "Reykjavik",
+  "stars": 2,
+  "base_price": 45,
+  "description": "Ostello vicino al porto vecchio, con cucina comune e partenze delle escursioni davanti alla porta."
+ },
+ {
+  "name": "Laugavegur Guesthouse",
+  "city": "Reykjavik",
+  "stars": 3,
+  "base_price": 140,
+  "description": "Guesthouse sulla via principale dello shopping, con camere calde e colazione nordica."
+ },
+ {
+  "name": "Hotel Hallgrímskirkja",
+  "city": "Reykjavik",
+  "stars": 3,
+  "base_price": 150,
+  "description": "Albergo semplice ai piedi della grande chiesa di cemento, simbolo della città."
+ },
+ {
+  "name": "Harpa Bay Hotel",
+  "city": "Reykjavik",
+  "stars": 4,
+  "base_price": 260,
+  "description": "Hotel moderno vicino alla sala concerti Harpa, con vista sulla baia e sulle montagne."
+ },
+ {
+  "name": "Northern Lights Lodge",
+  "city": "Reykjavik",
+  "stars": 4,
+  "base_price": 240,
+  "description": "Lodge fuori città con vetrate panoramiche per vedere l'aurora boreale dal letto."
+ },
+ {
+  "name": "Reykjavik Edition Palace",
+  "city": "Reykjavik",
+  "stars": 5,
+  "base_price": 520,
+  "description": "Albergo di lusso sul porto, con spa geotermica e ristorante di cucina islandese contemporanea."
+ },
+ {
+  "name": "Akureyri Backpackers",
+  "city": "Akureyri",
+  "stars": 2,
+  "base_price": 50,
+  "description": "Ostello in centro con bar, sauna e banco escursioni, molto amato dai viaggiatori."
+ },
+ {
+  "name": "Guesthouse Fjord View",
+  "city": "Akureyri",
+  "stars": 3,
+  "base_price": 130,
+  "description": "Guesthouse sulla collina con vista sul fiordo di Eyjafjörður e sulle montagne innevate."
+ },
+ {
+  "name": "Hotel Botanical Garden",
+  "city": "Akureyri",
+  "stars": 3,
+  "base_price": 140,
+  "description": "Albergo vicino al giardino botanico più a nord del mondo, con camere luminose."
+ },
+ {
+  "name": "Akureyri Harbour Hotel",
+  "city": "Akureyri",
+  "stars": 4,
+  "base_price": 220,
+  "description": "Hotel moderno sul porto, da cui partono le barche per l'avvistamento delle balene."
+ },
+ {
+  "name": "Mývatn Lake Lodge",
+  "city": "Akureyri",
+  "stars": 4,
+  "base_price": 240,
+  "description": "Lodge sul lago Mývatn, circondato da crateri e terme naturali, a un'ora dalla città."
+ },
+ {
+  "name": "North Iceland Grand Hotel",
+  "city": "Akureyri",
+  "stars": 5,
+  "base_price": 420,
+  "description": "Albergo di lusso con spa, piscina calda all'aperto e ristorante di agnello e salmerino."
+ },
+ {
+  "name": "Egilsstaðir Farm Hostel",
+  "city": "Egilsstaðir",
+  "stars": 2,
+  "base_price": 45,
+  "description": "Ostello in una vecchia fattoria vicino al lago Lagarfljót, con animali e cucina comune."
+ },
+ {
+  "name": "Lake Lagarfljót Guesthouse",
+  "city": "Egilsstaðir",
+  "stars": 3,
+  "base_price": 120,
+  "description": "Guesthouse affacciata sul lago del mostro leggendario, con colazione di prodotti della fattoria."
+ },
+ {
+  "name": "East Fjords Inn",
+  "city": "Egilsstaðir",
+  "stars": 3,
+  "base_price": 130,
+  "description": "Locanda in legno nella cittadina principale dell'Islanda orientale, comoda per i fiordi."
+ },
+ {
+  "name": "Hallormsstaður Forest Hotel",
+  "city": "Egilsstaðir",
+  "stars": 4,
+  "base_price": 200,
+  "description": "Hotel nella foresta più grande d'Islanda, con piscina e sentieri tra le betulle."
+ },
+ {
+  "name": "Seyðisfjörður Fjord Hotel",
+  "city": "Egilsstaðir",
+  "stars": 4,
+  "base_price": 210,
+  "description": "Albergo nel villaggio di artisti di Seyðisfjörður, sul fiordo circondato da cascate."
+ },
+ {
+  "name": "Vök Baths Retreat",
+  "city": "Egilsstaðir",
+  "stars": 5,
+  "base_price": 380,
+  "description": "Ritiro di lusso accanto alle piscine galleggianti sul lago, con cucina a base di erbe di montagna."
+ },
+ {
+  "name": "Camden Lock Hostel",
+  "city": "Londra",
+  "stars": 2,
+  "base_price": 40,
+  "description": "Ostello vicino al mercato di Camden, con bar e concerti nel quartiere della musica alternativa."
+ },
+ {
+  "name": "Southwark Budget Inn",
+  "city": "Londra",
+  "stars": 3,
+  "base_price": 120,
+  "description": "Albergo semplice vicino al Borough Market e alla Tate Modern, sulla riva sud del Tamigi."
+ },
+ {
+  "name": "Kensington Townhouse",
+  "city": "Londra",
+  "stars": 3,
+  "base_price": 140,
+  "description": "Camere in una casa vittoriana bianca vicino ai musei di South Kensington."
+ },
+ {
+  "name": "Shoreditch Loft Hotel",
+  "city": "Londra",
+  "stars": 4,
+  "base_price": 220,
+  "description": "Hotel in un vecchio magazzino del quartiere creativo, con terrazza e cocktail bar."
+ },
+ {
+  "name": "Covent Garden Theatre Hotel",
+  "city": "Londra",
+  "stars": 4,
+  "base_price": 260,
+  "description": "Albergo elegante tra i teatri del West End, ideale per una serata di musical."
+ },
+ {
+  "name": "The Thames Royal",
+  "city": "Londra",
+  "stars": 5,
+  "base_price": 580,
+  "description": "Albergo di gran lusso sul Tamigi, con vista sul Parlamento e tè del pomeriggio leggendario."
+ },
+ {
+  "name": "Royal Mile Backpackers",
+  "city": "Edimburgo",
+  "stars": 2,
+  "base_price": 35,
+  "description": "Ostello sul Royal Mile, la via che collega il castello al palazzo reale."
+ },
+ {
+  "name": "Grassmarket Inn",
+  "city": "Edimburgo",
+  "stars": 3,
+  "base_price": 110,
+  "description": "Locanda nella piazza ai piedi del castello, tra pub antichi e ristoranti."
+ },
+ {
+  "name": "Leith Shore Hotel",
+  "city": "Edimburgo",
+  "stars": 3,
+  "base_price": 100,
+  "description": "Albergo sul porto di Leith, quartiere dei ristoranti di pesce e delle vecchie navi."
+ },
+ {
+  "name": "New Town Georgian Hotel",
+  "city": "Edimburgo",
+  "stars": 4,
+  "base_price": 190,
+  "description": "Camere eleganti in una casa georgiana della città nuova, patrimonio Unesco."
+ },
+ {
+  "name": "Calton Hill View Hotel",
+  "city": "Edimburgo",
+  "stars": 4,
+  "base_price": 170,
+  "description": "Hotel con vista sulla collina dei monumenti e sulla città vecchia illuminata."
+ },
+ {
+  "name": "The Scottish Baronial Palace",
+  "city": "Edimburgo",
+  "stars": 5,
+  "base_price": 420,
+  "description": "Albergo di lusso in un palazzo nobiliare, con whisky bar e spa con prodotti delle Highlands."
+ },
+ {
+  "name": "Northern Quarter Hostel",
+  "city": "Manchester",
+  "stars": 2,
+  "base_price": 30,
+  "description": "Ostello nel quartiere dei murales e dei negozi di dischi, cuore della città alternativa."
+ },
+ {
+  "name": "Deansgate Inn",
+  "city": "Manchester",
+  "stars": 3,
+  "base_price": 90,
+  "description": "Albergo semplice sulla via principale, vicino ai ristoranti e alle stazioni."
+ },
+ {
+  "name": "Salford Quays Hotel",
+  "city": "Manchester",
+  "stars": 3,
+  "base_price": 95,
+  "description": "Hotel sui vecchi moli trasformati, vicino ai teatri e agli studi della BBC."
+ },
+ {
+  "name": "Spinningfields Hotel",
+  "city": "Manchester",
+  "stars": 4,
+  "base_price": 160,
+  "description": "Albergo moderno nel quartiere degli affari, con bar sul tetto e cocktail."
+ },
+ {
+  "name": "Castlefield Canal Hotel",
+  "city": "Manchester",
+  "stars": 4,
+  "base_price": 150,
+  "description": "Hotel tra i canali e i ponti in ferro del quartiere industriale restaurato."
+ },
+ {
+  "name": "Victoria Grand Manchester",
+  "city": "Manchester",
+  "stars": 5,
+  "base_price": 300,
+  "description": "Albergo di lusso in un palazzo vittoriano, con spa e ristorante di cucina britannica."
+ },
+ {
+  "name": "Jordaan Canal Hostel",
+  "city": "Amsterdam",
+  "stars": 2,
+  "base_price": 45,
+  "description": "Ostello in una casa sul canale del Jordaan, con biciclette a noleggio e colazione."
+ },
+ {
+  "name": "Hotel De Pijp",
+  "city": "Amsterdam",
+  "stars": 3,
+  "base_price": 130,
+  "description": "Albergo semplice nel quartiere del mercato Albert Cuyp, pieno di caffè e ristoranti."
+ },
+ {
+  "name": "Houseboat Prinsengracht",
+  "city": "Amsterdam",
+  "stars": 3,
+  "base_price": 150,
+  "description": "Camere su una casa galleggiante ormeggiata su uno dei canali più belli della città."
+ },
+ {
+  "name": "Museumplein Hotel",
+  "city": "Amsterdam",
+  "stars": 4,
+  "base_price": 230,
+  "description": "Hotel elegante a pochi passi dal Rijksmuseum e dal museo Van Gogh."
+ },
+ {
+  "name": "Amsterdam Canal Ring Suites",
+  "city": "Amsterdam",
+  "stars": 4,
+  "base_price": 250,
+  "description": "Suite in una casa del Seicento sul canale, con travi a vista e giardino interno."
+ },
+ {
+  "name": "Dam Palace Amsterdam",
+  "city": "Amsterdam",
+  "stars": 5,
+  "base_price": 480,
+  "description": "Albergo di gran lusso in un palazzo storico sulla piazza Dam, con spa e ristorante stellato."
+ },
+ {
+  "name": "Rotterdam Cube Hostel",
+  "city": "Rotterdam",
+  "stars": 2,
+  "base_price": 35,
+  "description": "Ostello dentro le famose case cubo gialle, un'esperienza architettonica unica."
+ },
+ {
+  "name": "Witte de With Hotel",
+  "city": "Rotterdam",
+  "stars": 3,
+  "base_price": 100,
+  "description": "Albergo semplice sulla via dei musei, dei bar e dei ristoranti alla moda."
+ },
+ {
+  "name": "Kop van Zuid Inn",
+  "city": "Rotterdam",
+  "stars": 3,
+  "base_price": 110,
+  "description": "Hotel moderno sulla penisola dei grattacieli, vicino al ponte Erasmus."
+ },
+ {
+  "name": "SS Rotterdam Hotel",
+  "city": "Rotterdam",
+  "stars": 4,
+  "base_price": 150,
+  "description": "Camere su un transatlantico degli anni Cinquanta ormeggiato nel porto."
+ },
+ {
+  "name": "Markthal View Hotel",
+  "city": "Rotterdam",
+  "stars": 4,
+  "base_price": 170,
+  "description": "Hotel vicino al mercato coperto più spettacolare d'Europa, con vista sul vecchio porto."
+ },
+ {
+  "name": "Erasmus Grand Rotterdam",
+  "city": "Rotterdam",
+  "stars": 5,
+  "base_price": 300,
+  "description": "Albergo di lusso in un grattacielo, con spa e ristorante panoramico sulla Mosa."
+ },
+ {
+  "name": "Strijp Design Hostel",
+  "city": "Eindhoven",
+  "stars": 2,
+  "base_price": 30,
+  "description": "Ostello in un'ex fabbrica della Philips, nel quartiere del design e delle start-up."
+ },
+ {
+  "name": "Hotel Stratumseind",
+  "city": "Eindhoven",
+  "stars": 3,
+  "base_price": 85,
+  "description": "Albergo semplice sulla via dei bar più lunga dei Paesi Bassi."
+ },
+ {
+  "name": "Eindhoven Central Inn",
+  "city": "Eindhoven",
+  "stars": 3,
+  "base_price": 90,
+  "description": "Hotel moderno vicino alla stazione, comodo per le gite nel Brabante."
+ },
+ {
+  "name": "Light Tower Hotel",
+  "city": "Eindhoven",
+  "stars": 4,
+  "base_price": 140,
+  "description": "Albergo nella torre della luce, simbolo della storia industriale della città."
+ },
+ {
+  "name": "Genneper Park Lodge",
+  "city": "Eindhoven",
+  "stars": 4,
+  "base_price": 130,
+  "description": "Lodge nel verde del parco cittadino, con piscina e biciclette."
+ },
+ {
+  "name": "Brabant Grand Hotel",
+  "city": "Eindhoven",
+  "stars": 5,
+  "base_price": 260,
+  "description": "Albergo di lusso con spa, ristorante di cucina brabantina e arte contemporanea."
+ },
+ {
+  "name": "Santo Spirito Hostel",
+  "city": "Firenze",
+  "stars": 2,
+  "base_price": 35,
+  "description": "Ostello nell'Oltrarno, tra le botteghe degli artigiani e la piazza dei locali."
+ },
+ {
+  "name": "Hotel San Lorenzo",
+  "city": "Firenze",
+  "stars": 3,
+  "base_price": 100,
+  "description": "Albergo semplice vicino al mercato centrale e alla basilica di San Lorenzo."
+ },
+ {
+  "name": "Locanda Santa Croce",
+  "city": "Firenze",
+  "stars": 3,
+  "base_price": 110,
+  "description": "Camere con soffitti affrescati vicino alla basilica di Santa Croce."
+ },
+ {
+  "name": "Palazzo Pitti Residence",
+  "city": "Firenze",
+  "stars": 4,
+  "base_price": 200,
+  "description": "Residenza elegante accanto a Palazzo Pitti e ai giardini di Boboli."
+ },
+ {
+  "name": "Hotel Ponte Vecchio",
+  "city": "Firenze",
+  "stars": 4,
+  "base_price": 230,
+  "description": "Albergo sul lungarno con vista sul Ponte Vecchio e terrazza per l'aperitivo."
+ },
+ {
+  "name": "Villa Fiesole Grand Hotel",
+  "city": "Firenze",
+  "stars": 5,
+  "base_price": 480,
+  "description": "Villa di lusso sulle colline di Fiesole, con piscina, giardino all'italiana e vista sul Duomo."
+ },
+ {
+  "name": "Cannaregio Hostel",
+  "city": "Venezia",
+  "stars": 2,
+  "base_price": 40,
+  "description": "Ostello nel sestiere più autentico, tra i bacari e il ghetto ebraico."
+ },
+ {
+  "name": "Locanda San Polo",
+  "city": "Venezia",
+  "stars": 3,
+  "base_price": 120,
+  "description": "Piccola locanda vicino al ponte di Rialto, con camere arredate in stile veneziano."
+ },
+ {
+  "name": "Hotel Lido Beach",
+  "city": "Venezia",
+  "stars": 3,
+  "base_price": 110,
+  "description": "Albergo sul Lido, l'isola delle spiagge, a un vaporetto da piazza San Marco."
+ },
+ {
+  "name": "Palazzo sul Canal Grande",
+  "city": "Venezia",
+  "stars": 4,
+  "base_price": 260,
+  "description": "Hotel in un palazzo gotico con camere affacciate sul Canal Grande."
+ },
+ {
+  "name": "Dorsoduro Art Hotel",
+  "city": "Venezia",
+  "stars": 4,
+  "base_price": 220,
+  "description": "Albergo di charme vicino alla collezione Guggenheim e alle Zattere."
+ },
+ {
+  "name": "Laguna Imperial Palace",
+  "city": "Venezia",
+  "stars": 5,
+  "base_price": 620,
+  "description": "Albergo di gran lusso con vista sul bacino di San Marco, terrazza e servizio in motoscafo."
+ },
+ {
+  "name": "Ballarò Hostel",
+  "city": "Palermo",
+  "stars": 2,
+  "base_price": 25,
+  "description": "Ostello accanto al mercato di Ballarò, nel cuore più vivace della città vecchia."
+ },
+ {
+  "name": "Hotel Quattro Canti",
+  "city": "Palermo",
+  "stars": 3,
+  "base_price": 80,
+  "description": "Albergo semplice all'incrocio barocco al centro di Palermo."
+ },
+ {
+  "name": "Mondello Beach Inn",
+  "city": "Palermo",
+  "stars": 3,
+  "base_price": 90,
+  "description": "Locanda a pochi passi dalla spiaggia di Mondello e dalle sue ville liberty."
+ },
+ {
+  "name": "Palazzo Kalsa Residence",
+  "city": "Palermo",
+  "stars": 4,
+  "base_price": 150,
+  "description": "Residenza in un palazzo nobiliare del quartiere della Kalsa, con terrazza sul mare."
+ },
+ {
+  "name": "Teatro Massimo Hotel",
+  "city": "Palermo",
+  "stars": 4,
+  "base_price": 140,
+  "description": "Hotel elegante di fronte al più grande teatro d'opera d'Italia."
+ },
+ {
+  "name": "Villa Igiea Palace",
+  "city": "Palermo",
+  "stars": 5,
+  "base_price": 400,
+  "description": "Villa liberty di lusso sul mare, con giardini, piscina e ristorante di pesce."
+ }
+]

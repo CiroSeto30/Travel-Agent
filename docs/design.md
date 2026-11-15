@@ -31,22 +31,21 @@ Il progetto è un assessment tecnico per Reply. Oltre a funzionare, deve dimostr
 
 ### Consigliato
 
-- Cronologia delle conversazioni (barra laterale con le chat passate). Costa poco con il design scelto.
 - Intero sistema avviabile con un solo comando (`docker compose up`), app compresa.
 - Test automatici per planner e prenotazione.
 
-### Facoltativo (solo se avanza tempo, in quest'ordine)
+### Facoltativo (solo se avanza tempo)
 
-1. Modifica di un itinerario prenotato, con verifica della disponibilità.
-2. Cancellazione di una prenotazione.
-3. Caricamento di immagini per esprimere le preferenze.
+- Cronologia delle conversazioni (barra laterale con le chat passate).
+
+Tagliati per la scadenza: modifica di un itinerario prenotato, cancellazione di una prenotazione, caricamento di immagini.
 
 ### Fuori perimetro
 
 - Fornitori reali di voli, hotel o attività: il catalogo è sintetico.
 - Pagamenti.
 - Viaggi in più città: una sola città di destinazione per viaggio.
-- Gruppi: un solo viaggiatore per prenotazione.
+- Gruppi oltre 6 persone e sconti per bambini: tutti i viaggiatori pagano uguale.
 - Valute multiple: tutto è in euro.
 
 ### Da evitare assolutamente (sarebbe un fallimento anche se "funziona")
@@ -64,7 +63,7 @@ Il progetto è un assessment tecnico per Reply. Oltre a funzionare, deve dimostr
 | Aeroporto di partenza (serve per i voli, ma non è tra gli input) | Salvato nel profilo utente alla registrazione; si può cambiare in chat ("stavolta parto da Roma"). |
 | Anno del mese indicato | La prossima occorrenza di quel mese in cui il viaggio può iniziare da domani in poi. |
 | Prezzo delle attività (la spec cita solo le date) | Le attività hanno un prezzo a persona, necessario per rispettare il budget. |
-| Numero di viaggiatori | Uno (vedi "Fuori perimetro"). |
+| Numero di viaggiatori | L'agente lo chiede: da 1 a 6. Voli e attività costano a persona; in hotel si prenotano le camere che servono a dare un letto a tutti (vedi §7). |
 | Lingua | Interfaccia in italiano. L'assistente risponde nella lingua in cui scrive l'utente. |
 
 ## 4. Architettura
@@ -118,23 +117,25 @@ erDiagram
     USERS ||--o{ BOOKINGS : effettua
     AIRPORTS ||--o{ FLIGHTS : collega
     FLIGHTS ||--o{ ITINERARY_ITEMS : usato_in
-    HOTELS ||--|{ HOTEL_AVAILABILITY : offre
-    HOTELS ||--o{ ITINERARY_ITEMS : usato_in
+    HOTELS ||--|{ ROOM_TYPES : ha
+    ROOM_TYPES ||--|{ ROOM_AVAILABILITY : offre
+    ROOM_TYPES ||--o{ ITINERARY_ITEMS : usato_in
     ACTIVITIES ||--|{ ACTIVITY_SLOTS : offre
     ACTIVITIES ||--o{ ITINERARY_ITEMS : usato_in
 ```
 
 | Tabella | Colonne principali | Note |
 |---|---|---|
-| `users` | id, email (unica), password_hash, name, home_airport → airports | |
+| `users` | id, email (unica), password_hash, first_name, last_name, home_airport → airports, created_at | |
 | `airports` | iata (PK), city, country | |
 | `flights` | id, origin → airports, destination → airports, departure_at, arrival_at, price, seats_left | Solo andata; un viaggio di andata e ritorno usa due voli. |
 | `hotels` | id, name, city, country, stars, description | |
-| `hotel_availability` | (hotel_id, night) PK, price, rooms_left | Una riga per hotel per notte. |
+| `room_types` | id, hotel_id, name, beds | Le tipologie di camera di un hotel (Singola, Doppia, Tripla, Familiare) con i posti letto. Nome unico per hotel. |
+| `room_availability` | (room_type_id, night) PK, price, rooms_left | Una riga per tipologia per notte: prezzo di una camera e camere libere. |
 | `activities` | id, name, city, country, category, target, price, duration_hours, description | `description` e `target` finiscono anche in Qdrant. |
 | `activity_slots` | (activity_id, day) PK, spots_left | Una riga per attività per giorno disponibile. |
-| `itineraries` | id, user_id, conversation_id, variant, status, total_cost, start_date, end_date, created_at, superseded_by | Stati: `proposed` (proposto), `superseded` (sostituito), `booked` (prenotato), `cancelled` (annullato). |
-| `itinerary_items` | id, itinerary_id, kind, flight_id / hotel_id / activity_id, day, price | Tipi: `flight_out`, `flight_return`, `hotel_night`, `activity`. Esattamente una delle tre chiavi esterne è valorizzata (vincolo di controllo). Il prezzo è una copia al momento della proposta. |
+| `itineraries` | id, user_id, conversation_id, proposal_set_id, variant, travelers (1–6), status, total_cost, start_date, end_date, created_at, superseded_by | Stati: `proposed` (proposto), `superseded` (sostituito), `booked` (prenotato), `cancelled` (annullato). |
+| `itinerary_items` | id, itinerary_id, kind, flight_id / room_type_id / activity_id, quantity, day, price | Tipi: `flight_out`, `flight_return`, `hotel_night`, `activity`. Esattamente una delle tre chiavi esterne è valorizzata (vincolo di controllo). `quantity`: posti per voli e attività, camere per una notte d'hotel (almeno 1). `price` è il totale della riga al momento della proposta. |
 | `bookings` | id, user_id, itinerary_id (unico), status, total_cost, booked_at | Stati: `confirmed` (confermata), `cancelled` (annullata). |
 | `conversations` | id, user_id, title, created_at, updated_at | |
 | `messages` | id, conversation_id, role, content, payload (JSON), created_at | `payload` conserva i dati strutturati (proposte, prenotazione) per ricostruire l'interfaccia dalla cronologia. |
@@ -160,6 +161,7 @@ Generato dagli script in `backend/seed/`, in modo deterministico (seme casuale f
 - **Destinazioni:** 11 paesi con 3 città ciascuno, 33 città in totale: Giappone, Spagna, Grecia, Portogallo, Francia, Islanda, Regno Unito, Paesi Bassi, Thailandia, Stati Uniti e Italia. Le città italiane di destinazione sono diverse da quelle di partenza.
 - **Voli:** giornalieri o quasi, tra aeroporti di partenza e di destinazione; il prezzo varia con la stagione e il giorno della settimana; posti limitati.
 - **Hotel:** 200 in totale, 6 o 7 per città, da 2 a 5 stelle; il prezzo per notte varia con la stagione.
+- **Tipologie di camera:** generate con una regola fissa. Tutti gli hotel hanno Singola (1 letto, 75% del prezzo della doppia, 2 camere) e Doppia (2 letti, prezzo base, 4 camere); gli hotel da 3 stelle in su hanno anche Tripla (3 letti, 130%, 2 camere) e Familiare (4 letti, 160%, 2 camere).
 - **Attività:** 500 in totale, 15 o 16 per città, divise per categoria (cultura, cibo, natura, sport, relax, vita notturna). Ognuna ha un target (famiglie, giovani, coppie, sportivi), un prezzo e uno schema settimanale di disponibilità con posti limitati.
 
 I dati di base sono scritti a mano (`airports.json`, `hotels.json`, `activities.json` con le descrizioni); date, prezzi e disponibilità vengono generati da `build_catalog.py`.
@@ -168,13 +170,13 @@ I dati di base sono scritti a mano (`airports.json`, `hotels.json`, `activities.
 
 Python puro, senza LLM, interamente testabile.
 
-**Input:** requisiti già validati: budget, paese, mese, numero di notti N, aeroporto di partenza, preferenze come testo e come categorie.
+**Input:** requisiti già validati: budget (per tutto il gruppo), paese, mese, numero di notti N, numero di viaggiatori P (da 1 a 6), aeroporto di partenza, preferenze come testo e come categorie.
 
 **Passi:**
 
-1. **Voli.** Cerca i voli di andata dall'aeroporto di partenza verso tutti gli aeroporti del paese nel mese indicato (da domani in poi). Per ciascuno cerca i voli di ritorno dalla stessa città N giorni dopo. Tiene le K coppie più economiche (K intorno a 5) con posti disponibili.
-2. **Hotel.** Per ogni coppia di voli cerca gli hotel della città di arrivo con una camera libera per tutte le N notti. Il costo è la somma dei prezzi per notte.
-3. **Attività.** Chiede al retriever RAG le attività di quella città ordinate per pertinenza rispetto alle preferenze. Per ogni giorno intero (esclusi i giorni di arrivo e di partenza) sceglie fino a 2 attività pertinenti con posti liberi in quel giorno, nei limiti del budget rimasto.
+1. **Voli.** Cerca i voli di andata dall'aeroporto di partenza verso tutti gli aeroporti del paese nel mese indicato (da domani in poi). Per ciascuno cerca i voli di ritorno dalla stessa città N giorni dopo. Tiene le K coppie più economiche (K intorno a 5) con almeno P posti liberi su entrambi i voli. Il costo è il prezzo del posto × P.
+2. **Hotel.** Per ogni coppia di voli e per ogni hotel della città di arrivo cerca la **combinazione di camere** più economica che dia almeno P letti e sia libera **tutte** le N notti (una tipologia è utilizzabile solo se ha abbastanza camere libere in ogni notte). A parità di costo preferisce meno letti vuoti, poi meno camere. Con al massimo 6 persone e 4 tipologie le combinazioni sono poche decine: si provano tutte. Il costo è la somma, notte per notte, del prezzo di ogni camera scelta.
+3. **Attività.** Chiede al retriever RAG le attività di quella città ordinate per pertinenza rispetto alle preferenze. Per ogni giorno intero (esclusi i giorni di arrivo e di partenza) sceglie fino a 2 attività pertinenti con almeno P posti liberi in quel giorno, nei limiti del budget rimasto. Il costo è il prezzo a persona × P.
 4. **Varianti.** Tra i candidati sceglie fino a tre itinerari diversi tra loro:
    - **Economica:** costo totale più basso.
    - **Bilanciata:** il miglior equilibrio tra pertinenza, qualità dell'hotel e costo.
@@ -204,7 +206,7 @@ flowchart LR
 
 - **Stato:** i requisiti raccolti finora, i campi mancanti, l'insieme di proposte corrente, l'itinerario in attesa di conferma (se c'è), l'ultima prenotazione.
 - **Estrazione:** l'LLM restituisce un output strutturato (modello Pydantic), unito ai requisiti precedenti, così l'utente può cambiare una cosa alla volta.
-- **Validazione:** regole Pydantic (budget > 0, mese da 1 a 12, notti da 2 a 14, paese presente nel catalogo, categorie note). Se l'utente non indica la partenza, si usa l'aeroporto del suo profilo.
+- **Validazione:** regole Pydantic (budget > 0, mese da 1 a 12, notti da 2 a 14, viaggiatori da 1 a 6, paese presente nel catalogo, categorie note). Se l'utente non indica la partenza, si usa l'aeroporto del suo profilo.
 - **Destinazioni disponibili:** l'agente sa sempre per quali paesi può creare un itinerario, perché l'elenco viene letto dal catalogo e inserito nel suo prompt di sistema (mai scritto a mano). Lo dice nel messaggio di benvenuto, quando l'utente chiede "dove posso andare?" e quando chiede un paese che non c'è: in quel caso spiega che non è disponibile e propone l'elenco, invece di inventare un itinerario.
 - **Strumenti a disposizione dell'LLM:** elencare le destinazioni disponibili (paesi e città), cercare gli itinerari (richiama il planner) e leggere i dettagli di un itinerario. **La prenotazione non è uno strumento libero**: è un nodo del grafo che si raggiunge solo dopo che l'utente ha visto il riepilogo e ha confermato in modo esplicito. Così la regola "nessuna prenotazione senza conferma" è garantita dalla struttura del grafo, non dal prompt.
 - **Risposte:** l'LLM scrive il testo. Prezzi e date nel testo vengono dalla proposta strutturata che riceve, e l'interfaccia mostra le proposte a partire dagli eventi strutturati, non dal testo.
@@ -213,7 +215,7 @@ flowchart LR
 
 | Metodo e percorso | A cosa serve |
 |---|---|
-| `POST /api/auth/register` | Crea un utente (email, password, nome, aeroporto di partenza). |
+| `POST /api/auth/register` | Crea un utente (email, password, nome, cognome, aeroporto di partenza). |
 | `POST /api/auth/login` | Verifica le credenziali e imposta il cookie JWT. |
 | `POST /api/auth/logout` | Cancella il cookie. |
 | `GET /api/auth/me` | Utente corrente. |
@@ -236,7 +238,7 @@ L'endpoint dei messaggi restituisce `text/event-stream`. Ogni evento ha un tipo 
 
 | Evento | Payload | Effetto nell'interfaccia |
 |---|---|---|
-| `requirements` | budget, paese, mese, notti, partenza, preferenze, campi mancanti | Aggiorna i requisiti mostrati in chat. |
+| `requirements` | budget, paese, mese, notti, viaggiatori, partenza, preferenze, campi mancanti | Aggiorna i requisiti mostrati in chat. |
 | `tool_start` / `tool_end` | nome dello strumento, etichetta leggibile | Indicatori di stato ("Cerco voli…"). |
 | `itinerary` | id dell'insieme di proposte, id dell'insieme che sostituisce, opzioni con riepilogo (variante, città, hotel, totale, quota del budget) | Mostra le righe delle proposte; mette in grigio quelle sostituite. |
 | `token` | un pezzo di testo | Fa scorrere il messaggio dell'assistente. |
@@ -251,9 +253,9 @@ Il client legge lo stream con `fetch` e un piccolo parser (`EventSource` support
 Tutto avviene in un'unica transazione del database:
 
 1. Carica l'itinerario: deve appartenere all'utente ed essere `proposed`. Se è già `booked`, restituisce la prenotazione esistente (operazione idempotente).
-2. Blocca le righe di disponibilità con `SELECT … FOR UPDATE`, sempre nello stesso ordine (voli, poi notti d'hotel, poi posti nelle attività, ognuno ordinato per chiave), per evitare deadlock.
-3. Verifica che ogni riga abbia ancora disponibilità; se no, annulla la transazione e indica quale elemento non è più disponibile.
-4. Scala posti, camere e posti nelle attività; imposta l'itinerario come `booked`, segna come `superseded` le altre proposte dello stesso insieme; inserisce la prenotazione.
+2. Blocca le righe di disponibilità con `SELECT … FOR UPDATE`, sempre nello stesso ordine (voli, poi notti delle tipologie di camera, poi posti nelle attività, ognuno ordinato per chiave), per evitare deadlock.
+3. Verifica che ogni riga abbia ancora almeno la quantità richiesta (posti per i voli e le attività, camere per ogni notte); se no, annulla la transazione e indica quale elemento non è più disponibile.
+4. Scala da ogni riga la quantità della voce corrispondente; imposta l'itinerario come `booked`, segna come `superseded` le altre proposte dello stesso insieme; inserisce la prenotazione.
 5. Conferma la transazione (commit).
 
 In caso di errore l'agente spiega cosa è cambiato e propone di cercare di nuovo.
@@ -266,7 +268,7 @@ In caso di errore l'agente spiega cosa è cambiato e propone di cercare di nuovo
   - Se l'itinerario aperto viene aggiornato, il pannello laterale si aggiorna sul posto con l'etichetta "aggiornata".
   - Su mobile il pannello laterale diventa un foglio a tutto schermo.
 - **Pulsante di prenotazione:** invia un messaggio in chat ("Prenota l'opzione bilanciata"); l'agente mostra il riepilogo e chiede conferma. Un solo percorso per prenotare, sempre attraverso l'agente.
-- **Barra della cronologia:** elenco delle conversazioni passate (consigliato).
+- **Barra della cronologia:** elenco delle conversazioni passate (facoltativo).
 - **Codice:** moduli ES: `api.js`, `auth.js`, `sse.js`, `chat.js`, `itinerary.js` (righe e pannello laterale, riusato dalla dashboard), `bookings.js`, `format.js`.
 - **Direzione visiva:** definita all'inizio della fase di frontend, con anteprime prima di scrivere il codice.
 
@@ -281,8 +283,8 @@ In caso di errore l'agente spiega cosa è cambiato e propone di cercare di nuovo
 
 | Area | Cosa si verifica |
 |---|---|
-| Planner | Su molte richieste casuali: totale mai sopra il budget, ogni notte coperta, ogni elemento disponibile nella sua data, voli coerenti con le N notti. Risultato "nessuna soluzione" quando il budget è troppo basso. |
-| Prenotazione | Caso normale; idempotenza; due prenotazioni simultanee per l'ultima camera: ne riesce esattamente una. |
+| Planner | Su molte richieste casuali: totale mai sopra il budget, ogni notte coperta, ogni elemento disponibile nella sua data, voli coerenti con le N notti, letti sufficienti per tutti i P viaggiatori. Combinazione di camere più economica su casi noti (per esempio 5 persone: familiare + singola contro tripla + doppia). Risultato "nessuna soluzione" quando il budget è troppo basso. |
+| Prenotazione | Caso normale; idempotenza; due prenotazioni simultanee per l'ultima camera: ne riesce esattamente una; due gruppi da 3 che si contendono gli ultimi 4 posti di un volo: ne riesce esattamente uno. |
 | Requisiti | Regole di validazione e unione degli aggiornamenti parziali. |
 | Autenticazione | Registrazione, login, endpoint protetto senza e con cookie. |
 | Agente | Alcune conversazioni scriptate con un LLM finto: i dati mancanti generano una domanda; un paese non disponibile riceve l'elenco dei paesi disponibili; nessuna prenotazione senza conferma. |
@@ -303,11 +305,13 @@ Un branch per fase, unito a `main` tramite pull request.
 
 | Giorno | Branch |
 |---|---|
-| Sab 14 | `chore/setup` (fatto), `docs/design` |
-| Dom 15 | `feat/database` (modelli, seed), `feat/auth` |
-| Lun 16 | `feat/planner` (con test), `feat/rag` |
-| Mar 17 | `feat/agent` (grafo, endpoint della chat, SSE), `feat/booking` (con test); avvio della struttura del frontend |
-| Mer 18 | `feat/frontend` (chat, pannello laterale, dashboard, cronologia), Docker Compose completo, `docs/final`, demo, `v1.0` |
+| Sab 14 | `chore/setup` (fatto), `docs/design` (fatto) |
+| Dom 15 | `feat/database` (modelli, seed) |
+| Lun 16 | `feat/auth`, `feat/planner` (con test) |
+| Mar 17 | `feat/rag`, `feat/agent` (grafo, endpoint della chat, SSE), `feat/booking` (con test) |
+| Mer 18 | `feat/frontend` (chat, pannello laterale, dashboard), Docker Compose completo, `docs/final`, demo, `v1.0` |
+
+Calendario rivisto il 15/11: il lavoro procede file per file, con spiegazione approfondita sulle parti con logica (planner, prenotazione, agente, streaming, chat) e più rapida su quelle ripetitive.
 
 Le funzionalità facoltative partono solo quando le consegne di mercoledì sono al sicuro.
 
