@@ -126,7 +126,7 @@ erDiagram
 
 | Tabella | Colonne principali | Note |
 |---|---|---|
-| `users` | id, email (unica), password_hash, name, home_airport → airports | |
+| `users` | id, email (unica), password_hash, first_name, last_name, home_airport → airports, created_at | |
 | `airports` | iata (PK), city, country | |
 | `flights` | id, origin → airports, destination → airports, departure_at, arrival_at, price, seats_left | Solo andata; un viaggio di andata e ritorno usa due voli. |
 | `hotels` | id, name, city, country, stars, description | |
@@ -215,7 +215,7 @@ flowchart LR
 
 | Metodo e percorso | A cosa serve |
 |---|---|
-| `POST /api/auth/register` | Crea un utente (email, password, nome, aeroporto di partenza). |
+| `POST /api/auth/register` | Crea un utente (email, password, nome, cognome, aeroporto di partenza). |
 | `POST /api/auth/login` | Verifica le credenziali e imposta il cookie JWT. |
 | `POST /api/auth/logout` | Cancella il cookie. |
 | `GET /api/auth/me` | Utente corrente. |
