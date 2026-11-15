@@ -1,0 +1,284 @@
+[
+ {
+  "iata": "NAP",
+  "city": "Napoli",
+  "country": "Italia",
+  "role": "departure"
+ },
+ {
+  "iata": "FCO",
+  "city": "Roma",
+  "country": "Italia",
+  "role": "departure"
+ },
+ {
+  "iata": "MXP",
+  "city": "Milano",
+  "country": "Italia",
+  "role": "departure"
+ },
+ {
+  "iata": "HND",
+  "city": "Tokyo",
+  "country": "Giappone",
+  "role": "destination",
+  "base_fare": 540,
+  "flight_hours": 13.5
+ },
+ {
+  "iata": "KIX",
+  "city": "Osaka",
+  "country": "Giappone",
+  "role": "destination",
+  "base_fare": 520,
+  "flight_hours": 13.0
+ },
+ {
+  "iata": "CTS",
+  "city": "Sapporo",
+  "country": "Giappone",
+  "role": "destination",
+  "base_fare": 600,
+  "flight_hours": 15.0
+ },
+ {
+  "iata": "BKK",
+  "city": "Bangkok",
+  "country": "Thailandia",
+  "role": "destination",
+  "base_fare": 470,
+  "flight_hours": 11.5
+ },
+ {
+  "iata": "HKT",
+  "city": "Phuket",
+  "country": "Thailandia",
+  "role": "destination",
+  "base_fare": 500,
+  "flight_hours": 13.0
+ },
+ {
+  "iata": "CNX",
+  "city": "Chiang Mai",
+  "country": "Thailandia",
+  "role": "destination",
+  "base_fare": 520,
+  "flight_hours": 14.0
+ },
+ {
+  "iata": "JFK",
+  "city": "New York",
+  "country": "Stati Uniti",
+  "role": "destination",
+  "base_fare": 380,
+  "flight_hours": 9.0
+ },
+ {
+  "iata": "SFO",
+  "city": "San Francisco",
+  "country": "Stati Uniti",
+  "role": "destination",
+  "base_fare": 480,
+  "flight_hours": 13.0
+ },
+ {
+  "iata": "MIA",
+  "city": "Miami",
+  "country": "Stati Uniti",
+  "role": "destination",
+  "base_fare": 430,
+  "flight_hours": 11.0
+ },
+ {
+  "iata": "MAD",
+  "city": "Madrid",
+  "country": "Spagna",
+  "role": "destination",
+  "base_fare": 85,
+  "flight_hours": 2.5
+ },
+ {
+  "iata": "BCN",
+  "city": "Barcellona",
+  "country": "Spagna",
+  "role": "destination",
+  "base_fare": 80,
+  "flight_hours": 1.8
+ },
+ {
+  "iata": "SVQ",
+  "city": "Siviglia",
+  "country": "Spagna",
+  "role": "destination",
+  "base_fare": 95,
+  "flight_hours": 2.8
+ },
+ {
+  "iata": "LIS",
+  "city": "Lisbona",
+  "country": "Portogallo",
+  "role": "destination",
+  "base_fare": 105,
+  "flight_hours": 3.0
+ },
+ {
+  "iata": "OPO",
+  "city": "Porto",
+  "country": "Portogallo",
+  "role": "destination",
+  "base_fare": 100,
+  "flight_hours": 2.8
+ },
+ {
+  "iata": "FAO",
+  "city": "Faro",
+  "country": "Portogallo",
+  "role": "destination",
+  "base_fare": 110,
+  "flight_hours": 3.0
+ },
+ {
+  "iata": "CDG",
+  "city": "Parigi",
+  "country": "Francia",
+  "role": "destination",
+  "base_fare": 90,
+  "flight_hours": 2.0
+ },
+ {
+  "iata": "NCE",
+  "city": "Nizza",
+  "country": "Francia",
+  "role": "destination",
+  "base_fare": 75,
+  "flight_hours": 1.2
+ },
+ {
+  "iata": "LYS",
+  "city": "Lione",
+  "country": "Francia",
+  "role": "destination",
+  "base_fare": 80,
+  "flight_hours": 1.5
+ },
+ {
+  "iata": "ATH",
+  "city": "Atene",
+  "country": "Grecia",
+  "role": "destination",
+  "base_fare": 110,
+  "flight_hours": 2.3
+ },
+ {
+  "iata": "JTR",
+  "city": "Santorini",
+  "country": "Grecia",
+  "role": "destination",
+  "base_fare": 140,
+  "flight_hours": 2.5
+ },
+ {
+  "iata": "HER",
+  "city": "Heraklion",
+  "country": "Grecia",
+  "role": "destination",
+  "base_fare": 130,
+  "flight_hours": 2.5
+ },
+ {
+  "iata": "KEF",
+  "city": "Reykjavik",
+  "country": "Islanda",
+  "role": "destination",
+  "base_fare": 220,
+  "flight_hours": 4.5
+ },
+ {
+  "iata": "AEY",
+  "city": "Akureyri",
+  "country": "Islanda",
+  "role": "destination",
+  "base_fare": 300,
+  "flight_hours": 6.5
+ },
+ {
+  "iata": "EGS",
+  "city": "Egilsstaðir",
+  "country": "Islanda",
+  "role": "destination",
+  "base_fare": 320,
+  "flight_hours": 7.0
+ },
+ {
+  "iata": "LHR",
+  "city": "Londra",
+  "country": "Regno Unito",
+  "role": "destination",
+  "base_fare": 95,
+  "flight_hours": 2.5
+ },
+ {
+  "iata": "EDI",
+  "city": "Edimburgo",
+  "country": "Regno Unito",
+  "role": "destination",
+  "base_fare": 110,
+  "flight_hours": 2.8
+ },
+ {
+  "iata": "MAN",
+  "city": "Manchester",
+  "country": "Regno Unito",
+  "role": "destination",
+  "base_fare": 90,
+  "flight_hours": 2.6
+ },
+ {
+  "iata": "AMS",
+  "city": "Amsterdam",
+  "country": "Paesi Bassi",
+  "role": "destination",
+  "base_fare": 90,
+  "flight_hours": 2.2
+ },
+ {
+  "iata": "RTM",
+  "city": "Rotterdam",
+  "country": "Paesi Bassi",
+  "role": "destination",
+  "base_fare": 85,
+  "flight_hours": 2.2
+ },
+ {
+  "iata": "EIN",
+  "city": "Eindhoven",
+  "country": "Paesi Bassi",
+  "role": "destination",
+  "base_fare": 80,
+  "flight_hours": 2.0
+ },
+ {
+  "iata": "FLR",
+  "city": "Firenze",
+  "country": "Italia",
+  "role": "destination",
+  "base_fare": 60,
+  "flight_hours": 1.2
+ },
+ {
+  "iata": "VCE",
+  "city": "Venezia",
+  "country": "Italia",
+  "role": "destination",
+  "base_fare": 55,
+  "flight_hours": 1.1
+ },
+ {
+  "iata": "PMO",
+  "city": "Palermo",
+  "country": "Italia",
+  "role": "destination",
+  "base_fare": 50,
+  "flight_hours": 1.0
+ }
+]
