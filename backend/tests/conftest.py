@@ -9,6 +9,13 @@ from app.config import get_settings
 from app.db.base import Base
 
 
+def check_test_database(test_url: str, app_url: str) -> None:
+    """The fixtures drop every table: refuse to run them against the app's own database."""
+    test_db, app_db = make_url(test_url).database, make_url(app_url).database
+    if test_db == app_db:
+        raise RuntimeError(f"TEST_DATABASE_URL points to '{test_db}', the same database as DATABASE_URL. "
+            "Tests would delete its tables: set TEST_DATABASE_URL to a separate database.")
+
 def _ensure_database_exists(url: str) -> None:
     """Create the test database if it is missing (first run on a new machine)."""
     target = make_url(url)
@@ -21,7 +28,9 @@ def _ensure_database_exists(url: str) -> None:
 
 @pytest.fixture(scope="session")
 def test_engine():
-    url = get_settings().test_database_url
+    settings = get_settings()
+    url = settings.test_database_url
+    check_test_database(url, settings.database_url)
     _ensure_database_exists(url)
     engine = create_engine(url)
     Base.metadata.drop_all(engine)
