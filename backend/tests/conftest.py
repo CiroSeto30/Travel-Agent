@@ -6,6 +6,7 @@ from sqlalchemy.engine import make_url
 from sqlalchemy.orm import Session
 
 from app.config import get_settings
+import app.db.models # noqa: F401  (registers every model on Base.metadata)
 from app.db.base import Base
 
 
@@ -15,6 +16,12 @@ def check_test_database(test_url: str, app_url: str) -> None:
     if test_db == app_db:
         raise RuntimeError(f"TEST_DATABASE_URL points to '{test_db}', the same database as DATABASE_URL. "
             "Tests would delete its tables: set TEST_DATABASE_URL to a separate database.")
+
+def _reset_schema(engine) -> None:
+    """Drop everything in the test database, including tables the models no longer define."""
+    with engine.begin() as conn:
+        conn.execute(text("DROP SCHEMA public CASCADE"))
+        conn.execute(text("CREATE SCHEMA public"))
 
 def _ensure_database_exists(url: str) -> None:
     """Create the test database if it is missing (first run on a new machine)."""
@@ -33,7 +40,7 @@ def test_engine():
     check_test_database(url, settings.database_url)
     _ensure_database_exists(url)
     engine = create_engine(url)
-    Base.metadata.drop_all(engine)
+    _reset_schema(engine)
     Base.metadata.create_all(engine)
     yield engine
     engine.dispose()
