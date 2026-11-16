@@ -127,7 +127,7 @@ erDiagram
 | Tabella | Colonne principali | Note |
 |---|---|---|
 | `users` | id, email (unica), password_hash, first_name, last_name, home_airport → airports, created_at | |
-| `airports` | iata (PK), city, country | |
+| `airports` | iata (PK), city, country, is_departure | `is_departure`: aeroporti italiani da cui si parte (NAP, FCO, MXP); gli altri sono destinazioni. |
 | `flights` | id, origin → airports, destination → airports, departure_at, arrival_at, price, seats_left | Solo andata; un viaggio di andata e ritorno usa due voli. |
 | `hotels` | id, name, city, country, stars, description | |
 | `room_types` | id, hotel_id, name, beds | Le tipologie di camera di un hotel (Singola, Doppia, Tripla, Familiare) con i posti letto. Nome unico per hotel. |
@@ -278,6 +278,7 @@ In caso di errore l'agente spiega cosa è cambiato e propone di cercare di nuovo
 - Il login restituisce un JWT firmato (HS256, `JWT_SECRET`, scadenza 24 ore) in un cookie httpOnly con SameSite=Lax.
 - Una dipendenza FastAPI (`get_current_user`) protegge tutti gli endpoint tranne registrazione, login, aeroporti, destinazioni e controllo di funzionamento.
 - Le pagine chiamano `/api/auth/me` all'apertura e, se serve, rimandano al login.
+- **Limite noto, accettato:** un JWT non si può revocare prima della scadenza. Il logout cancella il cookie dal browser, ma un token copiato altrove resterebbe valido fino a 24 ore. Valutate le sessioni lato server (logout vero, una tabella in più): scartate per la scadenza, la differenza qui è piccola. In produzione: token brevi con refresh token, oppure sessioni lato server.
 
 ## 14. Test
 
