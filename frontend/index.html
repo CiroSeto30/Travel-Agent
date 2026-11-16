@@ -3,10 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Travel Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Accedi | Travel Assistant</title>
+  <script type="module" src="js/login.js"></script>
 </head>
-<body>
-  <h1>Travel Agent</h1>
-  <p>Frontend in costruzione.</p>
+<body class="auth-page">
+  <main class="auth-card">
+    <p class="brand">Travel Assistant</p>
+    <h1>Accedi</h1>
+    <p class="lead">Pianifica e prenota il tuo prossimo viaggio in chat.</p>
+
+    <form id="login-form">
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="nome@esempio.com" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+      </div>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <button class="button button--primary" type="submit">Accedi</button>
+    </form>
+
+    <p class="auth-switch">Non hai un account? <a href="register.html">Registrati</a></p>
+  </main>
 </body>
 </html>

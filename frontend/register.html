@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Registrati | Travel Agent</title>
+  <script type="module" src="js/register.js"></script>
+</head>
+<body class="auth-page">
+  <main class="auth-card">
+    <p class="brand">Travel Agent</p>
+    <h1>Crea un account</h1>
+    <p class="lead">Ti serve per salvare le prenotazioni e ritrovarle in qualsiasi momento.</p>
+
+    <form id="register-form">
+      <div class="field-row">
+        <div class="field">
+          <label for="first_name">Nome</label>
+          <input id="first_name" name="first_name" autocomplete="given-name" required maxlength="100">
+        </div>
+        <div class="field">
+          <label for="last_name">Cognome</label>
+          <input id="last_name" name="last_name" autocomplete="family-name" required maxlength="100">
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="nome@esempio.com" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128"
+               aria-describedby="password-hint" required>
+        <span class="field-hint" id="password-hint">Almeno 8 caratteri.</span>
+      </div>
+      <div class="field">
+        <label for="home_airport">Aeroporto di partenza</label>
+        <select id="home_airport" name="home_airport" aria-describedby="airport-hint" required>
+          <option value="">Scegli un aeroporto</option>
+        </select>
+        <span class="field-hint" id="airport-hint">Serve per cercare i voli. In chat puoi sempre partire da un altro.</span>
+      </div>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <button class="button button--primary" type="submit">Crea account</button>
+    </form>
+
+    <p class="auth-switch">Hai già un account? <a href="index.html">Accedi</a></p>
+  </main>
+</body>

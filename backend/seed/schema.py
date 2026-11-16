@@ -6,7 +6,7 @@ from decimal import Decimal
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, Field, TypeAdapter, field_validator, model_validator
+from pydantic import BaseModel, Field, ValidationError, field_validator, model_validator
 
 Category = Literal["culture", "food", "nature", "sport", "relax", "nightlife"]
 Target = Literal["families", "young", "couples", "sporty"]
@@ -65,7 +65,13 @@ class BaseData:
 
 def _read(path: Path, model: type[BaseModel]) -> list:
     raw = json.loads(path.read_text(encoding="utf-8"))
-    return TypeAdapter(list[model]).validate_python(raw)
+    records = []
+    for i, item in enumerate(raw):
+        try:
+            records.append(model.model_validate(item))
+        except ValidationError as e:
+            raise ValueError(f"{path.name}, record {i}: {e}") from e
+    return records
 
 
 def load_base_data(data_dir: Path) -> BaseData:

@@ -1,0 +1,247 @@
+/* Travel Assistant: boarding-pass layout on a sky palette. */
+
+:root {
+  --sky: #f2f7fb;          /* page background */
+  --paper: #ffffff;        /* tickets, panels, forms */
+  --ink: #183247;          /* text and routes */
+  --azure: #2f86c9;        /* main action, selection, dates */
+  --azure-dark: #246ca6;   /* hover on azure */
+  --cloud: #d6e5f0;        /* borders */
+  --perforation: #bfd6e7;  /* dashed line between stub and ticket */
+  --mist: #5d7a90;         /* secondary text */
+  --faded: #8aa2b4;        /* placeholders, superseded proposals */
+  --danger: #b3261e;
+  --danger-bg: #fcedec;
+
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-ticket: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--sky);
+  color: var(--ink);
+  font: 400 15px/1.55 var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-ticket);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+a {
+  color: var(--azure);
+}
+
+:focus-visible {
+  outline: 2px solid var(--azure);
+  outline-offset: 2px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Buttons */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--cloud);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  font: 500 14px/1 var(--font-body);
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: var(--azure);
+}
+
+.button--primary {
+  border-color: var(--azure);
+  background: var(--azure);
+  color: #fff;
+}
+
+.button--primary:hover {
+  background: var(--azure-dark);
+}
+
+.button[aria-busy="true"] {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.button--link {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--mist);
+  font-weight: 400;
+}
+
+.button--link:hover {
+  color: var(--ink);
+}
+
+/* Forms */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--cloud);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+
+.field input::placeholder {
+  color: var(--faded);
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--azure);
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(47 134 201 / 20%);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.field-hint {
+  color: var(--mist);
+  font-size: 12px;
+}
+
+.form-error {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--danger-bg);
+  color: var(--danger);
+  font-size: 13px;
+}
+
+/* Login and registration */
+
+.auth-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 28px;
+  border: 1px solid var(--cloud);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.auth-card h1 {
+  font-size: 32px;
+}
+
+.auth-card .lead {
+  margin: 4px 0 22px;
+  color: var(--mist);
+  font-size: 14px;
+}
+
+.auth-card form .button--primary {
+  width: 100%;
+}
+
+.auth-switch {
+  margin: 18px 0 0;
+  color: var(--mist);
+  font-size: 14px;
+  text-align: center;
+}
+
+.brand {
+  margin: 0 0 20px;
+  font-family: var(--font-ticket);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* App header (chat and bookings) */
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--cloud);
+  background: var(--paper);
+}
+
+.app-header .brand {
+  margin: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.app-nav a {
+  color: var(--mist);
+  text-decoration: none;
+}
+
+.app-nav a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.app-nav .user-name {
+  color: var(--ink);
+}
