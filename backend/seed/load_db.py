@@ -36,7 +36,7 @@ def load_catalog(session: Session, catalog: Catalog, base: BaseData) -> bool:
         return False
 
     session.execute(insert(Airport), [
-        {"iata": a.iata, "city": a.city, "country": a.country} for a in base.airports
+        {"iata": a.iata, "city": a.city, "country": a.country, "is_departure": a.role == "departure"} for a in base.airports
     ])
     hotel_ids = _insert_returning_ids(session, Hotel, [
         {"name": h.name, "city": h.city, "country": base.country_of(h.city), "stars": h.stars,

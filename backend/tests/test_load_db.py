@@ -13,6 +13,7 @@ CAT = build_catalog(BASE, date(2026, 11, 15), days=5)
 def test_load_catalog_inserts_everything(db_session):
     assert load_catalog(db_session, CAT, BASE) is True
     assert db_session.query(Airport).count() == len(BASE.airports)
+    assert {a.iata for a in db_session.query(Airport).filter_by(is_departure=True)} == {"NAP", "FCO", "MXP"}
     assert db_session.query(Flight).count() == len(CAT.flights)
     assert db_session.query(RoomType).count() == len(CAT.room_types)
     assert db_session.query(RoomAvailability).count() == len(CAT.room_availability)

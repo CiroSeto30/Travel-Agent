@@ -3,7 +3,7 @@
 from datetime import date, datetime
 from decimal import Decimal
 
-from sqlalchemy import CheckConstraint, Date, DateTime, ForeignKey, Index, Integer, Numeric, String, Text, UniqueConstraint
+from sqlalchemy import CheckConstraint, Date, DateTime, ForeignKey, Index, Integer, Numeric, String, Text, UniqueConstraint, Boolean
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
@@ -17,6 +17,7 @@ class Airport(Base):
     iata: Mapped[str] = mapped_column(String(3), primary_key=True)
     city: Mapped[str] = mapped_column(String(100))
     country: Mapped[str] = mapped_column(String(100))
+    is_departure: Mapped[bool] = mapped_column(Boolean, default=False)
 
 
 class Flight(Base):
