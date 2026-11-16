@@ -17,7 +17,8 @@ class Settings(BaseSettings):
     database_url: str = "postgresql+psycopg://travel:travel@localhost:5432/travel"
     test_database_url: str = "postgresql+psycopg://travel:travel@localhost:5432/travel_test"
     qdrant_url: str = "http://localhost:6333"
-    llm_provider: str = "anthropic"
+    llm_provider: str = "google_genai"
+    llm_model: str = "gemini-3.5-flash-lite"
     llm_api_key: SecretStr = SecretStr("")
     jwt_secret: SecretStr = SecretStr("change-me")
 

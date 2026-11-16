@@ -80,7 +80,7 @@ flowchart TB
         PL --> CAT["Query sul catalogo"]
     end
 
-    AG --> LLM["API LLM<br/>Anthropic o OpenAI"]
+    AG --> LLM["API LLM<br/>Gemini (Google AI Studio) o Groq"]
     CAT --> PG[("PostgreSQL")]
     BK --> PG
     AG -. checkpoint .-> PG
@@ -99,7 +99,7 @@ FastAPI serve anche i file del frontend: pagine e API stanno sullo stesso indiri
 | Database vettoriale | Qdrant 1.19 | Componente separato come descritto nella spec; filtri potenti sui metadati (città, categoria). |
 | Embedding | fastembed, modello multilingue locale | Nessuna chiave API necessaria per il RAG; query in italiano e in inglese. |
 | Agente | LangGraph + modelli chat di LangChain | Grafo di stati esplicito con controlli; il checkpointer su Postgres rende persistente lo stato della conversazione. |
-| LLM | Anthropic o OpenAI, scelto nel `.env` | Indipendente dal provider. |
+| LLM | Gemini 3.5 Flash-Lite tramite Google AI Studio (piano gratuito: 15 richieste al minuto, 500 al giorno), con Gemini 3.1 Flash-Lite come riserva automatica (quota separata); Groq come alternativa. Provider e modelli scelti nel `.env` | Nessun costo e nessuna carta di credito, anche per il reviewer. I modelli Flash hanno solo 20 richieste al giorno sul piano gratuito: troppo poche per sviluppo e demo. Tool calling e output strutturato supportati. Il codice dipende da LangChain, non dal provider. |
 | Frontend | HTML, CSS, JavaScript senza framework (moduli ES) | Scelta esplicita; nessuno step di build. |
 | Autenticazione | JWT in un cookie httpOnly | Token non leggibile da JavaScript; inviato in automatico anche con la richiesta dello stream. |
 | Avvio | Docker Compose | Un solo comando per il reviewer. |
@@ -324,6 +324,7 @@ Le funzionalità facoltative partono solo quando le consegne di mercoledì sono 
 | Frontend | HTML/CSS/JS senza framework; React | Senza framework | Scelta di Ciro. Nessuno step di build; FastAPI serve i file. |
 | Layout delle proposte | A split view; B card nella chat; C righe nella chat + pannello laterale; D barra in alto; E pannello comprimibile | C | Scelta di Ciro dopo le anteprime. La chat resta al centro; i dettagli si aprono quando servono. |
 | Container | Uno per servizio; tutto in uno | Uno per servizio | Buona pratica di Docker; immagini ufficiali; cicli di vita indipendenti. |
+| Provider LLM | Gemini (AI Studio, gratuito); Groq (gratuito); OpenRouter, modelli `:free`; Anthropic o OpenAI (a pagamento) | Gemini, con Groq come alternativa | Requisito di Ciro: nessun costo. Gemini ha limiti gratuiti adatti a una demo e un buon tool calling. Groq è molto veloce ma il limite di token al minuto del piano gratuito è stretto per un agente con strumenti. OpenRouter senza acquisti concede solo 50 richieste al giorno. Nota: i dati inviati sul piano gratuito di Google possono essere usati per migliorare i prodotti; qui sono dati sintetici e messaggi di prova. |
 | Streaming | SSE; WebSocket | SSE | Basta una comunicazione dal server al client; HTTP semplice; facile da implementare in FastAPI. |
 
 ## 18. Decisioni lasciate a chi implementa
