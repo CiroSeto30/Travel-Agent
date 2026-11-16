@@ -20,5 +20,26 @@
       <button class="button button--link" id="logout" type="button">Esci</button>
     </nav>
   </header>
-  <main class="chat-layout"></main>
+    <main class="chat-layout">
+    <section class="chat" aria-label="Conversazione">
+      <p class="requirements" id="requirements" hidden></p>
+      <div class="messages" id="messages" aria-live="polite"></div>
+      <form class="composer" id="composer">
+        <label class="sr-only" for="message">Messaggio</label>
+        <textarea id="message" name="message" rows="1" placeholder="Due persone, Giappone ad aprile, 6 notti, 4.000 € in tutto"></textarea>
+        <button class="button button--primary" type="submit">Invia</button>
+      </form>
+    </section>
+
+    <aside class="details" id="details" aria-labelledby="details-title" hidden>
+      <div class="details__head">
+        <h2 id="details-title" class="details__variant"></h2>
+        <button class="button button--link details__close" type="button" aria-label="Chiudi i dettagli">Chiudi</button>
+      </div>
+      <p class="details__total"></p>
+      <p class="details__trip"></p>
+      <div class="details__program"></div>
+      <button class="button button--primary details__book" type="button">Prenota questa opzione</button>
+    </aside>
+  </main>
 </body>

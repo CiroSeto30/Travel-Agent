@@ -223,6 +223,7 @@ a {
   margin: 0;
   color: inherit;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .app-nav {
@@ -244,4 +245,367 @@ a {
 
 .app-nav .user-name {
   color: var(--ink);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Chat page: the conversation in the middle, the details panel on the right */
+
+.app-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.chat-layout {
+  display: grid;
+  flex: 1;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+}
+
+.chat-layout.has-details {
+  grid-template-columns: minmax(0, 1fr) 400px;
+}
+
+.chat {
+  --gutter: max(24px, calc((100% - 760px) / 2));
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.requirements {
+  margin: 0;
+  padding: 8px var(--gutter);
+  border-bottom: 1px solid var(--cloud);
+  color: var(--mist);
+  font-size: 13px;
+}
+
+.messages {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+  padding: 24px var(--gutter);
+}
+
+.message--user {
+  align-self: flex-end;
+  max-width: 80%;
+  padding: 10px 14px;
+  border: 1px solid var(--cloud);
+  border-radius: 12px;
+  background: var(--paper);
+  white-space: pre-wrap;
+}
+
+.message--assistant {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.message__text,
+.message__status,
+.message__error {
+  margin: 0;
+}
+
+.message__status {
+  color: var(--mist);
+  font-size: 14px;
+}
+
+.message__error {
+  color: var(--danger);
+  font-size: 14px;
+}
+
+.composer {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  padding: 12px var(--gutter) 20px;
+}
+
+.composer textarea {
+  flex: 1;
+  min-height: 44px;
+  max-height: 160px;
+  padding: 11px 14px;
+  border: 1px solid var(--cloud);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  resize: vertical;
+}
+
+.composer textarea:focus {
+  border-color: var(--azure);
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(47 134 201 / 20%);
+}
+
+.composer .button {
+  min-height: 44px;
+}
+
+/* Proposal tickets: route stub, perforation, variant and hotel, price */
+
+.tickets {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ticket {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--cloud);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.ticket__route {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-right: 1.5px dashed var(--perforation);
+  font-family: var(--font-ticket);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.ticket__arrow {
+  margin: 0 5px;
+  color: #9db7ca;
+}
+
+.ticket__body {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.ticket__variant {
+  font-weight: 500;
+}
+
+.ticket__meta {
+  color: var(--mist);
+}
+
+.ticket__price {
+  padding: 8px 4px 8px 12px;
+  font-family: var(--font-ticket);
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.ticket__open {
+  padding: 8px 14px 8px 10px;
+  border: 0;
+  background: none;
+  color: var(--azure);
+  font: 500 13px var(--font-body);
+  cursor: pointer;
+}
+
+/* the whole ticket is clickable, through the button */
+.ticket__open::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.ticket:hover {
+  border-color: var(--azure);
+}
+
+.ticket.is-selected {
+  border: 2px solid var(--azure);
+}
+
+.ticket.is-booked {
+  grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+}
+
+.ticket.is-selected .ticket__route {
+  border-right-color: #fff;
+  background: var(--azure);
+  color: #fff;
+}
+
+.ticket.is-selected .ticket__arrow {
+  color: #cfe3f3;
+}
+
+.ticket.is-selected .ticket__meta {
+  color: var(--azure);
+  font-weight: 500;
+}
+
+.ticket.is-superseded {
+  border-style: dashed;
+  background: transparent;
+  color: var(--faded);
+}
+
+.ticket.is-superseded .ticket__meta,
+.ticket.is-superseded .ticket__arrow,
+.ticket.is-superseded .ticket__open {
+  color: var(--faded);
+}
+
+.stamp {
+  padding: 2px 10px;
+  border: 3px double var(--azure);
+  border-radius: 6px;
+  color: var(--azure);
+  font-family: var(--font-ticket);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transform: rotate(-7deg);
+}
+
+/* Details panel */
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  padding: 20px 22px;
+  border-left: 1px solid var(--cloud);
+  background: var(--paper);
+}
+
+.details__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.details__variant {
+  font-size: 28px;
+}
+
+.details__total {
+  margin: 0;
+  font-family: var(--font-ticket);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.details__trip {
+  margin: 0 0 8px;
+  color: var(--mist);
+  font-size: 13px;
+}
+
+.details__program {
+  flex: 1;
+}
+
+.details__book {
+  width: 100%;
+  margin-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .chat-layout.has-details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .details {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    border-left: 0;
+  }
+
+  .app-header {
+    padding: 10px 14px;
+  }
+
+  .app-nav {
+    gap: 14px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .app-nav .user-name {
+    display: none;
+  }
+
+  /* narrow ticket: route on the left, variant, hotel and price stacked on the right */
+  .ticket,
+  .ticket.is-booked {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      "route body"
+      "route price";
+  }
+
+  .ticket__route {
+    grid-area: route;
+    padding: 8px 10px;
+    font-size: 18px;
+  }
+
+  .ticket__body {
+    grid-area: body;
+    padding: 8px 12px 0;
+  }
+
+  .ticket__price {
+    grid-area: price;
+    padding: 0 12px 8px;
+    font-size: 18px;
+  }
+
+  .stamp {
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+  }
+
+  /* no room for the "Dettagli" label: the whole ticket stays the button */
+  .ticket .ticket__open,
+  .ticket.is-superseded .ticket__open {
+    position: absolute;
+    inset: 0;
+    color: transparent;
+  }
+
+  .ticket__open:focus-visible {
+    outline: none;
+  }
+
+  .ticket:has(.ticket__open:focus-visible) {
+    outline: 2px solid var(--azure);
+    outline-offset: 2px;
+  }
 }
