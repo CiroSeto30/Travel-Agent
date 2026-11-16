@@ -3,7 +3,7 @@
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import SecretStr
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # backend/app/config.py -> parents[2] is the repository root
@@ -20,7 +20,10 @@ class Settings(BaseSettings):
     llm_provider: str = "google_genai"
     llm_model: str = "gemini-3.5-flash-lite"
     llm_api_key: SecretStr = SecretStr("")
-    jwt_secret: SecretStr = SecretStr("change-me")
+    # signs the login tokens: required, at least 32 characters (HS256 needs a 256-bit key)
+    jwt_secret: SecretStr = Field(min_length=32)
+    # send the login cookie over HTTPS only; keep False for http://localhost
+    cookie_secure: bool = False
 
 
 @lru_cache
