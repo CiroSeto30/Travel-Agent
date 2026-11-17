@@ -148,10 +148,16 @@ Lo stato dell'agente è salvato dal checkpointer Postgres di LangGraph (nelle su
 
 Una collezione Qdrant, `activities`, con un punto per ogni attività:
 
-- **vettore:** embedding di `name + description + target`;
-- **payload:** `activity_id`, `country`, `city`, `category`, `target`, `price`, con indici keyword su `country`, `city` e `category`.
+- **vettore:** embedding del testo "nome. descrizione Ideale per <target in italiano>.", con il modello multilingue `paraphrase-multilingual-MiniLM-L12-v2` di fastembed (384 dimensioni, circa 220 MB, scaricato una volta al primo uso);
+- **payload:** `activity_id`, `name`, `description`, `country`, `city`, `category`, `target`, `price`, con indici keyword su `country`, `city` e `category`, creati prima di inserire i punti. Nome e descrizione in chiaro rendono leggibile ogni punto (dashboard di Qdrant, un eventuale strumento di ricerca per l'agente).
+
+**Indice e ricerca.** Ricerca densa con similarità coseno. Qdrant indicizza i vettori con HNSW filtrabile: archi in più tra i punti che condividono un valore indicizzato del payload, così il filtro per città non spezza il grafo. Con 500 attività (circa 0,75 MB di vettori) la collezione resta sotto la soglia oltre la quale Qdrant costruisce il grafo, e il filtro per città lascia una quindicina di candidati: il pianificatore di query di Qdrant li trova con l'indice keyword e li confronta tutti, quindi la ricerca è esatta. Con un catalogo molto più grande entrerebbe in gioco HNSW, senza modifiche al codice.
 
 Il planner la interroga con le preferenze dell'utente come testo, filtrando per la città di destinazione. L'id del punto coincide con l'id dell'attività, così ogni risultato di Qdrant corrisponde direttamente a una riga di Postgres. Disponibilità e prezzo vengono sempre da Postgres, mai dal payload.
+
+**Come il RAG entra nel planner.** Il planner riceve una funzione di ordinamento (il *ranker*) e non sa come è fatta. Quello del RAG ordina le attività della città per similarità con le preferenze, più un piccolo bonus (0,1 sulla similarità coseno) per le categorie scelte. Senza preferenze scritte, o se Qdrant non risponde, ordina solo per categoria e lo scrive nel log: il RAG migliora l'ordine, ma non è mai un motivo perché la ricerca fallisca.
+
+**Indicizzazione.** `python -m seed.index_activities`, dopo il caricamento del catalogo. Ricostruisce la collezione da zero, e non fa niente se contiene già un punto per ogni attività.
 
 ## 6. Catalogo sintetico
 
@@ -252,7 +258,7 @@ Il client legge lo stream con `fetch` e un piccolo parser (`EventSource` support
 
 Tutto avviene in un'unica transazione del database:
 
-1. Carica l'itinerario: deve appartenere all'utente ed essere `proposed`. Se è già `booked`, restituisce la prenotazione esistente (operazione idempotente).
+1. Blocca con `SELECT … FOR UPDATE` l'itinerario insieme alle altre proposte dello stesso insieme, in ordine di id: così due proposte sorelle prenotate nello stesso istante non possono finire entrambe prenotate. L'itinerario deve appartenere all'utente ed essere `proposed`. Se è già `booked`, restituisce la prenotazione esistente (operazione idempotente: un doppio clic prenota una volta sola).
 2. Blocca le righe di disponibilità con `SELECT … FOR UPDATE`, sempre nello stesso ordine (voli, poi notti delle tipologie di camera, poi posti nelle attività, ognuno ordinato per chiave), per evitare deadlock.
 3. Verifica che ogni riga abbia ancora almeno la quantità richiesta (posti per i voli e le attività, camere per ogni notte); se no, annulla la transazione e indica quale elemento non è più disponibile.
 4. Scala da ogni riga la quantità della voce corrispondente; imposta l'itinerario come `booked`, segna come `superseded` le altre proposte dello stesso insieme; inserisce la prenotazione.
@@ -303,9 +309,10 @@ Prenotare resta possibile solo in chat: l'agente prenota l'itinerario con le att
 | Area | Cosa si verifica |
 |---|---|
 | Planner | Su molte richieste casuali: totale mai sopra il budget, ogni notte coperta, ogni elemento disponibile nella sua data, voli coerenti con le N notti, letti sufficienti per tutti i P viaggiatori. Combinazione di camere più economica su casi noti (per esempio 5 persone: familiare + singola contro tripla + doppia). Risultato "nessuna soluzione" quando il budget è troppo basso. |
-| Prenotazione | Caso normale; idempotenza; due prenotazioni simultanee per l'ultima camera: ne riesce esattamente una; due gruppi da 3 che si contendono gli ultimi 4 posti di un volo: ne riesce esattamente uno. |
+| Prenotazione | Caso normale; idempotenza; itinerario altrui o sostituito; un elemento non più disponibile non prenota niente. Concorrenza, su transazioni vere: due prenotazioni per l'ultima camera, ne riesce esattamente una; due gruppi da 3 per gli ultimi 4 posti di un volo, ne riesce esattamente uno; due proposte sorelle insieme, se ne prenota una; doppio clic, una sola prenotazione; sei prenotazioni contemporanee per 5 posti, mai un posto venduto due volte. I test di concorrenza tengono aperta la prima transazione e verificano che la seconda resti in attesa del blocco. |
 | Requisiti | Regole di validazione e unione degli aggiornamenti parziali. |
 | Autenticazione | Registrazione, login, endpoint protetto senza e con cookie. |
+| RAG | Un punto per attività con il suo payload; risultati solo della città richiesta; le preferenze portano in cima le attività che le descrivono; le categorie scelte salgono; senza preferenze o senza Qdrant si ordina per categoria; il planner con il ranker del RAG rispetta tutti i vincoli. I test usano Qdrant in modalità locale e un embedding finto basato sulle parole; un test in più, saltato se il modello non è scaricabile, controlla il modello vero su una query in italiano. |
 | Scelta delle attività | Totale ricalcolato; rifiuto di: itinerario altrui, prenotato o sostituito; giorno fuori dal viaggio; attività di un'altra città o non disponibile; sovrapposizione; budget superato. |
 | Agente | Alcune conversazioni scriptate con un LLM finto: i dati mancanti generano una domanda; un paese non disponibile riceve l'elenco dei paesi disponibili; nessuna prenotazione senza conferma. |
 
@@ -331,6 +338,22 @@ Un branch per fase, unito a `main` tramite pull request.
 | Mar 17 | `feat/rag`, `feat/agent` (grafo, endpoint della chat, SSE), `feat/booking` (con test) |
 | Mer 18 | `feat/frontend` (chat, pannello laterale, dashboard), Docker Compose completo, `docs/final`, demo, `v1.0` |
 
+**Piano rivisto il 17/11 alle 11** (consegna mercoledì sera, circa 20 ore di lavoro rimaste). Fatti: `chore/setup`, `docs/design`, `feat/database`, `feat/auth`, e il frontend della chat e del pannello con dati finti.
+
+| Quando | Branch | Contenuto |
+|---|---|---|
+| Mar 11:30–15:30 | `feat/planner` | orari delle attività, colonna `budget`, planner con test, salvataggio delle proposte |
+| Mar 15:30–17:00 | `feat/rag` | indicizzazione in Qdrant, retriever filtrato per città |
+| Mar 17:00–19:30 | `feat/booking` | prenotazione con blocco delle righe e test di concorrenza; endpoint dell'itinerario e della scelta delle attività |
+| Mar 20:30–24:00 | `feat/agent` (1) | requisiti e validazione, grafo con LLM finto e test, endpoint delle destinazioni |
+| Mer 9:00–12:00 | `feat/agent` (2) | Gemini, conversazioni, endpoint SSE, prove a mano |
+| Mer 12:00–14:00 | `feat/frontend` (2) | collegamento allo stream e alle API vere, pagina delle prenotazioni |
+| Mer 14:00–15:30 | `chore/docker` | servizio `app` nel Compose, seed e indicizzazione al primo avvio, prova da un clone pulito |
+| Mer 15:30–17:30 | `docs/final` | README, `docs/ARCHITECTURE.md`, controlli finali |
+| Mer 17:30–20:00 | riserva | GIF della demo, tag `v1.0` |
+
+Da tagliare, in quest'ordine, se si resta indietro: GIF della demo; ricostruzione della conversazione al ricaricamento della pagina; dettaglio della pagina delle prenotazioni (resta l'elenco). Non si tagliano: vincoli del planner, prenotazione solo dopo conferma, RAG, avvio con un comando.
+
 Aggiunte del 16/11: scelta delle attività con orari (circa 3 ore in più, divise tra `feat/planner`, `feat/booking` e `feat/frontend`); il frontend parte in anticipo, dopo `feat/auth`, con dati finti per la chat.
 
 Calendario rivisto il 15/11: il lavoro procede file per file, con spiegazione approfondita sulle parti con logica (planner, prenotazione, agente, streaming, chat) e più rapida su quelle ripetitive.
@@ -352,7 +375,6 @@ Le funzionalità facoltative partono solo quando le consegne di mercoledì sono 
 
 ## 18. Decisioni lasciate a chi implementa
 
-- Il modello di embedding esatto (un modello multilingue di fastembed, per esempio `paraphrase-multilingual-MiniLM-L12-v2`).
 - I pesi del punteggio della variante bilanciata e il numero K di coppie di voli.
 - La libreria per l'hashing delle password.
 - Il testo dei prompt.
