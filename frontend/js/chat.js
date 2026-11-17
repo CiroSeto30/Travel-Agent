@@ -1,5 +1,10 @@
 import { dateRange, euro, monthName } from "./format.js";
-import { createTicket, selectTicket, stampTicket, supersedeTicket } from "./itinerary.js";
+import { ApiError } from "./api.js";
+import {
+  createTicket, renderDetails, selectTicket, selectionOf, setTicketTotal, stampTicket, supersedeTicket, toggleActivity,
+} from "./itinerary.js";
+// until the real endpoints exist (feat/planner, feat/booking), itineraries come from fake data
+import { getItinerary, saveActivities } from "./mock-itineraries.js";
 import { mockReply, welcome } from "./mock.js";
 import { requireUser } from "./session.js";
 
@@ -14,7 +19,9 @@ const input = form.message;
 const details = document.querySelector("#details");
 const ticketsById = new Map();
 const ticketsBySet = new Map();
+const note = details.querySelector(".details__note");
 let busy = false;
+let opened = null; // { itinerary, saved, ticket, view, version } for the itinerary in the panel
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -79,7 +86,10 @@ function showRequirements(r) {
 }
 
 function showProposals(data, reply) {
-  for (const ticket of ticketsBySet.get(data.supersedes) ?? []) supersedeTicket(ticket);
+  for (const ticket of ticketsBySet.get(data.supersedes) ?? []) {
+    supersedeTicket(ticket);
+    if (opened?.ticket === ticket) makeReadOnly("superseded");
+  }
 
   const list = element("ul", "tickets");
   const tickets = data.options.map((option) => {
@@ -95,27 +105,115 @@ function showProposals(data, reply) {
 function showBooking(data) {
   const ticket = ticketsById.get(data.itinerary_id);
   stampTicket(ticket);
-  if (ticket.classList.contains("is-selected")) details.querySelector(".details__book").hidden = true;
+  if (opened?.ticket === ticket) makeReadOnly("booked");
 }
 
-function openDetails(option, ticket) {
+function showNote(text, isError = false) {
+  note.textContent = text ?? "";
+  note.hidden = !text;
+  note.classList.toggle("is-error", isError);
+}
+
+function showTotal(itinerary) {
+  details.querySelector(".details__total").textContent = euro(itinerary.total);
+}
+
+function render() {
+  const editable = opened.itinerary.status === "proposed";
+  opened.view = renderDetails(details.querySelector(".details__program"), opened.itinerary, {
+    editable,
+    onToggle: changeActivity,
+  });
+  details.querySelector(".details__book").hidden = !editable;
+  showTotal(opened.itinerary);
+}
+
+function makeReadOnly(status) {
+  opened.itinerary.status = status;
+  opened.saved.status = status;
+  showNote(null);
+  render();
+}
+
+async function openDetails(option, ticket) {
   selectTicket(ticket);
   details.querySelector(".details__variant").textContent = option.variant;
-  details.querySelector(".details__total").textContent = euro(option.total);
   details.querySelector(".details__trip").textContent =
     `${option.city}, ${dateRange(option.start_date, option.end_date)}, ` +
     `${option.travelers === 1 ? "1 persona" : `${option.travelers} persone`}`;
+  details.querySelector(".details__program").replaceChildren();
   details.querySelector(".details__book").dataset.variant = option.variant;
-  details.querySelector(".details__book").hidden =
-    ticket.classList.contains("is-superseded") || ticket.classList.contains("is-booked");
+  details.querySelector(".details__book").hidden = true;
+  showTotal(option);
+  showNote("Carico il programma…");
   details.hidden = false;
   layout.classList.add("has-details");
   details.querySelector(".details__close").focus();
+
+  try {
+    const itinerary = await getItinerary(option.itinerary_id);
+    if (!ticket.classList.contains("is-selected")) return; // another ticket was opened meanwhile
+    opened = { itinerary, saved: itinerary, ticket, view: null, version: 0 };
+    showNote(null);
+    render();
+  } catch {
+    showNote("Non è stato possibile caricare il programma. Chiudi e riapri i dettagli.", true);
+  }
+}
+
+function changeActivity(activityId, checked) {
+  const result = toggleActivity(opened.itinerary, activityId, checked);
+  if (result.overBudget) {
+    opened.view.update(opened.itinerary); // put the checkbox back
+    showNote(`Con "${result.target.name}" si supera il budget. Togli un'altra attività o alza il budget in chat.`, true);
+    return;
+  }
+  opened.itinerary = result.itinerary;
+  opened.view.update(result.itinerary);
+  showTotal(result.itinerary);
+  showNote(result.removed.length
+    ? `Tolto "${result.removed.map((a) => a.name).join('", "')}": si sovrapponeva a "${result.target.name}".`
+    : null);
+  save(opened);
+}
+
+function saveErrorMessage(error) {
+  const code = error instanceof ApiError ? error.detail?.code : null;
+  if (code === "over_budget") return "Con questa scelta si supera il budget. Togli un'attività o alza il budget in chat.";
+  if (code === "overlap") return "Due attività si sovrappongono: scegline una sola.";
+  if (code === "not_editable") return "Questa proposta non si può più modificare.";
+  if (code === "unavailable") return "Un'attività si è appena esaurita. Scegline un'altra.";
+  return "Non è stato possibile salvare la modifica. Riprova.";
+}
+
+// Every change saves the whole selection; only the answer to the latest change is applied.
+async function save(state) {
+  const version = ++state.version;
+  try {
+    const saved = await saveActivities(state.itinerary.itinerary_id, selectionOf(state.itinerary));
+    if (version !== state.version) return;
+    state.saved = saved;
+    state.itinerary = saved;
+    setTicketTotal(state.ticket, saved.total);
+    if (opened === state) {
+      state.view.update(saved);
+      showTotal(saved);
+    }
+  } catch (error) {
+    if (version !== state.version) return;
+    state.itinerary = state.saved;
+    if (opened === state) {
+      state.view.update(state.saved);
+      showTotal(state.saved);
+      showNote(saveErrorMessage(error), true);
+    }
+  }
 }
 
 function closeDetails() {
   details.hidden = true;
   layout.classList.remove("has-details");
+  opened = null;
   const selected = document.querySelector(".ticket.is-selected .ticket__open");
   selectTicket(null);
   selected?.focus();
