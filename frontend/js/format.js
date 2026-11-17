@@ -6,6 +6,8 @@ const euroFormat = new Intl.NumberFormat("it-IT", {
 });
 const shortFormat = new Intl.DateTimeFormat("it-IT", { day: "numeric", month: "long" });
 const monthFormat = new Intl.DateTimeFormat("it-IT", { month: "long" });
+const longDayFormat = new Intl.DateTimeFormat("it-IT", { weekday: "long", day: "numeric", month: "long" });
+const shortDayFormat = new Intl.DateTimeFormat("it-IT", { weekday: "short", day: "numeric", month: "short" });
 
 // amounts arrive from the API as strings ("3770.00"): Decimal on the server, never float
 export const euro = (amount) => euroFormat.format(Number(amount));
@@ -22,3 +24,8 @@ export function dateRange(startIso, endIso) {
 }
 
 export const monthName = (month) => monthFormat.format(new Date(2000, month - 1, 1));
+export const longDay = (iso) => longDayFormat.format(toDate(iso));
+export const shortDay = (iso) => shortDayFormat.format(toDate(iso));
+
+// "2027-04-17T10:15" → "10:15"
+export const clock = (isoDateTime) => isoDateTime.slice(11, 16);

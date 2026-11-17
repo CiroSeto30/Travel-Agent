@@ -1,32 +1,13 @@
 // A fake agent that emits the same events as the real chat endpoint (docs/design.md §10).
 // It lets the chat page be built and tried before the agent exists; chat.js stops using it in feat/agent.
 
+import { euro } from "./format.js";
+import { OPTIONS, currentTotal, markItinerary } from "./mock-itineraries.js";
+
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 let proposalSet = 0;
 let pending = null;
-
-const OPTIONS = [
-  [
-    { itinerary_id: 101, variant: "Economica", city: "Tokyo", origin: "NAP", destination: "HND",
-      hotel: "Asakusa Hanabi Inn", hotel_stars: 3, start_date: "2027-04-10", end_date: "2027-04-16",
-      travelers: 2, total: "3190.00", budget: "4000.00" },
-    { itinerary_id: 102, variant: "Bilanciata", city: "Tokyo", origin: "NAP", destination: "HND",
-      hotel: "Hotel Sumida Riverside", hotel_stars: 4, start_date: "2027-04-10", end_date: "2027-04-16",
-      travelers: 2, total: "3770.00", budget: "4000.00" },
-    { itinerary_id: 103, variant: "Comfort", city: "Osaka", origin: "NAP", destination: "KIX",
-      hotel: "Osaka Castle View", hotel_stars: 5, start_date: "2027-04-10", end_date: "2027-04-16",
-      travelers: 2, total: "3980.00", budget: "4000.00" },
-  ],
-  [
-    { itinerary_id: 201, variant: "Economica", city: "Tokyo", origin: "NAP", destination: "HND",
-      hotel: "Ueno Garden Hotel", hotel_stars: 3, start_date: "2027-04-17", end_date: "2027-04-23",
-      travelers: 2, total: "2980.00", budget: "4000.00" },
-    { itinerary_id: 202, variant: "Bilanciata", city: "Tokyo", origin: "NAP", destination: "HND",
-      hotel: "Shibuya Crossing Tower", hotel_stars: 4, start_date: "2027-04-17", end_date: "2027-04-23",
-      travelers: 2, total: "3640.00", budget: "4000.00" },
-  ],
-];
 
 async function* say(text) {
   for (const word of text.split(/(?<= )/)) {
@@ -48,6 +29,7 @@ export async function* mockReply(text) {
     yield { event: "tool_start", data: { tool: "book", label: "Prenoto voli, hotel e attività" } };
     await wait(900);
     yield { event: "tool_end", data: { tool: "book" } };
+    markItinerary(pending.itinerary_id, "booked");
     yield { event: "booking", data: { booking_id: 1, itinerary_id: pending.itinerary_id, status: "confirmed" } };
     yield* say(`Fatto: l'opzione ${pending.variant.toLowerCase()} è prenotata. La trovi in "Le mie prenotazioni".`);
     pending = null;
@@ -56,11 +38,13 @@ export async function* mockReply(text) {
     pending = options.find((o) => text.toLowerCase().includes(o.variant.toLowerCase())) ?? options[0];
     yield* say(
       `Riepilogo: ${pending.city}, opzione ${pending.variant.toLowerCase()}, hotel ${pending.hotel}, ` +
-      `${pending.travelers} persone, ${Number(pending.total).toLocaleString("it-IT")} € in tutto. ` +
+      `${pending.travelers} persone, ${euro(currentTotal(pending.itinerary_id))} in tutto. ` +
       "Confermi la prenotazione?",
     );
+  } else if (proposalSet === OPTIONS.length) {
+    yield* say("Queste sono le opzioni migliori che ho trovato. Apri i dettagli o dimmi quale vuoi prenotare.");
   } else {
-    const index = Math.min(proposalSet, OPTIONS.length - 1);
+    const index = proposalSet;
     const supersedes = proposalSet > 0 ? `set-${proposalSet}` : null;
     yield { event: "requirements", data: { country: "Giappone", month: 4, nights: 6, travelers: 2,
       budget: "4000.00", origin: "NAP", preferences: ["cultura", "cibo"], missing: [] } };
@@ -70,6 +54,7 @@ export async function* mockReply(text) {
     yield* say(supersedes
       ? "Spostando il viaggio di una settimana si risparmia qualcosa. Ecco le nuove opzioni."
       : "Ecco tre itinerari per il Giappone, dal 10 al 16 aprile, partendo da Napoli.");
+    for (const option of OPTIONS[proposalSet - 1] ?? []) markItinerary(option.itinerary_id, "superseded");
     proposalSet = index + 1;
     yield { event: "itinerary", data: { proposal_set_id: `set-${proposalSet}`, supersedes, options: OPTIONS[index] } };
     yield* say("Apri i dettagli per vedere il programma giorno per giorno.");

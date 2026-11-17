@@ -529,9 +529,186 @@ a {
   flex: 1;
 }
 
+/* note and booking button stay visible at the bottom while the program scrolls */
+.details__footer {
+  position: sticky;
+  bottom: -20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 8px -22px -20px;
+  padding: 12px 22px 20px;
+  border-top: 1px solid var(--cloud);
+  background: var(--paper);
+}
+
+.details__footer:has(.details__note[hidden]):has(.details__book[hidden]) {
+  display: none;
+}
+
+.details__note {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  background: #eaf3fa;
+  color: #1d5f92;
+  font-size: 13px;
+}
+
+.details__note.is-error {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
 .details__book {
   width: 100%;
-  margin-top: 16px;
+}
+
+.budget {
+  margin-bottom: 4px;
+}
+
+.budget__bar {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #e4eef5;
+}
+
+.budget__fill {
+  height: 100%;
+  background: var(--azure);
+}
+
+.budget__text {
+  margin: 4px 0 0;
+  color: var(--mist);
+  font-size: 12px;
+}
+
+.budget.is-over .budget__fill {
+  background: var(--danger);
+}
+
+.budget.is-over .budget__text {
+  color: var(--danger);
+}
+
+.details__section {
+  padding: 14px 0 4px;
+}
+
+.details__section-title {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.details__hint {
+  margin: 0 0 6px;
+  color: var(--mist);
+  font-size: 12px;
+}
+
+.flight,
+.hotel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0 12px;
+  padding: 6px 0;
+  font-size: 13px;
+}
+
+.flight + .flight {
+  border-top: 1px solid #eef4f9;
+}
+
+.flight__route {
+  grid-column: 1 / -1;
+  font-family: var(--font-ticket);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.flight__when,
+.hotel__rooms {
+  color: var(--mist);
+}
+
+.flight__price,
+.hotel__price {
+  text-align: right;
+}
+
+.hotel__name {
+  grid-column: 1 / -1;
+  font-weight: 500;
+}
+
+.day {
+  padding: 4px 0 8px;
+}
+
+.day__title {
+  margin: 10px 0 2px;
+  color: var(--azure);
+  font: 500 13px var(--font-body);
+  letter-spacing: 0;
+}
+
+.day__title::first-letter {
+  text-transform: uppercase;
+}
+
+.day__empty {
+  margin: 4px 0;
+  color: var(--mist);
+  font-size: 13px;
+}
+
+.activity {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 7px 0;
+  border-top: 1px solid #eef4f9;
+  font-size: 13px;
+}
+
+label.activity {
+  grid-template-columns: 18px 92px minmax(0, 1fr) auto;
+  cursor: pointer;
+}
+
+.activity input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--azure);
+}
+
+.activity__time {
+  white-space: nowrap;
+  font-family: var(--font-ticket);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.activity__name {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity__per-person {
+  color: var(--mist);
+  font-size: 12px;
+}
+
+label.activity:has(input:not(:checked)) .activity__time,
+label.activity:has(input:not(:checked)) .activity__name {
+  color: var(--mist);
 }
 
 @media (max-width: 900px) {
