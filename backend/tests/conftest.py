@@ -4,11 +4,18 @@ import pytest
 from sqlalchemy import create_engine, text
 from sqlalchemy.engine import make_url
 from sqlalchemy.orm import Session
+from datetime import date
+
 
 from app.config import get_settings
 import app.db.models # noqa: F401  (registers every model on Base.metadata)
 from app.db.base import Base
 
+from seed.build_catalog import build_catalog
+from seed.load_db import DATA_DIR, load_catalog
+from seed.schema import BaseData, load_base_data
+
+TODAY = date(2027, 3, 31)  # the planner tests' catalog covers April and the first half of May
 
 def check_test_database(test_url: str, app_url: str) -> None:
     """The fixtures drop every table: refuse to run them against the app's own database."""
@@ -68,3 +75,21 @@ def client(db_session):
     with TestClient(app) as c:
         yield c
     app.dependency_overrides.clear()
+
+
+@pytest.fixture(scope="session")
+def base_data():
+    return load_base_data(DATA_DIR)
+
+
+@pytest.fixture
+def japan(db_session, base_data):
+    """A small catalog for the planner tests: only Japan, 45 days from 1 April 2027."""
+    cities = {a.city for a in base_data.airports if a.country == "Giappone"}
+    base = BaseData(
+        airports=[a for a in base_data.airports if a.role == "departure" or a.country == "Giappone"],
+        hotels=[h for h in base_data.hotels if h.city in cities],
+        activities=[a for a in base_data.activities if a.city in cities],
+    )
+    load_catalog(db_session, build_catalog(base, date(2027, 4, 1), days=45), base)
+    return db_session

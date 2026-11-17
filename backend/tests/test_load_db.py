@@ -1,7 +1,7 @@
 from datetime import date
 from pathlib import Path
 
-from app.db.models import Airport, Flight, Hotel, RoomAvailability, RoomType
+from app.db.models import Activity, Airport, Flight, Hotel, RoomAvailability, RoomType
 from seed.build_catalog import build_catalog
 from seed.load_db import load_catalog
 from seed.schema import load_base_data
@@ -17,6 +17,8 @@ def test_load_catalog_inserts_everything(db_session):
     assert db_session.query(Flight).count() == len(CAT.flights)
     assert db_session.query(RoomType).count() == len(CAT.room_types)
     assert db_session.query(RoomAvailability).count() == len(CAT.room_availability)
+    first = db_session.query(Activity).filter_by(name=BASE.activities[0].name).one()
+    assert first.start_time == BASE.activities[0].start_time
 
 
 def test_room_availability_points_to_the_right_room(db_session):

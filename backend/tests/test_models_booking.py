@@ -17,7 +17,7 @@ def user(db_session):
 
 
 def new_itinerary(s, user):
-    it = Itinerary(user_id=user.id, variant="bilanciata", travelers=2, total_cost=Decimal("1860.00"),
+    it = Itinerary(user_id=user.id, variant="bilanciata", travelers=2, budget=Decimal("2000.00"), total_cost=Decimal("1860.00"),
                    start_date=date(2027, 4, 3), end_date=date(2027, 4, 9))
     s.add(it)
     s.flush()
