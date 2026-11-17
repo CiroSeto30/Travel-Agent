@@ -1,18 +1,6 @@
-import pytest
+from app.db.models import User
 
-from app.db.models import Airport, User
-
-NEW_USER = {"email": "Ciro@Example.com", "password": "correct horse", "first_name": "Ciro",
-            "last_name": "Setolino", "home_airport": "NAP"}
-
-
-@pytest.fixture(autouse=True)
-def airports(db_session):
-    db_session.add_all([
-        Airport(iata="NAP", city="Napoli", country="Italia", is_departure=True),
-        Airport(iata="HND", city="Tokyo", country="Giappone"),
-    ])
-    db_session.flush()
+NEW_USER = {"email": "Ciro@Example.com", "password": "correct horse", "first_name": "Ciro", "last_name": "Setolino"}
 
 
 def register(client, **changes):
@@ -43,10 +31,6 @@ def test_same_email_twice_is_rejected(client):
     assert register(client, email="ciro@example.com").status_code == 409
 
 
-def test_destination_airport_is_rejected(client):
-    assert register(client, home_airport="HND").status_code == 422
-
-
 def test_short_password_is_rejected(client):
     assert register(client, password="short").status_code == 422
 
@@ -75,5 +59,5 @@ def test_invalid_cookie_is_rejected(client):
     assert client.get("/api/auth/me").status_code == 401
 
 
-def test_airports_lists_departures_only(client):
-    assert [a["iata"] for a in client.get("/api/airports").json()] == ["NAP"]
+def test_departure_airport_is_not_part_of_the_account(client):
+    assert "home_airport" not in register(client).json()

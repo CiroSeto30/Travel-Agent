@@ -7,7 +7,7 @@ from sqlalchemy.exc import IntegrityError
 from app.api.deps import COOKIE_NAME, CurrentUser, DbSession
 from app.auth.security import TOKEN_LIFETIME, create_access_token, hash_password, verify_password
 from app.config import get_settings
-from app.db.models import Airport, User
+from app.db.models import User
 from app.schemas.auth import LoginIn, RegisterIn, UserOut
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
@@ -26,11 +26,8 @@ def _start_session(response: Response, user_id: int) -> None:
 
 @router.post("/register", status_code=status.HTTP_201_CREATED)
 def register(data: RegisterIn, db: DbSession, response: Response) -> UserOut:
-    airport = db.get(Airport, data.home_airport)
-    if airport is None or not airport.is_departure:
-        raise HTTPException(status.HTTP_422_UNPROCESSABLE_CONTENT, "Unknown departure airport")
     user = User(email=data.email, password_hash=hash_password(data.password), first_name=data.first_name,
-                last_name=data.last_name, home_airport=data.home_airport)
+                last_name=data.last_name)
     db.add(user)
     try:
         db.commit()

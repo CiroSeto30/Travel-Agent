@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Chat | Travel Agent</title>
+  <script type="module" src="js/chat.js"></script>
+</head>
+<body class="app-page">
+  <header class="app-header">
+    <a class="brand" href="chat.html">Travel Agent</a>
+    <nav class="app-nav" aria-label="Principale">
+      <a href="chat.html" aria-current="page">Chat</a>
+      <a href="bookings.html">Le mie prenotazioni</a>
+      <span class="user-name"></span>
+      <button class="button button--link" id="logout" type="button">Esci</button>
+    </nav>
+  </header>
+    <main class="chat-layout">
+    <section class="chat" aria-label="Conversazione">
+      <p class="requirements" id="requirements" hidden></p>
+      <div class="messages" id="messages" aria-live="polite"></div>
+      <form class="composer" id="composer">
+        <label class="sr-only" for="message">Messaggio</label>
+        <textarea id="message" name="message" rows="1" placeholder="Due persone, Giappone ad aprile, 6 notti, 4.000 € in tutto"></textarea>
+        <button class="button button--primary" type="submit">Invia</button>
+      </form>
+    </section>
+
+    <aside class="details" id="details" aria-labelledby="details-title" hidden>
+      <div class="details__head">
+        <h2 id="details-title" class="details__variant"></h2>
+        <button class="button button--link details__close" type="button" aria-label="Chiudi i dettagli">Chiudi</button>
+      </div>
+      <p class="details__total"></p>
+      <p class="details__trip"></p>
+      <div class="details__program"></div>
+      <button class="button button--primary details__book" type="button">Prenota questa opzione</button>
+    </aside>
+  </main>
+</body>

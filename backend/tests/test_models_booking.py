@@ -10,7 +10,7 @@ from app.db.models import Airport, Booking, Flight, Itinerary, ItineraryItem, Us
 @pytest.fixture
 def user(db_session):
     db_session.add(Airport(iata="NAP", city="Napoli", country="Italia"))
-    u = User(email="ciro@example.com", password_hash="x", first_name="Ciro", last_name="Setolino", home_airport="NAP")
+    u = User(email="ciro@example.com", password_hash="x", first_name="Ciro", last_name="Setolino")
     db_session.add(u)
     db_session.flush()
     return u
@@ -25,12 +25,12 @@ def new_itinerary(s, user):
 
 
 def test_email_is_unique(db_session, user):
-    db_session.add(User(email="ciro@example.com", password_hash="y", first_name="Mario", last_name="Rossi", home_airport="NAP"))
+    db_session.add(User(email="ciro@example.com", password_hash="y", first_name="Mario", last_name="Rossi"))
     with pytest.raises(IntegrityError):
         db_session.flush()
 
 def test_last_name_is_required(db_session, user):
-    db_session.add(User(email="mario@example.com", password_hash="y", first_name="Mario", home_airport="NAP"))
+    db_session.add(User(email="mario@example.com", password_hash="y", first_name="Mario"))
     with pytest.raises(IntegrityError):
         db_session.flush()
 
