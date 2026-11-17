@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     database_url: str = "postgresql+psycopg://travel:travel@localhost:5432/travel"
     test_database_url: str = "postgresql+psycopg://travel:travel@localhost:5432/travel_test"
     qdrant_url: str = "http://localhost:6333"
+    embedding_model: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
     llm_provider: str = "google_genai"
     llm_model: str = "gemini-3.5-flash-lite"
     llm_api_key: SecretStr = SecretStr("")
