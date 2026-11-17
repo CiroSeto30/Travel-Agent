@@ -15,7 +15,6 @@ class RegisterIn(BaseModel):
     password: str = Field(min_length=8, max_length=128)
     first_name: str = Field(min_length=1, max_length=100)
     last_name: str = Field(min_length=1, max_length=100)
-    home_airport: str = Field(pattern=r"^[A-Z]{3}$")
 
 
 class LoginIn(BaseModel):
@@ -30,12 +29,4 @@ class UserOut(BaseModel):
     email: str
     first_name: str
     last_name: str
-    home_airport: str
 
-
-class AirportOut(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
-
-    iata: str
-    city: str
-    country: str

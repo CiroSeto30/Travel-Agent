@@ -24,4 +24,3 @@ export const getCurrentUser = () => request("/api/auth/me");
 export const login = (email, password) => request("/api/auth/login", { method: "POST", body: { email, password } });
 export const register = (user) => request("/api/auth/register", { method: "POST", body: user });
 export const logout = () => request("/api/auth/logout", { method: "POST" });
-export const getAirports = () => request("/api/airports");

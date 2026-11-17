@@ -1,15 +1,9 @@
-import { ApiError, getAirports, register } from "./api.js";
+import { ApiError, register } from "./api.js";
 
 const form = document.querySelector("#register-form");
 const errorBox = document.querySelector("#form-error");
 const submit = form.querySelector('button[type="submit"]');
 
-async function loadAirports() {
-  const airports = await getAirports();
-  form.home_airport.append(
-    ...airports.map((a) => new Option(`${a.city} (${a.iata})`, a.iata)),
-  );
-}
 
 function messageFor(error) {
   if (!(error instanceof ApiError)) return "Non è stato possibile registrarsi. Riprova tra qualche istante.";
@@ -33,7 +27,3 @@ form.addEventListener("submit", async (event) => {
   }
 });
 
-loadAirports().catch(() => {
-  errorBox.textContent = "Non è stato possibile caricare gli aeroporti. Ricarica la pagina.";
-  errorBox.hidden = false;
-});

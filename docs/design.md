@@ -60,7 +60,7 @@ Tagliati per la scadenza: modifica di un itinerario prenotato, cancellazione di 
 | Punto mancante | Decisione |
 |---|---|
 | Durata del viaggio (la spec indica solo il mese) | L'agente chiede il numero di notti (da 2 a 14). Se l'utente non ha preferenze, ne propone 5. |
-| Aeroporto di partenza (serve per i voli, ma non è tra gli input) | Salvato nel profilo utente alla registrazione; si può cambiare in chat ("stavolta parto da Roma"). |
+| Aeroporto di partenza (serve per i voli, ma non è tra gli input) | Un requisito del viaggio, raccolto dall'agente in chat come gli altri: se l'utente non lo dice, l'agente lo chiede proponendo gli aeroporti di partenza del catalogo (Napoli, Roma, Milano). Non fa parte dell'account. |
 | Anno del mese indicato | La prossima occorrenza di quel mese in cui il viaggio può iniziare da domani in poi. |
 | Prezzo delle attività (la spec cita solo le date) | Le attività hanno un prezzo a persona, necessario per rispettare il budget. |
 | Numero di viaggiatori | L'agente lo chiede: da 1 a 6. Voli e attività costano a persona; in hotel si prenotano le camere che servono a dare un letto a tutti (vedi §7). |
@@ -126,7 +126,7 @@ erDiagram
 
 | Tabella | Colonne principali | Note |
 |---|---|---|
-| `users` | id, email (unica), password_hash, first_name, last_name, home_airport → airports, created_at | |
+| `users` | id, email (unica), password_hash, first_name, last_name, created_at | |
 | `airports` | iata (PK), city, country, is_departure | `is_departure`: aeroporti italiani da cui si parte (NAP, FCO, MXP); gli altri sono destinazioni. |
 | `flights` | id, origin → airports, destination → airports, departure_at, arrival_at, price, seats_left | Solo andata; un viaggio di andata e ritorno usa due voli. |
 | `hotels` | id, name, city, country, stars, description | |
@@ -206,8 +206,8 @@ flowchart LR
 
 - **Stato:** i requisiti raccolti finora, i campi mancanti, l'insieme di proposte corrente, l'itinerario in attesa di conferma (se c'è), l'ultima prenotazione.
 - **Estrazione:** l'LLM restituisce un output strutturato (modello Pydantic), unito ai requisiti precedenti, così l'utente può cambiare una cosa alla volta.
-- **Validazione:** regole Pydantic (budget > 0, mese da 1 a 12, notti da 2 a 14, viaggiatori da 1 a 6, paese presente nel catalogo, categorie note). Se l'utente non indica la partenza, si usa l'aeroporto del suo profilo.
-- **Destinazioni disponibili:** l'agente sa sempre per quali paesi può creare un itinerario, perché l'elenco viene letto dal catalogo e inserito nel suo prompt di sistema (mai scritto a mano). Lo dice nel messaggio di benvenuto, quando l'utente chiede "dove posso andare?" e quando chiede un paese che non c'è: in quel caso spiega che non è disponibile e propone l'elenco, invece di inventare un itinerario.
+- **Validazione:** regole Pydantic (budget > 0, mese da 1 a 12, notti da 2 a 14, viaggiatori da 1 a 6, paese presente nel catalogo, partenza tra gli aeroporti di partenza del catalogo, categorie note). La partenza è obbligatoria: l'estrazione accetta sia il nome della città ("parto da Napoli") sia il codice.
+- **Destinazioni e partenze disponibili:** l'agente sa sempre per quali paesi può creare un itinerario e da quali aeroporti si parte, perché entrambi gli elenchi vengono letti dal catalogo e inseriti nel suo prompt di sistema (mai scritti a mano). Lo dice nel messaggio di benvenuto, quando l'utente chiede "dove posso andare?" e quando chiede un paese che non c'è: in quel caso spiega che non è disponibile e propone l'elenco, invece di inventare un itinerario.
 - **Strumenti a disposizione dell'LLM:** elencare le destinazioni disponibili (paesi e città), cercare gli itinerari (richiama il planner) e leggere i dettagli di un itinerario. **La prenotazione non è uno strumento libero**: è un nodo del grafo che si raggiunge solo dopo che l'utente ha visto il riepilogo e ha confermato in modo esplicito. Così la regola "nessuna prenotazione senza conferma" è garantita dalla struttura del grafo, non dal prompt.
 - **Risposte:** l'LLM scrive il testo. Prezzi e date nel testo vengono dalla proposta strutturata che riceve, e l'interfaccia mostra le proposte a partire dagli eventi strutturati, non dal testo.
 
@@ -215,11 +215,10 @@ flowchart LR
 
 | Metodo e percorso | A cosa serve |
 |---|---|
-| `POST /api/auth/register` | Crea un utente (email, password, nome, cognome, aeroporto di partenza). |
+| `POST /api/auth/register` | Crea un utente (email, password, nome, cognome). |
 | `POST /api/auth/login` | Verifica le credenziali e imposta il cookie JWT. |
 | `POST /api/auth/logout` | Cancella il cookie. |
 | `GET /api/auth/me` | Utente corrente. |
-| `GET /api/airports` | Aeroporti di partenza per il modulo di registrazione. |
 | `GET /api/destinations` | Paesi e città disponibili, per il messaggio di benvenuto della chat. |
 | `GET /api/conversations` | Conversazioni dell'utente (barra della cronologia). |
 | `POST /api/conversations` | Avvia una conversazione. |
@@ -295,7 +294,7 @@ Prenotare resta possibile solo in chat: l'agente prenota l'itinerario con le att
 
 - Password salvate con un algoritmo di hashing moderno (argon2 o bcrypt, a scelta di chi implementa).
 - Il login restituisce un JWT firmato (HS256, `JWT_SECRET`, scadenza 24 ore) in un cookie httpOnly con SameSite=Lax.
-- Una dipendenza FastAPI (`get_current_user`) protegge tutti gli endpoint tranne registrazione, login, aeroporti, destinazioni e controllo di funzionamento.
+- Una dipendenza FastAPI (`get_current_user`) protegge tutti gli endpoint tranne registrazione, login, destinazioni e controllo di funzionamento.
 - Le pagine chiamano `/api/auth/me` all'apertura e, se serve, rimandano al login.
 - **Limite noto, accettato:** un JWT non si può revocare prima della scadenza. Il logout cancella il cookie dal browser, ma un token copiato altrove resterebbe valido fino a 24 ore. Valutate le sessioni lato server (logout vero, una tabella in più): scartate per la scadenza, la differenza qui è piccola. In produzione: token brevi con refresh token, oppure sessioni lato server.
 
@@ -348,6 +347,7 @@ Le funzionalità facoltative partono solo quando le consegne di mercoledì sono 
 | Layout delle proposte | A split view; B card nella chat; C righe nella chat + pannello laterale; D barra in alto; E pannello comprimibile | C | Scelta di Ciro dopo le anteprime. La chat resta al centro; i dettagli si aprono quando servono. |
 | Container | Uno per servizio; tutto in uno | Uno per servizio | Buona pratica di Docker; immagini ufficiali; cicli di vita indipendenti. |
 | Provider LLM | Gemini (AI Studio, gratuito); Groq (gratuito); OpenRouter, modelli `:free`; Anthropic o OpenAI (a pagamento) | Gemini, con Groq come alternativa | Requisito di Ciro: nessun costo. Gemini ha limiti gratuiti adatti a una demo e un buon tool calling. Groq è molto veloce ma il limite di token al minuto del piano gratuito è stretto per un agente con strumenti. OpenRouter senza acquisti concede solo 50 richieste al giorno. Nota: i dati inviati sul piano gratuito di Google possono essere usati per migliorare i prodotti; qui sono dati sintetici e messaggi di prova. |
+| Aeroporto di partenza | Nel profilo, scelto alla registrazione; chiesto in chat per ogni viaggio | In chat | Scelta di Ciro (16/11). È un requisito del viaggio come paese e mese: registrazione più leggera, e la conversazione resta l'unico posto in cui si definisce il viaggio. Costo: chi fa più viaggi lo ripete, ma spesso lo dice già nel primo messaggio. |
 | Streaming | SSE; WebSocket | SSE | Basta una comunicazione dal server al client; HTTP semplice; facile da implementare in FastAPI. |
 
 ## 18. Decisioni lasciate a chi implementa
