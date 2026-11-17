@@ -1,9 +1,9 @@
 """Catalog tables: what can be booked (flights, hotels, activities) and when."""
 
-from datetime import date, datetime
+from datetime import date, datetime, time
 from decimal import Decimal
 
-from sqlalchemy import CheckConstraint, Date, DateTime, ForeignKey, Index, Integer, Numeric, String, Text, UniqueConstraint, Boolean
+from sqlalchemy import CheckConstraint, Date, DateTime, ForeignKey, Index, Integer, Numeric, String, Text, UniqueConstraint, Boolean, Time
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
@@ -83,6 +83,7 @@ class Activity(Base):
     target: Mapped[str] = mapped_column(String(20))
     price: Mapped[Decimal] = mapped_column(Money)
     duration_hours: Mapped[Decimal] = mapped_column(Numeric(4, 1))
+    start_time: Mapped[time] = mapped_column(Time)  # local time, the same on every day it runs
     description: Mapped[str] = mapped_column(Text)
 
 

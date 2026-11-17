@@ -47,3 +47,19 @@ def test_unknown_category_is_rejected(tmp_path):
     (tmp_path / "activities.json").write_text(json.dumps(acts), encoding="utf-8")
     with pytest.raises(ValueError):
         load_base_data(tmp_path)
+
+
+def test_activities_start_and_end_on_the_same_day():
+    d = load_base_data(DATA)
+    for a in d.activities:
+        end = a.start_time.hour * 60 + a.start_time.minute + float(a.duration_hours) * 60
+        assert end <= 24 * 60, a.name
+
+
+def test_bad_start_time_is_rejected(tmp_path):
+    shutil.copytree(DATA, tmp_path, dirs_exist_ok=True)
+    acts = json.loads((tmp_path / "activities.json").read_text(encoding="utf-8"))
+    acts[0]["start_time"] = "23:00"  # every activity lasts at least an hour: it would end after midnight
+    (tmp_path / "activities.json").write_text(json.dumps(acts), encoding="utf-8")
+    with pytest.raises(ValueError, match="midnight"):
+        load_base_data(tmp_path)

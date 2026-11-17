@@ -45,7 +45,7 @@ def load_catalog(session: Session, catalog: Catalog, base: BaseData) -> bool:
     ])
     activity_ids = _insert_returning_ids(session, Activity, [
         {"name": a.name, "city": a.city, "country": base.country_of(a.city), "category": a.category,
-         "target": a.target, "price": a.price, "duration_hours": a.duration_hours,
+         "target": a.target, "price": a.price, "duration_hours": a.duration_hours, "start_time": a.start_time,
          "description": a.description}
         for a in base.activities
     ])

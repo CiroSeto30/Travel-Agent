@@ -34,6 +34,7 @@ class Itinerary(Base):
     proposal_set_id: Mapped[str | None] = mapped_column(String(36), index=True)
     variant: Mapped[str] = mapped_column(String(20))
     travelers: Mapped[int] = mapped_column(Integer)
+    budget: Mapped[Decimal] = mapped_column(Money)  # kept to check later changes, like the activity choice
     status: Mapped[str] = mapped_column(String(20), default="proposed")
     total_cost: Mapped[Decimal] = mapped_column(Money)
     start_date: Mapped[date] = mapped_column(Date)

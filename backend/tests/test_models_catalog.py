@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date, datetime, time
 from decimal import Decimal
 
 import pytest
@@ -59,7 +59,7 @@ def test_room_night_is_unique(db_session):
 
 def test_activity_slot_belongs_to_activity(db_session):
     a = Activity(name="Fushimi Inari all'alba", city="Kyoto", country="Giappone", category="culture",
-                 target="couples", price=Decimal("25.00"), duration_hours=Decimal("3"), description="…")
+                 target="couples", price=Decimal("25.00"), duration_hours=Decimal("3"), start_time=time(5,30), description="…")
     db_session.add(a)
     db_session.flush()
     db_session.add(ActivitySlot(activity_id=a.id, day=date(2027, 4, 4), spots_left=10))

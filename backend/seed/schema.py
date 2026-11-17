@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from decimal import Decimal
 from pathlib import Path
 from typing import Literal
+from datetime import time
 
 from pydantic import BaseModel, Field, ValidationError, field_validator, model_validator
 
@@ -43,6 +44,7 @@ class ActivityIn(BaseModel):
     price: Decimal = Field(ge=0)
     duration_hours: Decimal = Field(gt=0)
     weekdays: list[int] = Field(min_length=1)  # Monday = 0 … Sunday = 6
+    start_time: time  # local time, "HH:MM" in the JSON
     description: str = Field(min_length=20)
 
     @field_validator("weekdays")
@@ -51,6 +53,13 @@ class ActivityIn(BaseModel):
         if any(d not in range(7) for d in days) or len(set(days)) != len(days):
             raise ValueError(f"weekdays must be distinct values from 0 to 6, got {days}")
         return days
+
+    @model_validator(mode="after")
+    def ends_before_midnight(self) -> "ActivityIn":
+        end = self.start_time.hour * 60 + self.start_time.minute + float(self.duration_hours) * 60
+        if end > 24 * 60:
+            raise ValueError(f"Activity '{self.name}' would end after midnight")
+        return self
 
 
 @dataclass(frozen=True)
