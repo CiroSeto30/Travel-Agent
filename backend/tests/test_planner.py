@@ -86,8 +86,16 @@ def test_month_without_flights_gives_no_solution(japan):
     assert isinstance(result, NoSolution) and result.reason == "no_flights"
 
 
-def test_preferred_categories_come_first(japan):
-    result = plan(japan, request(budget=Decimal("8000"), categories=("food",)), today=TODAY)
-    first_choices = [d.chosen[0].activity_id for d in result[0].days if d.chosen]
-    categories = [japan.get(Activity, i).category for i in first_choices]
-    assert categories.count("food") >= len(categories) / 2
+def test_only_the_requested_categories_are_chosen(japan):
+    result = plan(japan, request(budget=Decimal("8000"), categories=("food", "culture")), today=TODAY)
+    for proposal in result:
+        chosen = [a.activity_id for d in proposal.days for a in d.chosen]
+        assert chosen and {japan.get(Activity, i).category for i in chosen} <= {"food", "culture"}
+        others = [a.activity_id for d in proposal.days for a in d.alternatives]
+        assert any(japan.get(Activity, i).category not in ("food", "culture") for i in others)  # still offered
+
+
+def test_without_categories_any_activity_can_be_chosen(japan):
+    result = plan(japan, request(budget=Decimal("8000")), today=TODAY)
+    chosen = {japan.get(Activity, a.activity_id).category for d in result[0].days for a in d.chosen}
+    assert len(chosen) > 2
