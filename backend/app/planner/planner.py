@@ -211,7 +211,10 @@ def _activity_days(s: Session, c: _Candidate, req: TripRequest, rank: Ranker) ->
     for a, day in rows:
         offered[day].append(Slot(a.id, a.name, a.start_time, _end(a.start_time, a.duration_hours), a.price))
 
-    chosen = choose_activities(offered, rank(list(activities.values()), req), req.travelers,
+    # with categories, the planner picks only what was asked for; the rest stays on offer in the panel
+    wanted = {i for i, a in activities.items() if not req.categories or a.category in req.categories}
+    candidates = {day: [sl for sl in slots if sl.activity_id in wanted] for day, slots in offered.items()}
+    chosen = choose_activities(candidates, rank(list(activities.values()), req), req.travelers,
                                req.budget - c.fixed)
     picked = {slot.activity_id for slots in chosen.values() for slot in slots}
     return tuple(
