@@ -3,7 +3,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-from app.api import auth, bookings, itineraries
+from app.api import auth, bookings, conversations, destinations, itineraries
 from app.config import ROOT_DIR, get_settings
 
 settings = get_settings()
@@ -18,6 +18,8 @@ def health() -> dict[str, str]:
 app.include_router(auth.router)
 app.include_router(itineraries.router)
 app.include_router(bookings.router)
+app.include_router(conversations.router)
+app.include_router(destinations.router)
 
 # Mounted last: it answers every path not handled by the API routes above.
 app.mount("/", StaticFiles(directory=ROOT_DIR / "frontend", html=True), name="frontend")

@@ -20,6 +20,7 @@ class Settings(BaseSettings):
     embedding_model: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
     llm_provider: str = "google_genai"
     llm_model: str = "gemini-3.5-flash-lite"
+    llm_fallback_model: str = ""  # used when the main model fails, for example when its free quota runs out
     llm_api_key: SecretStr = SecretStr("")
     # signs the login tokens: required, at least 32 characters (HS256 needs a 256-bit key)
     jwt_secret: SecretStr = Field(min_length=32)

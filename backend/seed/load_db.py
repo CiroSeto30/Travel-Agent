@@ -69,9 +69,12 @@ def load_catalog(session: Session, catalog: Catalog, base: BaseData) -> bool:
 
 
 def main() -> None:
+    from app.agent.runtime import setup_checkpointer
+    from app.config import get_settings
     from app.db.session import SessionLocal, engine
 
     init_db(engine)
+    setup_checkpointer(get_settings().database_url)  # LangGraph's tables for the chat state
     base = load_base_data(DATA_DIR)
     catalog = build_catalog(base, start=date.today())
     with SessionLocal() as session:
