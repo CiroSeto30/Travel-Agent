@@ -232,8 +232,7 @@ flowchart LR
 | `POST /api/conversations/{id}/messages` | Invia un messaggio; la risposta è uno stream SSE. |
 | `GET /api/itineraries/{id}` | Itinerario completo, giorno per giorno, con le attività alternative di ogni giorno. |
 | `PUT /api/itineraries/{id}/activities` | Salva le attività scelte dall'utente in un itinerario proposto; il server ricalcola il totale (vedi §11 bis). |
-| `GET /api/bookings` | Prenotazioni dell'utente. |
-| `GET /api/bookings/{id}` | Una prenotazione con il suo itinerario. |
+| `GET /api/bookings` | Prenotazioni dell'utente, dalla più recente, ognuna con il riepilogo del suo itinerario. Il dettaglio di una prenotazione si legge da `GET /api/itineraries/{id}`, in sola lettura. |
 | `GET /api/health` | Controllo di funzionamento. |
 
 Non c'è volutamente un endpoint pubblico per creare una prenotazione: si prenota solo tramite la chat, come chiede la spec.
@@ -277,6 +276,19 @@ Regole, verificate dal server a ogni salvataggio (la pagina le anticipa solo per
 - **Nessuna sovrapposizione:** due attività dello stesso giorno devono distare almeno 30 minuti. Le attività che si sovrappongono compaiono tutte, ma se ne può spuntare una sola alla volta: spuntandone una, quelle in conflitto si tolgono da sole, e una riga dice cosa è stato tolto e perché. Il server rifiuta comunque qualsiasi selezione con due attività sovrapposte.
 - **Budget rigido:** il totale ricalcolato dai prezzi del database non può superare il budget dell'itinerario. Se lo supera, la modifica non viene salvata e il messaggio suggerisce di togliere un'attività o di alzare il budget in chat.
 - **Salvataggio automatico** a ogni clic. Se il server rifiuta (per esempio l'attività si è appena esaurita), la casella torna com'era e compare il motivo.
+
+Il server controlla tutte le regole **prima** di cambiare qualsiasi cosa: una selezione rifiutata non lascia niente da annullare. Risponde con un codice che la pagina traduce in un messaggio:
+
+| Codice | Stato HTTP | Quando |
+|---|---|---|
+| `not_found` | 404 | itinerario inesistente o di un altro utente |
+| `not_editable` | 409 | itinerario prenotato o sostituito |
+| `invalid_day` | 422 | un giorno che non è tra i giorni interi del viaggio |
+| `unavailable` | 409 | attività di un'altra città, che non si svolge quel giorno o senza P posti liberi |
+| `overlap` | 422 | due attività dello stesso giorno a meno di 30 minuti |
+| `over_budget` | 422 | il totale ricalcolato supera il budget |
+
+La modifica blocca la riga dell'itinerario (`FOR UPDATE`), come la prenotazione: una prenotazione e una modifica dello stesso itinerario non si sovrappongono mai.
 
 Prenotare resta possibile solo in chat: l'agente prenota l'itinerario con le attività scelte, leggendole dal database.
 
