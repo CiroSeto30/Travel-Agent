@@ -1,15 +1,26 @@
 import { dateRange, euro, monthName } from "./format.js";
-import { ApiError } from "./api.js";
+import { ApiError, createConversation, getDestinations, getItinerary, saveActivities, sendMessage } from "./api.js";
 import {
   createTicket, renderDetails, selectTicket, selectionOf, setTicketTotal, stampTicket, supersedeTicket, toggleActivity,
 } from "./itinerary.js";
-// until the real endpoints exist (feat/planner, feat/booking), itineraries come from fake data
-import { getItinerary, saveActivities } from "./mock-itineraries.js";
-import { mockReply, welcome } from "./mock.js";
 import { requireUser } from "./session.js";
 
-// until the agent endpoint exists (feat/agent), replies come from the fake agent
-const replyTo = mockReply;
+let conversationId = null; // created with the first message, so an unused page leaves no empty conversation
+
+async function* replyTo(text) {
+  conversationId ??= (await createConversation()).id;
+  yield* sendMessage(conversationId, text);
+}
+
+function welcome(user, destinations) {
+  const countries = destinations.countries.map((c) => c.country);
+  const list = countries.length > 1 ? `${countries.slice(0, -1).join(", ")} e ${countries.at(-1)}` : countries[0];
+  const departures = destinations.departures.map((d) => d.city).join(", ");
+  return (
+    `Ciao ${user.first_name}! Posso organizzare viaggi in ${list}, con partenza da ${departures}. ` +
+    "Dimmi dove vorresti andare, in che mese, per quante notti, in quanti siete, con che budget e da dove parti."
+  );
+}
 
 const layout = document.querySelector(".chat-layout");
 const messages = document.querySelector("#messages");
@@ -104,8 +115,15 @@ function showProposals(data, reply) {
 
 function showBooking(data) {
   const ticket = ticketsById.get(data.itinerary_id);
+  if (!ticket) return;
   stampTicket(ticket);
   if (opened?.ticket === ticket) makeReadOnly("booked");
+  // the other proposals of the same answer can no longer be booked
+  const siblings = [...ticketsBySet.values()].find((tickets) => tickets.includes(ticket)) ?? [];
+  for (const other of siblings.filter((t) => t !== ticket)) {
+    supersedeTicket(other);
+    if (opened?.ticket === other) makeReadOnly("superseded");
+  }
 }
 
 function showNote(text, isError = false) {
@@ -235,9 +253,11 @@ async function send(text) {
       else if (event === "booking") showBooking(data);
       else if (event === "error") reply.error(data.message);
     }
-  } catch {
+  } catch (error) {
     reply.status(null);
-    reply.error("La risposta si è interrotta. Invia di nuovo il messaggio.");
+    reply.error(error instanceof ApiError && error.status === 401
+      ? "La sessione è scaduta: accedi di nuovo."
+      : "La risposta si è interrotta. Invia di nuovo il messaggio.");
   } finally {
     busy = false;
     form.removeAttribute("aria-busy");
@@ -269,5 +289,5 @@ details.querySelector(".details__book").addEventListener("click", (event) => {
 });
 
 const user = await requireUser();
-addAssistantMessage().write(welcome(user));
+addAssistantMessage().write(welcome(user, await getDestinations()));
 input.focus();

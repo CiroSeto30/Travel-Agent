@@ -210,12 +210,18 @@ flowchart LR
     C -- no --> X
 ```
 
-- **Stato:** i requisiti raccolti finora, i campi mancanti, l'insieme di proposte corrente, l'itinerario in attesa di conferma (se c'è), l'ultima prenotazione.
-- **Estrazione:** l'LLM restituisce un output strutturato (modello Pydantic), unito ai requisiti precedenti, così l'utente può cambiare una cosa alla volta.
-- **Validazione:** regole Pydantic (budget > 0, mese da 1 a 12, notti da 2 a 14, viaggiatori da 1 a 6, paese presente nel catalogo, partenza tra gli aeroporti di partenza del catalogo, categorie note). La partenza è obbligatoria: l'estrazione accetta sia il nome della città ("parto da Napoli") sia il codice.
-- **Destinazioni e partenze disponibili:** l'agente sa sempre per quali paesi può creare un itinerario e da quali aeroporti si parte, perché entrambi gli elenchi vengono letti dal catalogo e inseriti nel suo prompt di sistema (mai scritti a mano). Lo dice nel messaggio di benvenuto, quando l'utente chiede "dove posso andare?" e quando chiede un paese che non c'è: in quel caso spiega che non è disponibile e propone l'elenco, invece di inventare un itinerario.
-- **Strumenti a disposizione dell'LLM:** elencare le destinazioni disponibili (paesi e città), cercare gli itinerari (richiama il planner) e leggere i dettagli di un itinerario. **La prenotazione non è uno strumento libero**: è un nodo del grafo che si raggiunge solo dopo che l'utente ha visto il riepilogo e ha confermato in modo esplicito. Così la regola "nessuna prenotazione senza conferma" è garantita dalla struttura del grafo, non dal prompt.
-- **Risposte:** l'LLM scrive il testo. Prezzi e date nel testo vengono dalla proposta strutturata che riceve, e l'interfaccia mostra le proposte a partire dagli eventi strutturati, non dal testo.
+- **Stato:** i requisiti raccolti finora, i requisiti a cui rispondono le proposte correnti, l'insieme di proposte corrente con i riepiloghi, l'itinerario in attesa di conferma (se c'è), i fatti da dire nella risposta e gli eventi strutturati del turno (per lo stream).
+- **Due compiti per l'LLM, nient'altro.** In `understand` legge il messaggio e restituisce un output strutturato (`Turn`): cosa aggiunge o cambia nei requisiti, e cosa vuole fare l'utente (`trip`, `choose` con la variante scelta, `confirm`, `other`). In `respond` scrive la risposta a partire dai **fatti** stabiliti dal grafo (domande da fare, proposte, riepilogo, esito della prenotazione), senza inventare prezzi o date. In mezzo c'è solo codice.
+- **Estrazione e unione:** l'aggiornamento estratto si unisce ai requisiti precedenti (ciò che il messaggio dice sostituisce, il resto resta), così l'utente può cambiare una cosa alla volta.
+- **Validazione:** in codice, non nel prompt: budget > 0, mese da 1 a 12, notti da 2 a 14, viaggiatori da 1 a 6, paese presente nel catalogo, partenza tra gli aeroporti di partenza del catalogo, categorie note. Paese e partenza si riconoscono senza badare a maiuscole; la partenza anche dal nome della città ("parto da Napoli" → NAP). I valori non validi non vengono usati: diventano un problema da spiegare all'utente.
+- **Instradamento (`route`), deterministico:**
+  - conferma **e** riepilogo mostrato nella risposta precedente → prenota;
+  - scelta di una variante tra le proposte correnti → riepilogo e richiesta di conferma;
+  - requisiti completi e validi, diversi da quelli delle proposte correnti → pianifica (le proposte precedenti diventano `superseded`);
+  - altrimenti → risponde: una domanda mirata se manca qualcosa, oppure una risposta libera.
+- **Nessuna prenotazione senza conferma, garantita dal grafo:** il riepilogo aspetta solo il messaggio successivo; qualsiasi altro messaggio lo annulla. Se il totale è cambiato dopo il riepilogo (per esempio scambiando un'attività nel pannello), il grafo mostra il riepilogo aggiornato invece di prenotare. La prenotazione gira in un savepoint: un elemento esaurito annulla solo la prenotazione, e l'agente dice quale.
+- **Destinazioni e partenze disponibili:** lette dal catalogo e passate all'LLM in ogni risposta che ne ha bisogno (mai scritte a mano). Un paese che non c'è riceve l'elenco dei paesi disponibili, invece di un itinerario inventato. Le stesse liste escono da `GET /api/destinations` per il messaggio di benvenuto.
+- **Dipendenze per richiesta** (sessione del database, utente, conversazione, data di oggi, ranker) passate come contesto di LangGraph: non finiscono nel checkpoint.
 
 ## 9. API REST
 
@@ -243,15 +249,19 @@ L'endpoint dei messaggi restituisce `text/event-stream`. Ogni evento ha un tipo 
 
 | Evento | Payload | Effetto nell'interfaccia |
 |---|---|---|
-| `requirements` | budget, paese, mese, notti, viaggiatori, partenza, preferenze, campi mancanti | Aggiorna i requisiti mostrati in chat. |
+| `requirements` | budget, paese, mese, notti, viaggiatori, partenza, preferenze, categorie, campi mancanti, problemi | Aggiorna i requisiti mostrati in chat. |
 | `tool_start` / `tool_end` | nome dello strumento, etichetta leggibile | Indicatori di stato ("Cerco voli…"). |
-| `itinerary` | id dell'insieme di proposte, id dell'insieme che sostituisce, opzioni con riepilogo (variante, città, hotel, totale, quota del budget) | Mostra le righe delle proposte; mette in grigio quelle sostituite. |
+| `itinerary` | `proposal_set_id`, `supersedes` (l'insieme che sostituisce, o null), `options`: riepiloghi (variante, città, tratta, hotel, date, viaggiatori, totale, budget) | Mostra le righe delle proposte; mette in grigio quelle sostituite. |
 | `token` | un pezzo di testo | Fa scorrere il messaggio dell'assistente. |
 | `booking` | id della prenotazione, id dell'itinerario, stato | Mostra "Prenotato" e aggiorna la dashboard. |
 | `error` | codice, messaggio | Mostra l'errore e permette di riprovare. |
 | `done` | id del messaggio salvato | Chiude lo stream. |
 
-Il client legge lo stream con `fetch` e un piccolo parser (`EventSource` supporta solo GET). I messaggi vengono salvati alla fine dello stream: ricaricando la pagina, la conversazione si ricostruisce da `GET /api/conversations/{id}`.
+Il client legge lo stream con `fetch` e un piccolo parser (`EventSource` supporta solo GET). Il messaggio dell'utente viene salvato prima di far partire l'agente; la risposta alla fine dello stream, con gli eventi `requirements`, `itinerary` e `booking` nel `payload`: ricaricando la pagina, la conversazione si ricostruisce da `GET /api/conversations/{id}`. Il titolo della conversazione è l'inizio del primo messaggio.
+
+Gli eventi nascono nei nodi del grafo (lo *stream writer* di LangGraph) e il testo arriva pezzo per pezzo dal modello. L'agente gira in un thread suo e mette ciò che produce in una coda, che la risposta HTTP legge: lo stream sincrono di LangGraph tiene il suo contesto nel thread che l'ha avviato, mentre una risposta in streaming può riprendere il suo generatore in un thread diverso a ogni passo. Un errore dell'agente (rete, quota dell'LLM) diventa un evento `error`, con i dettagli nel log.
+
+**Stato dell'agente.** Checkpointer Postgres di LangGraph, con un thread per conversazione (`conversation-<id>`): requisiti, proposte e riepilogo in attesa sopravvivono a un riavvio del server. Le sue tabelle le crea il seed (`python -m seed.load_db`), mai una richiesta: la creazione usa indici `CONCURRENTLY`, che aspettano la fine di ogni transazione aperta, compresa quella della richiesta stessa.
 
 ## 11. Prenotazione e concorrenza
 
@@ -383,6 +393,7 @@ Le funzionalità facoltative partono solo quando le consegne di mercoledì sono 
 | Container | Uno per servizio; tutto in uno | Uno per servizio | Buona pratica di Docker; immagini ufficiali; cicli di vita indipendenti. |
 | Provider LLM | Gemini (AI Studio, gratuito); Groq (gratuito); OpenRouter, modelli `:free`; Anthropic o OpenAI (a pagamento) | Gemini, con Groq come alternativa | Requisito di Ciro: nessun costo. Gemini ha limiti gratuiti adatti a una demo e un buon tool calling. Groq è molto veloce ma il limite di token al minuto del piano gratuito è stretto per un agente con strumenti. OpenRouter senza acquisti concede solo 50 richieste al giorno. Nota: i dati inviati sul piano gratuito di Google possono essere usati per migliorare i prodotti; qui sono dati sintetici e messaggi di prova. |
 | Aeroporto di partenza | Nel profilo, scelto alla registrazione; chiesto in chat per ogni viaggio | In chat | Scelta di Ciro (16/11). È un requisito del viaggio come paese e mese: registrazione più leggera, e la conversazione resta l'unico posto in cui si definisce il viaggio. Costo: chi fa più viaggi lo ripete, ma spesso lo dice già nel primo messaggio. |
+| Ruolo dell'LLM nell'agente | Agente con strumenti scelti liberamente dall'LLM (cerca, dettagli, destinazioni); grafo con instradamento in codice e LLM solo per capire e scrivere | Grafo con instradamento in codice | Decisione del 18/11. Due chiamate all'LLM per messaggio invece di tre o quattro: conta con 15 richieste al minuto del piano gratuito. Ogni passo è testabile con un LLM finto e la regola della conferma non dipende dal modello. Costo: l'agente non può concatenare strumenti in modi non previsti; per questo assistente i passi sono pochi e noti. |
 | Streaming | SSE; WebSocket | SSE | Basta una comunicazione dal server al client; HTTP semplice; facile da implementare in FastAPI. |
 
 ## 18. Decisioni lasciate a chi implementa
