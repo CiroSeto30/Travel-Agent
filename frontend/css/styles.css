@@ -810,3 +810,12 @@ label.activity:has(input:not(:checked)) .activity__name {
 .bookings__status.is-error {
   color: var(--danger);
 }
+
+.activity__elsewhere {
+  color: var(--azure);
+  font-size: 12px;
+}
+
+.activity__elsewhere[hidden] {
+  display: none;
+}

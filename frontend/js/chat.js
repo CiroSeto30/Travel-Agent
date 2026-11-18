@@ -1,4 +1,4 @@
-import { dateRange, euro, monthName } from "./format.js";
+import { dateRange, euro, longDay, monthName } from "./format.js";
 import { ApiError, createConversation, getDestinations, getItinerary, saveActivities, sendMessage } from "./api.js";
 import {
   createTicket, renderDetails, selectTicket, selectionOf, setTicketTotal, stampTicket, supersedeTicket, toggleActivity,
@@ -179,8 +179,8 @@ async function openDetails(option, ticket) {
   }
 }
 
-function changeActivity(activityId, checked) {
-  const result = toggleActivity(opened.itinerary, activityId, checked);
+function changeActivity(dayIso, activityId, checked) {
+  const result = toggleActivity(opened.itinerary, dayIso, activityId, checked);
   if (result.overBudget) {
     opened.view.update(opened.itinerary); // put the checkbox back
     showNote(`Con "${result.target.name}" si supera il budget. Togli un'altra attività o alza il budget in chat.`, true);
@@ -189,9 +189,14 @@ function changeActivity(activityId, checked) {
   opened.itinerary = result.itinerary;
   opened.view.update(result.itinerary);
   showTotal(result.itinerary);
-  showNote(result.removed.length
-    ? `Tolto "${result.removed.map((a) => a.name).join('", "')}": si sovrapponeva a "${result.target.name}".`
-    : null);
+  const notes = [];
+  if (result.movedFrom.length) {
+    notes.push(`"${result.target.name}" spostata da ${longDay(result.movedFrom[0])}: ogni attività si fa una volta per viaggio.`);
+  }
+  if (result.removed.length) {
+    notes.push(`Tolto "${result.removed.map((a) => a.name).join('", "')}": si sovrapponeva a "${result.target.name}".`);
+  }
+  showNote(notes.length ? notes.join(" ") : null);
   save(opened);
 }
 
@@ -199,6 +204,7 @@ function saveErrorMessage(error) {
   const code = error instanceof ApiError ? error.detail?.code : null;
   if (code === "over_budget") return "Con questa scelta si supera il budget. Togli un'attività o alza il budget in chat.";
   if (code === "overlap") return "Due attività si sovrappongono: scegline una sola.";
+  if (code === "duplicate") return "Questa attività è già scelta in un altro giorno.";
   if (code === "not_editable") return "Questa proposta non si può più modificare.";
   if (code === "unavailable") return "Un'attività si è appena esaurita. Scegline un'altra.";
   return "Non è stato possibile salvare la modifica. Riprova.";

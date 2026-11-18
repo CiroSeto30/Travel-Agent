@@ -140,6 +140,17 @@ def test_over_budget_is_rejected(client, japan, trip):
              422, "over_budget")
 
 
+def test_the_same_activity_on_two_days_is_rejected(client, trip):
+    _, [first, *_] = trip
+    details = client.get(f"/api/itineraries/{first}").json()
+    days_of = {}
+    for d in details["days"]:
+        for a in d["activities"]:
+            days_of.setdefault(a["activity_id"], []).append(d["day"])
+    activity, days = next((a, ds) for a, ds in days_of.items() if len(ds) > 1)  # it runs on several days
+    rejected(client, first, [{"day": day, "activity_id": activity} for day in days[:2]], 422, "duplicate")
+
+
 def test_days_outside_the_full_days_are_rejected(client, trip):
     _, [first, *_] = trip
     details = client.get(f"/api/itineraries/{first}").json()
