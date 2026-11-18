@@ -75,16 +75,25 @@ function totalOf(itinerary) {
   return (fixed + sum(activities.map((a) => a.price))).toFixed(2);
 }
 
-// Check or uncheck one activity: overlapping activities of that day are unchecked.
-export function toggleActivity(itinerary, activityId, checked) {
+// Check or uncheck one activity of one day: overlapping activities of that day are unchecked.
+// The same activity runs on several days, so a choice is identified by day and activity together.
+export function toggleActivity(itinerary, dayIso, activityId, checked) {
   const next = structuredClone(itinerary);
-  const day = next.days.find((d) => d.activities.some((a) => a.activity_id === activityId));
+  const day = next.days.find((d) => d.day === dayIso);
   const target = day.activities.find((a) => a.activity_id === activityId);
   target.selected = checked;
   const removed = checked ? day.activities.filter((a) => a !== target && a.selected && overlaps(a, target)) : [];
   for (const activity of removed) activity.selected = false;
+  // an activity is done once per trip: choosing it here moves it from the day it was on
+  const movedFrom = checked
+    ? next.days.filter((d) => d !== day && d.activities.some((a) => a.activity_id === activityId && a.selected))
+      .map((d) => d.day)
+    : [];
+  for (const other of next.days.filter((d) => movedFrom.includes(d.day))) {
+    for (const a of other.activities) if (a.activity_id === activityId) a.selected = false;
+  }
   next.total = totalOf(next);
-  return { itinerary: next, removed, target, overBudget: Number(next.total) > Number(next.budget) };
+  return { itinerary: next, removed, movedFrom, target, overBudget: Number(next.total) > Number(next.budget) };
 }
 
 export const selectionOf = (itinerary) =>
@@ -120,18 +129,25 @@ function flightRow(flight) {
   return row;
 }
 
-function activityRow(activity, editable, onToggle) {
+const choiceKey = (dayIso, activityId) => `${dayIso}|${activityId}`;
+
+function activityRow(activity, dayIso, editable, onToggle) {
   const row = element(editable ? "label" : "div", "activity");
   if (editable) {
     const box = element("input");
     box.type = "checkbox";
     box.checked = activity.selected;
-    box.dataset.id = activity.activity_id;
-    box.addEventListener("change", () => onToggle(activity.activity_id, box.checked));
+    box.dataset.key = choiceKey(dayIso, activity.activity_id);
+    box.addEventListener("change", () => onToggle(dayIso, activity.activity_id, box.checked));
     row.append(box);
   }
   const name = element("span", "activity__name", activity.name);
   name.append(element("span", "activity__per-person", `${euro(activity.price_per_person)} a persona`));
+  if (editable) {
+    const elsewhere = element("span", "activity__elsewhere");
+    elsewhere.hidden = true;
+    name.append(elsewhere);
+  }
   row.append(
     element("span", "activity__time", `${activity.start_time}–${activity.end_time}`),
     name,
@@ -173,7 +189,7 @@ export function renderDetails(container, itinerary, { editable, onToggle }) {
     const group = element("div", "day");
     group.append(element("h4", "day__title", longDay(day.day)));
     if (shown.length === 0) group.append(element("p", "day__empty", "Giornata libera."));
-    group.append(...shown.map((a) => activityRow(a, editable, onToggle)));
+    group.append(...shown.map((a) => activityRow(a, day.day, editable, onToggle)));
     program.append(group);
   }
 
@@ -185,8 +201,18 @@ export function renderDetails(container, itinerary, { editable, onToggle }) {
     fill.style.width = `${Math.min(100, Math.round((total / limit) * 100))}%`;
     budget.classList.toggle("is-over", total > limit);
     text.textContent = budgetText(next);
-    const selected = new Set(next.days.flatMap((d) => d.activities).filter((a) => a.selected).map((a) => a.activity_id));
-    for (const box of container.querySelectorAll('input[type="checkbox"]')) box.checked = selected.has(Number(box.dataset.id));
+    const selected = new Set(next.days.flatMap((d) =>
+      d.activities.filter((a) => a.selected).map((a) => choiceKey(d.day, a.activity_id))));
+    const chosenOn = new Map(next.days.flatMap((d) =>
+      d.activities.filter((a) => a.selected).map((a) => [a.activity_id, d.day])));
+    for (const box of container.querySelectorAll('input[type="checkbox"]')) {
+      box.checked = selected.has(box.dataset.key);
+      const [dayIso, id] = box.dataset.key.split("|");
+      const other = chosenOn.get(Number(id));
+      const hint = box.closest(".activity").querySelector(".activity__elsewhere");
+      hint.hidden = box.checked || !other || other === dayIso;
+      hint.textContent = hint.hidden ? "" : `Già scelta ${shortDay(other)}`;
+    }
   }
   update(itinerary);
   return { update };

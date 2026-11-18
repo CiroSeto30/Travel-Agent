@@ -284,6 +284,7 @@ Regole, verificate dal server a ogni salvataggio (la pagina le anticipa solo per
 - **Solo sulle proposte:** l'itinerario deve appartenere all'utente ed essere `proposed`. Prenotato o sostituito: sola lettura.
 - **Solo giorni interi del viaggio,** esclusi arrivo e partenza, e solo attività della città dell'itinerario, nei giorni in cui si svolgono, con almeno P posti liberi.
 - **Nessuna sovrapposizione:** due attività dello stesso giorno devono distare almeno 30 minuti. Le attività che si sovrappongono compaiono tutte, ma se ne può spuntare una sola alla volta: spuntandone una, quelle in conflitto si tolgono da sole, e una riga dice cosa è stato tolto e perché. Il server rifiuta comunque qualsiasi selezione con due attività sovrapposte.
+- **Una volta per viaggio:** molte attività si svolgono ogni giorno e compaiono tra le alternative di ogni giorno. Negli altri giorni una riga dice dove è già scelta; spuntandola in un altro giorno si sposta lì, e una riga lo dice.
 - **Budget rigido:** il totale ricalcolato dai prezzi del database non può superare il budget dell'itinerario. Se lo supera, la modifica non viene salvata e il messaggio suggerisce di togliere un'attività o di alzare il budget in chat.
 - **Salvataggio automatico** a ogni clic. Se il server rifiuta (per esempio l'attività si è appena esaurita), la casella torna com'era e compare il motivo.
 
@@ -294,6 +295,7 @@ Il server controlla tutte le regole **prima** di cambiare qualsiasi cosa: una se
 | `not_found` | 404 | itinerario inesistente o di un altro utente |
 | `not_editable` | 409 | itinerario prenotato o sostituito |
 | `invalid_day` | 422 | un giorno che non è tra i giorni interi del viaggio |
+| `duplicate` | 422 | la stessa attività scelta in due giorni (molte attività si svolgono ogni giorno: si fanno una volta per viaggio, come nel planner) |
 | `unavailable` | 409 | attività di un'altra città, che non si svolge quel giorno o senza P posti liberi |
 | `overlap` | 422 | due attività dello stesso giorno a meno di 30 minuti |
 | `over_budget` | 422 | il totale ricalcolato supera il budget |
@@ -311,7 +313,9 @@ Prenotare resta possibile solo in chat: l'agente prenota l'itinerario con le att
   - Su mobile il pannello laterale diventa un foglio a tutto schermo.
 - **Pulsante di prenotazione:** invia un messaggio in chat ("Prenota l'opzione bilanciata"); l'agente mostra il riepilogo e chiede conferma. Un solo percorso per prenotare, sempre attraverso l'agente.
 - **Barra della cronologia:** elenco delle conversazioni passate (facoltativo).
-- **Codice:** moduli ES: `api.js`, `auth.js`, `sse.js`, `chat.js`, `itinerary.js` (righe e pannello laterale, riusato dalla dashboard), `bookings.js`, `format.js`.
+- **Codice:** moduli ES: `api.js` (chiamate al backend, compreso lo stream della chat), `sse.js` (parser degli eventi), `session.js` (utente collegato), `login.js`, `register.js`, `chat.js`, `itinerary.js` (tagliandi e pannello, riusati dalla pagina delle prenotazioni), `bookings.js`, `format.js`.
+- **Conversazione:** creata al primo messaggio, così una pagina aperta e non usata non lascia conversazioni vuote. Il messaggio di benvenuto elenca paesi e partenze letti da `GET /api/destinations`. Quando una proposta viene prenotata, le altre dello stesso insieme diventano "sostituite" anche nella pagina.
+- **Pagina delle prenotazioni:** i tagliandi con il timbro, dalla più recente; "Dettagli" apre il programma in sola lettura.
 - **Direzione visiva (scelta di Ciro dopo due giri di anteprime):** carta d'imbarco su palette cielo. Ogni proposta è un tagliando: a sinistra della perforazione tratteggiata la tratta in grande (per esempio NAP → HND), a destra variante, hotel e prezzo. È l'unico gesto forte; il resto è sobrio.
   - Colori: cielo `#F2F7FB` (sfondo), carta `#FFFFFF`, inchiostro `#183247`, azzurro `#2F86C9` (azione principale, selezione, date), nuvola `#D6E5F0` (bordi), perforazione `#BFD6E7`, nebbia `#5D7A90` (testo secondario).
   - Caratteri: Barlow Condensed per tratte, prezzi, orari e titoli; DM Sans per il resto.

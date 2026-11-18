@@ -15,7 +15,7 @@ class SelectionError(Exception):
     def __init__(self, status: int, code: str, message: str) -> None:
         super().__init__(message)
         self.status = status  # the HTTP status the API answers with
-        self.code = code  # "not_found", "not_editable", "invalid_day", "unavailable", "overlap", "over_budget"
+        self.code = code  # "not_found", "not_editable", "invalid_day", "duplicate", "unavailable", "overlap", "over_budget"
 
 
 def update_activities(s: Session, *, user_id: int, itinerary_id: int,
@@ -36,6 +36,8 @@ def update_activities(s: Session, *, user_id: int, itinerary_id: int,
     wanted = sorted(set(selection))
     if any(day not in stay.full_days for day, _ in wanted):
         raise SelectionError(422, "invalid_day", "activities only go on the full days of the trip")
+    if len({a for _, a in wanted}) < len(wanted):  # many activities run every day: once per trip, like the planner
+        raise SelectionError(422, "duplicate", "the same activity is chosen on more than one day")
 
     activities = {a.id: a for a in s.scalars(select(Activity).where(Activity.id.in_({a for _, a in wanted})))}
     by_day = defaultdict(list)
